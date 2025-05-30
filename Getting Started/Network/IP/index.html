@@ -1,0 +1,620 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+        <title>IP & Subnet - On-Demend</title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        
+        <link rel="canonical" href="https://junki1108.github.io/On-Demend/Getting%20Started/Network/IP/">
+        <meta name="author" content="Junki1108">
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="stylesheet" href="../../../assets/css/darcula-highlight.min.css">
+
+        <link rel="stylesheet" href="../../../assets/css/bootstrap.min.css">
+        <link rel="stylesheet" href="../../../assets/css/dracula-ui.min.css">
+        <link rel="stylesheet" href="../../../assets/css/mkdocs.min.css">
+
+        
+            <link  rel="icon" type="image/x-icon" href="../../../favicon.svg">
+        
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+                <script>hljs.initHighlightingOnLoad();</script>
+
+</head>
+
+<body class="drac-bg-black-secondary drac-text-grey-ternary drac-text drac-scrollbar-purple">
+
+    <main class="d-flex">
+
+        <!-- block sidebar -->
+            <nav id="sidebar" class="sidebar drac-bg-black">
+    <div class="custom-menu">
+        <button type="button" id="sidebarCollapse" class="btn btn-primary">
+            <i class="fa fa-bars"></i>
+            <span class="sr-only">Menu</span>
+        </button>
+    </div>
+
+    <div class="p-4">
+        
+            <img class="logo" src="../../../logo.png" height="150px">
+        
+
+        <div class="drac-text-center">
+            
+                <span class="drac-text drac-line-height drac-text-white">On-Demend</span>
+            
+        </div>
+
+        <div class="drac-box flex-column">
+            <ul class="dot-ul">
+                <li><div class="dot-li drac-bg-cyan"></div></li>
+                <li><div class="dot-li drac-bg-green"></div></li>
+                <li><div class="dot-li drac-bg-orange"></div></li>
+                <li><div class="dot-li drac-bg-pink"></div></li>
+                <li><div class="dot-li drac-bg-purple"></div></li>
+                <li><div class="dot-li drac-bg-red"></div></li>
+                <li><div class="dot-li drac-bg-yellow"></div></li>
+            </ul>
+        </div>
+
+        <hr class="drac-divider" />
+
+        <!-- block menu -->
+        <ul class="mb-5 drac-list drac-list-none">
+            
+            <li class="drac-box">
+                <a href="../../.."
+                    class="
+                    drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+                    홈 | Home
+                </a>
+            </li>
+            <li class="drac-box">
+                <a href="../../.."
+                    class="
+                    drac-anchor btn-toggle d-inline-flex align-items-center border-0 drac-text-purple--hover collapsed"
+                    data-bs-toggle="collapse" data-bs-target="#로깅-|-logging-collapse" aria-expanded="false">
+                    로깅 | Logging
+                </a>
+                <div class="collapse" id="로깅-|-logging-collapse">
+                    <ul class="mb-5 drac-list drac-list-none">
+                            
+    <li class="drac-box-ternary">
+        <a href="../../../Logging/fluentbit/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Fluentbit
+        </a>
+    </li>
+                    </ul>
+                </div>
+            </li>
+            <li class="drac-box">
+                <a href="../../.."
+                    class="
+                    drac-anchor btn-toggle d-inline-flex align-items-center border-0 drac-text-purple--hover collapsed"
+                    data-bs-toggle="collapse" data-bs-target="#ec2-collapse" aria-expanded="false">
+                    EC2
+                </a>
+                <div class="collapse" id="ec2-collapse">
+                    <ul class="mb-5 drac-list drac-list-none">
+                            
+    <li class="drac-box-ternary">
+        <a href="../../../EC2/systemd/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Systemd
+        </a>
+    </li>
+                    </ul>
+                </div>
+            </li>
+            <li class="drac-box">
+                <a href="../../.."
+                    class="
+                    drac-anchor btn-toggle d-inline-flex align-items-center border-0 drac-text-purple--hover collapsed"
+                    data-bs-toggle="collapse" data-bs-target="#ecs-collapse" aria-expanded="false">
+                    ECS
+                </a>
+                <div class="collapse" id="ecs-collapse">
+                    <ul class="mb-5 drac-list drac-list-none">
+                            
+    <li class="drac-box-ternary">
+        <a href="../../../ECS/docker/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Docker
+        </a>
+    </li>
+                    </ul>
+                </div>
+            </li>
+            <li class="drac-box">
+                <a href="../../.."
+                    class="
+                    drac-anchor btn-toggle d-inline-flex align-items-center border-0 drac-text-purple--hover collapsed"
+                    data-bs-toggle="collapse" data-bs-target="#eks-collapse" aria-expanded="false">
+                    EKS
+                </a>
+                <div class="collapse" id="eks-collapse">
+                    <ul class="mb-5 drac-list drac-list-none">
+                            
+    <li class="drac-box-ternary">
+        <a href="../../../EKS/install/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Installation
+        </a>
+    </li>
+                    </ul>
+                </div>
+            </li>
+            <li class="drac-box">
+                <a href="../../.."
+                    class="
+                    drac-anchor btn-toggle d-inline-flex align-items-center border-0 drac-text-purple--hover collapsed"
+                    data-bs-toggle="collapse" data-bs-target="#ci/cd-collapse" aria-expanded="false">
+                    CI/CD
+                </a>
+                <div class="collapse" id="ci/cd-collapse">
+                    <ul class="mb-5 drac-list drac-list-none">
+                            
+    <li class="drac-box-ternary">
+        <a href="../../../CI%26CD/CodeDeploy/ECS/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            CodeDeploy
+        </a>
+    </li>
+                    </ul>
+                </div>
+            </li>
+            <li class="drac-box">
+                <a href="../../.."
+                    class=" active 
+                    drac-anchor btn-toggle d-inline-flex align-items-center border-0 drac-text-purple--hover collapsed"
+                    data-bs-toggle="collapse" data-bs-target="#getting-started-collapse" aria-expanded="false">
+                    Getting Started
+                </a>
+                <div class="collapse" id="getting-started-collapse">
+                    <ul class="mb-5 drac-list drac-list-none">
+                            
+    <li class="drac-box-ternary">
+        <a href="#" class="
+            drac-anchor-secondary btn-toggle d-inline-flex align-items-center border-0 drac-text-purple--hover collapsed"
+            data-bs-toggle="collapse" data-bs-target="#html/css-collapse" aria-expanded="false">
+            HTML/CSS
+        </a>
+
+        <div class="collapse" id="html/css-collapse">
+            <ul class="mb-5 drac-list drac-list-none">
+                    
+    <li class="drac-box-ternary">
+        <a href="../../HTML/html/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            HTML
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../../HTML/css/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            CSS
+        </a>
+    </li>
+            </ul>
+        </div>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="#" class="
+            drac-anchor-secondary btn-toggle d-inline-flex align-items-center border-0 drac-text-purple--hover collapsed"
+            data-bs-toggle="collapse" data-bs-target="#linux-collapse" aria-expanded="false">
+            Linux
+        </a>
+
+        <div class="collapse" id="linux-collapse">
+            <ul class="mb-5 drac-list drac-list-none">
+                    
+    <li class="drac-box-ternary">
+        <a href="../../Linux/Command/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Commands
+        </a>
+    </li>
+            </ul>
+        </div>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="#" class="
+            drac-anchor-secondary btn-toggle d-inline-flex align-items-center border-0 drac-text-purple--hover collapsed"
+            data-bs-toggle="collapse" data-bs-target="#network-collapse" aria-expanded="false">
+            Network
+        </a>
+
+        <div class="collapse" id="network-collapse">
+            <ul class="mb-5 drac-list drac-list-none">
+                    
+    <li class="drac-box-ternary">
+        <a href="./"
+            class=" active 
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            IP & Subnet
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../Protocols/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Protocols
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../HTTP/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            HTTP
+        </a>
+    </li>
+            </ul>
+        </div>
+    </li>
+                    </ul>
+                </div>
+            </li>
+            <li class="drac-box">
+                <a href="../../.."
+                    class="
+                    drac-anchor btn-toggle d-inline-flex align-items-center border-0 drac-text-purple--hover collapsed"
+                    data-bs-toggle="collapse" data-bs-target="#private-collapse" aria-expanded="false">
+                    Private
+                </a>
+                <div class="collapse" id="private-collapse">
+                    <ul class="mb-5 drac-list drac-list-none">
+                            
+    <li class="drac-box-ternary">
+        <a href="#" class="
+            drac-anchor-secondary btn-toggle d-inline-flex align-items-center border-0 drac-text-purple--hover collapsed"
+            data-bs-toggle="collapse" data-bs-target="#db-a-collapse" aria-expanded="false">
+            DB-A
+        </a>
+
+        <div class="collapse" id="db-a-collapse">
+            <ul class="mb-5 drac-list drac-list-none">
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../NoAWS/DB-A/0414s/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            04.14
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../NoAWS/DB-A/0508s/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            05.08
+        </a>
+    </li>
+            </ul>
+        </div>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="#" class="
+            drac-anchor-secondary btn-toggle d-inline-flex align-items-center border-0 drac-text-purple--hover collapsed"
+            data-bs-toggle="collapse" data-bs-target="#protection-collapse" aria-expanded="false">
+            Protection
+        </a>
+
+        <div class="collapse" id="protection-collapse">
+            <ul class="mb-5 drac-list drac-list-none">
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../NoAWS/Protection/0415s/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            04.15
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../NoAWS/Protection/0417-1/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            04.17-1
+        </a>
+    </li>
+                    
+    <li class="drac-box-ternary">
+        <a href="../../../NoAWS/Protection/0417-2/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            04.17-2
+        </a>
+    </li>
+            </ul>
+        </div>
+    </li>
+                    </ul>
+                </div>
+            </li>
+            <li class="drac-box">
+                <a href="../../../%EC%96%91%EC%84%B8%EC%B0%AC/stu/"
+                    class="
+                    drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+                    *비공개 - 이세찬이 멍청한 이유를 아십니까?
+                </a>
+            </li>
+            <li class="drac-box">
+                <a href="../../../etc/b/"
+                    class="
+                    drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+                    <p style='color: lime; transition: 0.5s;'>이상한 사람들</p>
+                </a>
+            </li>
+            <li class="drac-box">
+                <a href="../../.."
+                    class="
+                    drac-anchor btn-toggle d-inline-flex align-items-center border-0 drac-text-purple--hover collapsed"
+                    data-bs-toggle="collapse" data-bs-target="#etc-tools-collapse" aria-expanded="false">
+                    Etc Tools
+                </a>
+                <div class="collapse" id="etc-tools-collapse">
+                    <ul class="mb-5 drac-list drac-list-none">
+                            
+    <li class="drac-box-ternary">
+        <a href="../../../ETC%20Tools/AWS-Nuke/default/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            AWS-Nuke
+        </a>
+    </li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+        <!-- endblock -->
+    </div>
+</nav>
+        <!-- endblock -->
+
+        <nav class="divider drac-bg-purple-cyan"></nav>
+
+        <div class="content">
+            <!-- block header -->
+                <header>
+    <nav class="navbar navbar-expand-xl drac-bg-purple">
+        <div class="container-fluid">
+            
+            <button class="navbar-toggler w-100 text-center" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsMenu"
+                aria-controls="navbarsMenu" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse flex-column ml-auto" id="navbarsMenu">
+                <ul class="navbar-nav text-md-center">
+
+                    <!-- block preview -->
+                    <li class="nav-item">
+                            
+        <div class="container">
+            <div class="row row-preview">
+                <div class="col">
+                    <a href="../../Linux/Command/"
+                        class="btn-preview drac-btn drac-btn-outline drac-text-white drac-text-cyan-green--hover">
+                        <i class="fa fa-arrow-left"></i> Previous
+                    </a>
+                </div>
+                <div class="col">
+                    <a href="../Protocols/"
+                        class="btn-preview drac-btn drac-btn-outline drac-text-white drac-text-cyan-green--hover" style="padding-left: 3%;">
+                        Next <i class="fa fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+                    </li>
+                    <!--  endblock -->
+
+                    <!-- block search -->
+                    <li class="nav-item"><div role="search" class="search-box">
+	<form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+		<input type="text" name="q" class="drac-input drac-input-search drac-input-white drac-text-white drac-bg-black-secondary"
+		placeholder="Search docs" title="Type search term here" />
+	</form>
+</div>
+                    </li>
+                    <!--  endblock -->
+
+                    <!-- block source -->
+                    <li class="nav-item">
+                        
+                            
+                                <div class="md-source source-detail">
+    <div class="md-source-repo-icon">
+        <i class="fa fa-github-alt drac-text-white" aria-hidden="true"></i>
+    </div>
+
+    <div class="md-source-repo-url">
+        <a href="https://github.com/Junki1108/On-Demend"
+            class="md-source drac-anchor drac-text drac-text-white drac-text-cyan-green--hover">
+            On-Demend/On-Demend
+        </a>
+
+        <ul class="md-source-repo-text">
+            <li>
+                <i class="fa fa-tag drac-text-black" aria-hidden="true"></i>
+                <img alt="GitHub tag (latest by date)"
+                    src="https://img.shields.io/github/v/tag/On-Demend/On-Demend?color=white&label=%20&style=flat-square">
+            </li>
+
+            <li>
+                <i class="fa fa-star drac-text-black" aria-hidden="true"></i>
+                <img alt="GitHub Repo stars"
+                    src="https://img.shields.io/github/stars/On-Demend/On-Demend?color=white&label=%20&style=flat-square">
+            </li>
+
+            <li>
+                <i class="fa fa-code-fork drac-text-black" aria-hidden="true"></i>
+                <img alt="GitHub forks"
+                    src="https://img.shields.io/github/forks/On-Demend/On-Demend?color=white&label=%20&style=flat-square">
+            </li>
+        </ul>
+    </div>
+
+</div>
+                            
+                        
+                    </li>
+                    <!--  endblock -->
+
+                </ul>
+            </div>
+
+        </div>
+    </nav>
+</header>
+            <!-- endblock -->
+
+            <!-- block content -->
+                <section class="p-md-5 section-content">
+    <article>
+        <p><h1 id="ip">IP</h1>
+<ul>
+<li>IP 주소는 인터넷에 연결된 각 기기를 구별하기 위해 사용되는 고유한 번호</li>
+<li>IP는 프로토콜 자체이며, IP 주소는 IP 프로토콜로 통신을 하기위한 주소로 이해하면 됨. (ex: <code>192.168.35.100</code>, <code>172.30.1.2</code>)</li>
+<li>IP 주소는 IPv4와 IPv6 두 버전이 있음. (IPv4 기준으로 설명할 것임)<ul>
+<li>IPv4 </li>
+<li>IPv6 (전국대회에도 나오지 않음)</li>
+</ul>
+</li>
+<li>IP는 <code>0.0.0.0</code> ~ <code>255.255.255.255</code>까지 사용 가능</li>
+<li>공인 IP vs 사설 IP<ul>
+<li>공인 IP : 인터넷에서 직접 사용 가능한 IP</li>
+<li>사설 IP : 내부 네트워크에서만 사용하는 IP</li>
+<li>루프백 주소 : 자기 자신을 가리키는 IP 주소<ul>
+<li><code>127.0.0.1</code> ~ <code>127.255.255.255</code> 또는 <code>localhost</code>에서 사용 가능</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>IP 대역대<ul>
+<li>A 클래스<ul>
+<li>공인 IP : <code>0.0.0.0</code> ~ <code>127.255.255.255</code></li>
+<li>사설 IP : <code>10.0.0.0</code> ~ <code>10.255.255.255</code></li>
+<li>SUBNET : <code>255.0.0.0</code> (/8) <b style="color: green; font-weight: normal;"># 아래 서브넷 설명 보고오는거 추천</b></li>
+<li>대규모 네트워크 (16,777,216개의 주소)</li>
+</ul>
+</li>
+<li>B 클래스<ul>
+<li>공인 IP : <code>128.0.0.0</code> ~ <code>191.255.255.255</code></li>
+<li>사설 IP : <code>172.16.0.0</code> ~ <code>172.31.255.255</code></li>
+<li>SUBNET : <code>255.255.0.0</code> (/16)</li>
+<li>대규모 네트워크 (65,536개의 주소)</li>
+</ul>
+</li>
+<li>C 클래스<ul>
+<li>공인 IP : <code>192.0.0.0</code> ~ <code>223.255.255.255</code></li>
+<li>사설 IP : <code>192.168.0.0</code> ~ <code>192.168.255.255</code></li>
+<li>SUBNET : <code>255.255.255.0</code> (/24)</li>
+<li>대규모 네트워크 (256개의 주소)</li>
+</ul>
+</li>
+<li>D 클래스 : 멀티 캐스트 전용 (<code>224.0.0.0</code> ~ <code>239.255.255.255</code>)</li>
+<li>E 클래스 : 연구용 (<code>240.0.0.0</code> ~ <code>255.255.255.255</code>)</li>
+</ul>
+</li>
+<li>네트워크 주소와 브로드 캐스트 주소<ul>
+<li>네트워크 주소<ul>
+<li>하나의 네트워크 자체를 식별하는 용도</li>
+<li>서브넷에서 가장 첫번째 주소(시작 주소)를 사용</li>
+</ul>
+</li>
+<li>브로드캐스트 주소<ul>
+<li>네트워크에 포함된 <strong>모든</strong> 호스트에게 메시지 전송하는 용도</li>
+<li>서브넷에서 가장 마지막 주소를 사용</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h1 id="subnet">SUBNET</h1>
+<ul>
+<li>하나의 큰 네트워크를 작은 네트워크 단위로 나눈 것</li>
+<li>네트워크 자원을 효율적으로 관리</li>
+<li>서브넷 마스크(Subnet Mask)로 서브넷을 나눔</li>
+<li>서브넷 마스크 예시 : <code>255.255.255.0</code>으로 표현하며, 프리픽스 표기법으로는 <code>/24</code>로 표현</li>
+<li>서브넷 마스크<ul>
+<li>서브넷 마스크는 보통 <code>255.255.255.0</code>과 같이 10진수로 사용<ul>
+<li>2진수로 변환하면 32bit로 구성되어있음.</li>
+<li>8bit씩 <code>.</code>으로 구분하며, 이를 옥텟이라고 함.</li>
+<li>ex: 255.255.255.0 -&gt; 11111111.11111111.11111111.00000000<ul>
+<li>0이 8개므로, 128+64+32+16+8+4+2+1 = 사용 가능한 호스트 수 256개</li>
+</ul>
+</li>
+<li>2진수로 변환한 결과에서 <code>1</code>이 네트워크 주소, <code>0</code>이 호스트 주소를 의미</li>
+<li>서브넷 마스크를 프리픽스로 변환하면 2진수로 변환한 결과에서 <code>/1의 개수</code>로 나타냄</li>
+<li>ex: 255.255.255.128 -&gt; 11111111.11111111.11111111.10000000 = <code>/25</code></li>
+<li>네트워크 대역을 나타낼 때는 192.168.1.0/24 같이 나타냄</li>
+</ul>
+</li>
+<li>네트워크 &amp; 브로드캐스트 주소 예제<ul>
+<li>대역대 : 192.168.8.0/24</li>
+<li>네트워크 주소 : 192.168.8.0</li>
+<li>브로드캐스트 주소 : 192.168.8.255</li>
+<li>사용 가능한 호스트(기기)의 IP 범위 : 192.168.8.1 ~ 192.168.8.254</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>연습 문제<ol>
+<li>172.30.0.0/16의 브로드캐스트 주소를 구하시오.</li>
+<li>10.100.0.20/24 IP가 속해있는 네트워크 주소를 구하시오.</li>
+<li>192.168.0.0/26의 호스트 수는?</li>
+<li>10.193.0.0/20 대역 대에서 사용 가능한 호스트 개수만을 구하시오.</li>
+<li>192.168.0.8/30 은 호스트로 통신이 (가능)/(불가능) 하다.</li>
+<li>172.0.0.0/8에서 사용 가능한 가장 마지막 주소를 구하시오.</li>
+</ol>
+</li>
+</ul></p>
+    </article>
+</section>
+            <!-- endblock -->
+
+            <!-- block footer -->
+                <footer>
+    <div class="d-flex flex-sm-row justify-content-between py-2 border-top drac-text-black drac-bg-cyan-green">
+        <a href="https://github.com/dracula/mkdocs" target="_blank" style="padding-left: 1%;"
+            class="footer-text drac-anchor drac-text-black drac-text-purple--hover">
+            Made with Dracula Theme for MkDocs
+        </a>
+    </div>
+</footer>
+            <!-- endblock -->
+        </div>
+
+    </main>
+
+        <script>var base_url = '../../..';</script>
+        <script src="../../../assets/js/jquery-3.3.1.slim.min.js"></script>
+        <script src="../../../assets/js/bootstrap.bundle.min.js"></script>
+        <script src="../../../assets/js/mkdocs.js"></script>
+			<script src="../../../search/main.js" defer></script>
+
+</body>
+
+</html>
