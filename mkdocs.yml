@@ -5,7 +5,7 @@ site_author: On-Demand
 repo_url: https://github.com/On-Demend/On-Demend
 repo_name: On-Demend/On-Demend
 edit_uri: edit/main/docs/
-language: en
+language: ko
 nav:
   - "Home": index.md
   - "CI/CD":
@@ -29,8 +29,9 @@ nav:
       - "IP & Subnet": "Getting Started/Network/IP.md"
       - "Protocols": "Getting Started/Network/Protocols.md"
       - "HTTP": "Getting Started/Network/HTTP.md"
-  - "Etc Tools":
-    - "AWS-Nuke": "ETC Tools/AWS-Nuke/default.md"
+  - "Tools":
+    - "cURL": "Tools/cURL.md"
+    - "AWS-Nuke": "Tools/AWS-Nuke/default.md"
 theme:
   language: ko
   name: material

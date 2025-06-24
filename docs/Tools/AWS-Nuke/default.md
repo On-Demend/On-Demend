@@ -1,8 +1,8 @@
-# Download
+## Download
 
 Download Link : [ekristen/aws-nuke](https://github.com/ekristen/aws-nuke)
 
-# Settings
+## Settings
 
 `config.yml`
 ```bash
@@ -40,7 +40,7 @@ accounts:
       - "<IAM UserName> -> <AccessKey>"
 ```
 
-# RUN
+## RUN
 ```bash
 aws-nuke nuke -c ".\config.yml" --no-dry-run
 ```

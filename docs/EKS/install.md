@@ -63,6 +63,4 @@ echo "export AWS_ACCOUNT_ID=$(aws sts get-caller-identity --query Account --outp
 source ~/.bashrc
 ```
 ### Upade Kubeconfig
-`bash
-aws eks update-kubeconfig --name $CLUSTER_NAME
-`
+`aws eks update-kubeconfig --name $CLUSTER_NAME`
