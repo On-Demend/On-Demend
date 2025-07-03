@@ -1,3 +1,4 @@
+comments: true
 # HOME :: On-Demend
 
 ## 👋 On-Demend

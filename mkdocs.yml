@@ -97,9 +97,7 @@ plugins:
   - tags:
       enabled: true
       listings: false
-  - meta:
-      defaults:
-        comments: true
+  - meta
 
 markdown_extensions:
   - admonition
