@@ -11,7 +11,11 @@ extra_css:
 nav:
   - "Home": index.md
   - "CI/CD":
-    - "CodeDeploy": "CI&CD/CodeDeploy/ECS.md"
+    - "CodeSeries":
+      - "CodeBuild":
+          - "ECS": "CI&CD/CodeSeries/CodeBuild/ecs.md"
+      - "CodeDeploy":
+          - "ECS": "CI&CD/CodeSeries/CodeDeploy/ecs.md"
   - "EC2":
     - Systemd: EC2/systemd.md
   - "ECS":
@@ -45,8 +49,6 @@ theme:
   font:
     code: Roboto Mono
   palette:
-    theme:
-  palette:
     - media: "(prefers-color-scheme)"
       toggle:
         icon: material/link
@@ -76,7 +78,6 @@ theme:
     - navigation.expand
     - toc.follow
     - navigation.sections
-    - toc.integrate
     - content.code.annotate
     - content.code.copy
     - navigation.indexes
@@ -98,6 +99,10 @@ plugins:
       enabled: true
       listings: false
   - meta
+  - git-committers:
+      repository: On-Demend/On-Demend
+      branch: main
+  - git-authors
 
 markdown_extensions:
   - admonition
@@ -143,3 +148,18 @@ extra:
       link: https://github.com/On-Demend
     - icon: fontawesome/brands/docker
       link: https://hub.docker.com/u/ondemend?_gl=1*6ghh16*_gcl_au*MTM4OTg1NzU2NC4xNzQ0OTU0NTc1*_ga*MzA1OTk1NTExLjE3NDQ5NTQ1NzY.*_ga_XJWPQMJYHQ*czE3NDk0NDc3NjMkbzMkZzEkdDE3NDk0NDgxNDkkajU5JGwwJGgw
+  analytics: 
+    feedback:
+      title: Was this page helpful?
+      ratings:
+        - icon: material/emoticon-happy-outline
+          name: This page was helpful
+          data: 1
+          note: >-
+            Thanks for your feedback!
+        - icon: material/emoticon-sad-outline
+          name: This page could be improved
+          data: 0
+          note: >- 
+            Thanks for your feedback! Help us improve this page by
+            using our <a href="..." target="_blank" rel="noopener">feedback form</a>.

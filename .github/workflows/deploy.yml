@@ -15,7 +15,7 @@ jobs:
         with:
           python-version: '3.13'
           cache: 'pip'
-      - run: pip install mkdocs mkdocs-material mkdocs-git-revision-date-localized-plugin mkdocs-minify-plugin pymdown-extensions
+      - run: pip install mkdocs mkdocs-material mkdocs-git-revision-date-localized-plugin mkdocs-minify-plugin pymdown-extensions mkdocs-git-committers-plugin-2 mkdocs-git-authors-plugin
 
       - name: Deploy to GitHub Pages
         env:
