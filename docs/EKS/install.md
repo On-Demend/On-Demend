@@ -1,7 +1,7 @@
 # Install/Setting Script
 
 ## Install AWSCLIv2
-`bash
+`
 pip3 install awscli --upgrade
 `
 
