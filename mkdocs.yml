@@ -30,6 +30,7 @@ nav:
       - "HTML": "Getting Started/HTML/html.md"
       - "CSS": "Getting Started/HTML/css.md"
     - "Linux":
+      - "Description": "Getting Started/Linux/Tutorial.md"
       - "Commands": "Getting Started/Linux/Command.md"
     - "Network":
       - "IP & Subnet": "Getting Started/Network/IP.md"
