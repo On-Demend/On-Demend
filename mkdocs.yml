@@ -39,6 +39,9 @@ nav:
   - "Tools":
     - "cURL": "Tools/cURL.md"
     - "AWS-Nuke": "Tools/AWS-Nuke/default.md"
+  - "Big Data":
+    - "Installation": "temp-bigdata/install.md"
+    - "Code": "temp-bigdata/codes.md"
 theme:
   language: ko
   custom_dir: overrides
