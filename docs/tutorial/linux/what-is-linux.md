@@ -1,4 +1,4 @@
-# Description
+# What is Linux - Linux
 ## UNIX (유닉스)
 
 **유닉스(UNIX)**는 1969년 AT&T 벨 연구소에서 개발된  

@@ -5,7 +5,6 @@ site_author: On-Demand
 repo_url: https://github.com/On-Demend/On-Demend
 repo_name: On-Demend/On-Demend
 edit_uri: edit/main/docs/
-language: ko
 extra_css:
   - stylesheets/extra.css
 nav:
@@ -20,6 +19,7 @@ nav:
     - Systemd: EC2/systemd.md
   - "ECS":
     - Docker: ECS/docker.md
+    - Docker: ECS/gateway.md
   - "EKS":
     - Installation: EKS/install.md
   - "Logging":
@@ -27,15 +27,15 @@ nav:
   
   - "Getting Started":
     - "HTML/CSS":
-      - "HTML": "Getting Started/HTML/html.md"
-      - "CSS": "Getting Started/HTML/css.md"
+      - "HTML": "tutorial/HTML/html.md"
+      - "CSS": "tutorial/HTML/css.md"
     - "Linux":
-      - "Description": "Getting Started/Linux/Tutorial.md"
-      - "Commands": "Getting Started/Linux/Command.md"
+      - "What is Linux": "tutorial/linux/what-is-linux.md"
+      - "Commands": "tutorial/linux/commands.md"
     - "Network":
-      - "IP & Subnet": "Getting Started/Network/IP.md"
-      - "Protocols": "Getting Started/Network/Protocols.md"
-      - "HTTP": "Getting Started/Network/HTTP.md"
+      - "IP & Subnet": "tutorial/Network/IP.md"
+      - "Protocols": "tutorial/Network/Protocols.md"
+      - "HTTP": "tutorial/Network/HTTP.md"
   - "Tools":
     - "cURL": "Tools/cURL.md"
     - "AWS-Nuke": "Tools/AWS-Nuke/default.md"
