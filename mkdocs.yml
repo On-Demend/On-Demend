@@ -42,6 +42,7 @@ nav:
   - "Big Data":
     - "Installation": "temp-bigdata/install.md"
     - "Code": "temp-bigdata/codes.md"
+    - "Example": "temp-bigdata/example.md"
 theme:
   language: ko
   custom_dir: overrides
