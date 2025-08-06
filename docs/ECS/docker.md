@@ -25,7 +25,7 @@ WORKDIR /app
 
 COPY . .
 
-RUN yum install -y shadow-utils
+RUN dnf install -y shadow-utils
 
 CMD ["./app"]
 ```

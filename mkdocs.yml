@@ -19,7 +19,7 @@ nav:
     - Systemd: EC2/systemd.md
   - "ECS":
     - Docker: ECS/docker.md
-    - Docker: ECS/gateway.md
+    - Gateway: ECS/gateway.md
   - "EKS":
     - Installation: EKS/install.md
   - "Logging":
@@ -38,6 +38,7 @@ nav:
       - "HTTP": "tutorial/Network/HTTP.md"
   - "Tools":
     - "cURL": "Tools/cURL.md"
+    - "SSH/SCP": "Tools/ssh_scp.md"
     - "AWS-Nuke": "Tools/AWS-Nuke/default.md"
 theme:
   language: ko
