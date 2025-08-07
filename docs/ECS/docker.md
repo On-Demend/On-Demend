@@ -11,6 +11,8 @@ WORKDIR /app
 
 COPY . .
 
+RUN chmod +x ./app
+
 RUN apk --no-cache add curl
 
 CMD ["./app"]
@@ -25,6 +27,8 @@ WORKDIR /app
 
 COPY . .
 
+RUN chmod +x ./app
+
 RUN dnf install -y shadow-utils
 
 CMD ["./app"]
@@ -38,6 +42,8 @@ FROM ubuntu:latest
 WORKDIR /app
 
 COPY . .
+
+RUN chmod +x ./app
 
 RUN apt install -y curl
 

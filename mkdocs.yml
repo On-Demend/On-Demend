@@ -21,7 +21,10 @@ nav:
     - Docker: ECS/docker.md
     - Gateway: ECS/gateway.md
   - "EKS":
+    - "AWS Load Balancer Controller": "EKS/awslbctr.md"
+    - "Base Resources": "EKS/base_resource.md"
     - Installation: EKS/install.md
+    - "Modify Domain": "EKS/change_domain.md"
   - "Logging":
     - Fluentbit: Logging/fluentbit.md
   
@@ -37,9 +40,9 @@ nav:
       - "Protocols": "tutorial/Network/Protocols.md"
       - "HTTP": "tutorial/Network/HTTP.md"
   - "Tools":
+    - "AWS-Nuke": "Tools/AWS-Nuke/default.md"
     - "cURL": "Tools/cURL.md"
     - "SSH/SCP": "Tools/ssh_scp.md"
-    - "AWS-Nuke": "Tools/AWS-Nuke/default.md"
 theme:
   language: ko
   custom_dir: overrides
