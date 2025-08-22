@@ -18,3 +18,16 @@ Host Bastion
   Port 22222
   IdentityFile C:\Users\Example\Downloads\bastion-key.pem
 ```
+
+## (No SSH) Install VSCode Server
+```bash
+curl -fsSL https://code-server.dev/install.sh | sh
+
+cat <<EOF > /home/ec2-user/.config/code-server/config.yaml
+bind-addr: 0.0.0.0:8080
+auth: none
+cert: false
+EOF
+
+sudo systemctl enable --now code-server@ec2-user
+```

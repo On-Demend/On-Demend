@@ -15,7 +15,7 @@ usermod -aG docker ec2-user
 
 ## Install Kubectl
 ```bash
-curl -O https://s3.us-west-2.amazonaws.com/amazon-eks/1.33.0/2025-05-01/bin/linux/amd64/kubectl
+curl -O https://s3.us-west-2.amazonaws.com/amazon-eks/1.33.3/2025-08-03/bin/linux/amd64/kubectl
 chmod +x ./kubectl
 mv ./kubectl /usr/local/bin/kubectl
 kubectl completion bash | tee /etc/bash_completion.d/kubectl > /dev/null

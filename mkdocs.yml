@@ -29,12 +29,11 @@ nav:
     - Fluentbit: Logging/fluentbit.md
   
   - "Getting Started":
-    - "HTML/CSS":
-      - "HTML": "tutorial/HTML/html.md"
-      - "CSS": "tutorial/HTML/css.md"
     - "Linux":
       - "What is Linux": "tutorial/linux/what-is-linux.md"
       - "Commands": "tutorial/linux/commands.md"
+      - "Exam 1": "tutorial/linux/exam.md"
+      - "Exam 2": "tutorial/linux/exam2.md"
     - "Network":
       - "IP & Subnet": "tutorial/Network/IP.md"
       - "Protocols": "tutorial/Network/Protocols.md"
