@@ -20,7 +20,7 @@ chmod +x ./kubectl
 mv ./kubectl /usr/local/bin/kubectl
 kubectl completion bash | tee /etc/bash_completion.d/kubectl > /dev/null
 ```
-Other Version Download : [Set up kubectl](https://docs.aws.amazon.com/eks/latest/userguide/install-kubectl.html)
+Download other Versions : [Set up kubectl](https://docs.aws.amazon.com/eks/latest/userguide/install-kubectl.html)
 
 ## Install Helm
 ```bash
@@ -48,7 +48,7 @@ dnf install -y docker
 systemctl start docker
 systemctl enable docker
 usermod -aG docker ec2-user
-curl -O https://s3.us-west-2.amazonaws.com/amazon-eks/1.33.0/2025-05-01/bin/linux/amd64/kubectl
+curl -O https://s3.us-west-2.amazonaws.com/amazon-eks/1.33.3/2025-08-03/bin/linux/amd64/kubectl
 chmod +x ./kubectl
 mv ./kubectl /usr/local/bin/kubectl
 kubectl completion bash | tee /etc/bash_completion.d/kubectl > /dev/null

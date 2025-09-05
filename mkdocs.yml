@@ -20,6 +20,7 @@ nav:
   - "ECS":
     - Docker: ECS/docker.md
     - Gateway: ECS/gateway.md
+    - Installation: ECS/installation.md
   - "EKS":
     - "AWS Load Balancer Controller": "EKS/awslbctr.md"
     - "Base Resources": "EKS/base_resource.md"

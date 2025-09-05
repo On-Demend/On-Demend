@@ -26,7 +26,7 @@ regions:
 # - sa-east-1
 - global
 
-account-blocklist:
+blocklist:
 - "999999999999"
 
 accounts:
