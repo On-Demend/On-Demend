@@ -27,6 +27,8 @@ nav:
     - Installation: EKS/install.md
     - "Modify Domain": "EKS/change_domain.md"
   - "Logging":
+    - Athena: Logging/athena.md
+    - CloudWatch: Logging/cloudwatch.md
     - Fluentbit: Logging/fluentbit.md
   - "Tools":
     - "AWS-Nuke": "tools/nuke/default.md"
