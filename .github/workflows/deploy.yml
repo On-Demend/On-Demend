@@ -19,7 +19,7 @@ jobs:
 
       - name: Build with Zensical
         run: |
-          zensical build --config zensical.yml
+          zensical build --config-file zensical.yml
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
