@@ -1,0 +1,7 @@
+[data-md-color-scheme="slate"] .md-nav__link.md-nav__link--active:not(:hover) {
+  color: #673AB7;
+}
+[data-md-color-scheme="slate"] {
+  --md-primary-fg-color: #673AB7;
+  --md-typeset-a-color: #673AB7
+}
