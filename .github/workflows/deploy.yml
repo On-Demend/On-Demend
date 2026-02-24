@@ -17,8 +17,13 @@ jobs:
           cache: 'pip'
       - run: pip install zensical pymdown-extensions
 
-      - name: Deploy to GitHub Pages
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Build with Zensical
         run: |
-          zensical deploy --config zensical.yml --force
+          zensical build --config zensical.yml
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./site
+          force_modify: true
