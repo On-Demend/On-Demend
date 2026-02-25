@@ -12,13 +12,13 @@
         <meta name="author" content="On-Demend">
       
       
-        <link rel="canonical" href="https://on-demend.github.io/On-Demend/tutorial/linux/exam/">
+        <link rel="canonical" href="https://on-demend.github.io/On-Demend/tutorial/linux/exam3/">
       
       
-        <link rel="prev" href="../commands/">
+        <link rel="prev" href="../exam2/">
       
       
-        <link rel="next" href="../exam2/">
+        <link rel="next" href="../../Network/IP/">
       
       
         
@@ -29,7 +29,7 @@
     
     
       
-        <title>Commands - Linux Exam (EASY) - On-Demend</title>
+        <title>Linux 기초 명령어 시험 3 - On-Demend</title>
       
     
     
@@ -44,6 +44,71 @@
         <link rel="stylesheet" href="../../../assets/stylesheets/modern/palette.dfe2e883.min.css">
       
       
+  
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+  
+  <style>:root{--md-admonition-icon--abstract:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M2.5%201.75v11.5c0%20.138.112.25.25.25h3.17a.75.75%200%200%201%200%201.5H2.75A1.75%201.75%200%200%201%201%2013.25V1.75C1%20.784%201.784%200%202.75%200h8.5C12.216%200%2013%20.784%2013%201.75v7.736a.75.75%200%200%201-1.5%200V1.75a.25.25%200%200%200-.25-.25h-8.5a.25.25%200%200%200-.25.25m13.274%209.537zl-4.557%204.45a.75.75%200%200%201-1.055-.008l-1.943-1.95a.75.75%200%200%201%201.062-1.058l1.419%201.425%204.026-3.932a.75.75%200%201%201%201.048%201.074M4.75%204h4.5a.75.75%200%200%201%200%201.5h-4.5a.75.75%200%200%201%200-1.5M4%207.75A.75.75%200%200%201%204.75%207h2a.75.75%200%200%201%200%201.5h-2A.75.75%200%200%201%204%207.75%22/%3E%3C/svg%3E');--md-admonition-icon--bug:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M4.72.22a.75.75%200%200%201%201.06%200l1%20.999a3.5%203.5%200%200%201%202.441%200l.999-1a.748.748%200%200%201%201.265.332.75.75%200%200%201-.205.729l-.775.776c.616.63.995%201.493.995%202.444v.327q0%20.15-.025.292c.408.14.764.392%201.029.722l1.968-.787a.75.75%200%200%201%20.556%201.392L13%207.258V9h2.25a.75.75%200%200%201%200%201.5H13v.5q-.002.615-.141%201.186l2.17.868a.75.75%200%200%201-.557%201.392l-2.184-.873A5%205%200%200%201%208%2016a5%205%200%200%201-4.288-2.427l-2.183.873a.75.75%200%200%201-.558-1.392l2.17-.868A5%205%200%200%201%203%2011v-.5H.75a.75.75%200%200%201%200-1.5H3V7.258L.971%206.446a.75.75%200%200%201%20.558-1.392l1.967.787c.265-.33.62-.583%201.03-.722a1.7%201.7%200%200%201-.026-.292V4.5c0-.951.38-1.814.995-2.444L4.72%201.28a.75.75%200%200%201%200-1.06m.53%206.28a.75.75%200%200%200-.75.75V11a3.5%203.5%200%201%200%207%200V7.25a.75.75%200%200%200-.75-.75ZM6.173%205h3.654A.17.17%200%200%200%2010%204.827V4.5a2%202%200%201%200-4%200v.327c0%20.096.077.173.173.173%22/%3E%3C/svg%3E');--md-admonition-icon--danger:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M9.504.43a1.516%201.516%200%200%201%202.437%201.713L10.415%205.5h2.123c1.57%200%202.346%201.909%201.22%203.004l-7.34%207.142a1.25%201.25%200%200%201-.871.354h-.302a1.25%201.25%200%200%201-1.157-1.723L5.633%2010.5H3.462c-1.57%200-2.346-1.909-1.22-3.004zm1.047%201.074L3.286%208.571A.25.25%200%200%200%203.462%209H6.75a.75.75%200%200%201%20.694%201.034l-1.713%204.188%206.982-6.793A.25.25%200%200%200%2012.538%207H9.25a.75.75%200%200%201-.683-1.06l2.008-4.418.003-.006-.004-.009-.006-.006-.008-.001q-.005%200-.009.004%22/%3E%3C/svg%3E');--md-admonition-icon--example:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M5%205.782V2.5h-.25a.75.75%200%200%201%200-1.5h6.5a.75.75%200%200%201%200%201.5H11v3.282l3.666%205.76C15.619%2013.04%2014.543%2015%2012.767%2015H3.233c-1.776%200-2.852-1.96-1.899-3.458Zm-2.4%206.565a.75.75%200%200%200%20.633%201.153h9.534a.75.75%200%200%200%20.633-1.153L12.225%2010.5h-8.45ZM9.5%202.5h-3V6c0%20.143-.04.283-.117.403L4.73%209h6.54L9.617%206.403A.75.75%200%200%201%209.5%206Z%22/%3E%3C/svg%3E');--md-admonition-icon--failure:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M2.344%202.343za8%208%200%200%201%2011.314%2011.314A8.002%208.002%200%200%201%20.234%2010.089a8%208%200%200%201%202.11-7.746m1.06%2010.253a6.5%206.5%200%201%200%209.108-9.275%206.5%206.5%200%200%200-9.108%209.275M6.03%204.97%208%206.94l1.97-1.97a.749.749%200%200%201%201.275.326.75.75%200%200%201-.215.734L9.06%208l1.97%201.97a.749.749%200%200%201-.326%201.275.75.75%200%200%201-.734-.215L8%209.06l-1.97%201.97a.749.749%200%200%201-1.275-.326.75.75%200%200%201%20.215-.734L6.94%208%204.97%206.03a.75.75%200%200%201%20.018-1.042.75.75%200%200%201%201.042-.018%22/%3E%3C/svg%3E');--md-admonition-icon--info:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M0%208a8%208%200%201%201%2016%200A8%208%200%200%201%200%208m8-6.5a6.5%206.5%200%201%200%200%2013%206.5%206.5%200%200%200%200-13M6.5%207.75A.75.75%200%200%201%207.25%207h1a.75.75%200%200%201%20.75.75v2.75h.25a.75.75%200%200%201%200%201.5h-2a.75.75%200%200%201%200-1.5h.25v-2h-.25a.75.75%200%200%201-.75-.75M8%206a1%201%200%201%201%200-2%201%201%200%200%201%200%202%22/%3E%3C/svg%3E');--md-admonition-icon--note:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M1%207.775V2.75C1%201.784%201.784%201%202.75%201h5.025c.464%200%20.91.184%201.238.513l6.25%206.25a1.75%201.75%200%200%201%200%202.474l-5.026%205.026a1.75%201.75%200%200%201-2.474%200l-6.25-6.25A1.75%201.75%200%200%201%201%207.775m1.5%200c0%20.066.026.13.073.177l6.25%206.25a.25.25%200%200%200%20.354%200l5.025-5.025a.25.25%200%200%200%200-.354l-6.25-6.25a.25.25%200%200%200-.177-.073H2.75a.25.25%200%200%200-.25.25ZM6%205a1%201%200%201%201%200%202%201%201%200%200%201%200-2%22/%3E%3C/svg%3E');--md-admonition-icon--question:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M0%208a8%208%200%201%201%2016%200A8%208%200%200%201%200%208m8-6.5a6.5%206.5%200%201%200%200%2013%206.5%206.5%200%200%200%200-13M6.92%206.085h.001a.749.749%200%201%201-1.342-.67c.169-.339.436-.701.849-.977C6.845%204.16%207.369%204%208%204a2.76%202.76%200%200%201%201.637.525c.503.377.863.965.863%201.725%200%20.448-.115.83-.329%201.15-.205.307-.47.513-.692.662-.109.072-.22.138-.313.195l-.006.004a6%206%200%200%200-.26.16%201%201%200%200%200-.276.245.75.75%200%200%201-1.248-.832c.184-.264.42-.489.692-.661q.154-.1.313-.195l.007-.004c.1-.061.182-.11.258-.161a1%201%200%200%200%20.277-.245C8.96%206.514%209%206.427%209%206.25a.61.61%200%200%200-.262-.525A1.27%201.27%200%200%200%208%205.5c-.369%200-.595.09-.74.187a1%201%200%200%200-.34.398M9%2011a1%201%200%201%201-2%200%201%201%200%200%201%202%200%22/%3E%3C/svg%3E');--md-admonition-icon--quote:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M1.75%202.5h10.5a.75.75%200%200%201%200%201.5H1.75a.75.75%200%200%201%200-1.5m4%205h8.5a.75.75%200%200%201%200%201.5h-8.5a.75.75%200%200%201%200-1.5m0%205h8.5a.75.75%200%200%201%200%201.5h-8.5a.75.75%200%200%201%200-1.5M2.5%207.75v6a.75.75%200%200%201-1.5%200v-6a.75.75%200%200%201%201.5%200%22/%3E%3C/svg%3E');--md-admonition-icon--success:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M13.78%204.22a.75.75%200%200%201%200%201.06l-7.25%207.25a.75.75%200%200%201-1.06%200L2.22%209.28a.75.75%200%200%201%20.018-1.042.75.75%200%200%201%201.042-.018L6%2010.94l6.72-6.72a.75.75%200%200%201%201.06%200%22/%3E%3C/svg%3E');--md-admonition-icon--tip:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M3.499.75a.75.75%200%200%201%201.5%200v.996C5.9%202.903%206.793%203.65%207.662%204.376l.24.202c-.036-.694.055-1.422.426-2.163C9.1.873%2010.794-.045%2012.622.26%2014.408.558%2016%201.94%2016%204.25c0%201.278-.954%202.575-2.44%202.734l.146.508.065.22c.203.701.412%201.455.476%202.226.142%201.707-.4%203.03-1.487%203.898C11.714%2014.671%2010.27%2015%208.75%2015h-6a.75.75%200%200%201%200-1.5h1.376a4.5%204.5%200%200%201-.563-1.191%203.84%203.84%200%200%201-.05-2.063%204.65%204.65%200%200%201-2.025-.293.75.75%200%200%201%20.525-1.406c1.357.507%202.376-.006%202.698-.318l.009-.01a.747.747%200%200%201%201.06%200%20.75.75%200%200%201-.012%201.074c-.912.92-.992%201.835-.768%202.586.221.74.745%201.337%201.196%201.621H8.75c1.343%200%202.398-.296%203.074-.836.635-.507%201.036-1.31.928-2.602-.05-.603-.216-1.224-.422-1.93l-.064-.221c-.12-.407-.246-.84-.353-1.29a2.4%202.4%200%200%201-.507-.441%203.1%203.1%200%200%201-.633-1.248.75.75%200%200%201%201.455-.364c.046.185.144.436.31.627.146.168.353.305.712.305.738%200%201.25-.615%201.25-1.25%200-1.47-.95-2.315-2.123-2.51-1.172-.196-2.227.387-2.706%201.345-.46.92-.27%201.774.019%203.062l.042.19.01.05c.348.443.666.949.94%201.553a.75.75%200%201%201-1.365.62c-.553-1.217-1.32-1.94-2.3-2.768L6.7%205.527c-.814-.68-1.75-1.462-2.692-2.619a3.7%203.7%200%200%200-1.023.88c-.406.495-.663%201.036-.722%201.508.116.122.306.21.591.239.388.038.797-.06%201.032-.19a.75.75%200%200%201%20.728%201.31c-.515.287-1.23.439-1.906.373-.682-.067-1.473-.38-1.879-1.193L.75%205.677V5.5c0-.984.48-1.94%201.077-2.664.46-.559%201.05-1.055%201.673-1.353z%22/%3E%3C/svg%3E');--md-admonition-icon--warning:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M6.457%201.047c.659-1.234%202.427-1.234%203.086%200l6.082%2011.378A1.75%201.75%200%200%201%2014.082%2015H1.918a1.75%201.75%200%200%201-1.543-2.575Zm1.763.707a.25.25%200%200%200-.44%200L1.698%2013.132a.25.25%200%200%200%20.22.368h12.164a.25.25%200%200%200%20.22-.368Zm.53%203.996v2.5a.75.75%200%200%201-1.5%200v-2.5a.75.75%200%200%201%201.5%200M9%2011a1%201%200%201%201-2%200%201%201%200%200%201%202%200%22/%3E%3C/svg%3E');}</style>
+
 
 
     
@@ -87,7 +152,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#commands-linux-exam-easy" class="md-skip">
+        <a href="#linux-3" class="md-skip">
           Skip to content
         </a>
       
@@ -122,7 +187,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Commands - Linux Exam (EASY)
+              Linux 기초 명령어 시험 3
             
           </span>
         </div>
@@ -1666,37 +1731,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Exam 1
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="././" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../exam1/" class="md-nav__link">
         
   
   
@@ -1712,247 +1750,6 @@
   
 
       </a>
-      
-        
-
-
-<nav class="md-nav md-nav--secondary" aria-label="On this page">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      On this page
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        1. 리눅스에서 최상위 디렉토리를 나타내는 기호는 무엇인가?
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2. 현재 자신이 위치한 디렉토리를 의미하는 기호는 무엇인가?
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3. 상위(부모) 디렉토리를 의미하는 기호는 무엇인가?
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4. 현재 위치한 작업 디렉토리의 절대 경로를 확인하는 명령어는 무엇인가?
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#5" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        5. 홈 디렉토리를 의미하는 기호는 무엇인가?
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#6" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        6. 현재 디렉토리 안에 있는 파일과 디렉토리를 출력하는 명령어는 무엇인가?
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#7-test" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        7. 디렉토리 test로 이동하려면 어떤 명령어를 써야 하는가?
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#8" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        8. 상위 디렉토리로 이동하는 명령어는 무엇인가?
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#9" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        9. 홈 디렉토리로 돌아가는 명령어는 무엇인가?
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#10-newdir" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        10. 새로운 디렉토리 newdir을 만드는 명령어는 무엇인가?
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#11-atxt" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        11. 빈 파일 a.txt를 만드는 명령어는 무엇인가?
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#12-atxt" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        12. 파일 a.txt의 내용을 화면에 출력하는 명령어는 무엇인가?
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#13-atxt" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        13. 파일 a.txt의 앞부분만 확인하는 명령어는 무엇인가?
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#14-atxt" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        14. 파일 a.txt의 마지막 부분만 확인하는 명령어는 무엇인가?
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#15" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        15. 현재 로그인한 사용자의 이름을 확인하는 명령어는 무엇인가?
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#16" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        16. 현재 날짜와 시간을 출력하는 명령어는 무엇인가?
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#17" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        17. 현재 달력을 출력하는 명령어는 무엇인가?
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#18" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        18. 화면을 깨끗하게 지우고 싶을 때 사용하는 명령어는 무엇인가?
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#19" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        19. 현재 실행 중인 명령어 히스토리를 확인하는 명령어는 무엇인가?
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#20" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        20. 터미널(세션)을 종료하는 명령어는 무엇인가?
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1981,6 +1778,44 @@
   
 
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="././" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Exam 3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
     </li>
   
 
@@ -2171,234 +2006,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      On this page
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        1. 리눅스에서 최상위 디렉토리를 나타내는 기호는 무엇인가?
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2. 현재 자신이 위치한 디렉토리를 의미하는 기호는 무엇인가?
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3. 상위(부모) 디렉토리를 의미하는 기호는 무엇인가?
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4. 현재 위치한 작업 디렉토리의 절대 경로를 확인하는 명령어는 무엇인가?
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#5" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        5. 홈 디렉토리를 의미하는 기호는 무엇인가?
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#6" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        6. 현재 디렉토리 안에 있는 파일과 디렉토리를 출력하는 명령어는 무엇인가?
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#7-test" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        7. 디렉토리 test로 이동하려면 어떤 명령어를 써야 하는가?
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#8" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        8. 상위 디렉토리로 이동하는 명령어는 무엇인가?
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#9" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        9. 홈 디렉토리로 돌아가는 명령어는 무엇인가?
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#10-newdir" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        10. 새로운 디렉토리 newdir을 만드는 명령어는 무엇인가?
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#11-atxt" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        11. 빈 파일 a.txt를 만드는 명령어는 무엇인가?
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#12-atxt" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        12. 파일 a.txt의 내용을 화면에 출력하는 명령어는 무엇인가?
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#13-atxt" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        13. 파일 a.txt의 앞부분만 확인하는 명령어는 무엇인가?
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#14-atxt" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        14. 파일 a.txt의 마지막 부분만 확인하는 명령어는 무엇인가?
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#15" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        15. 현재 로그인한 사용자의 이름을 확인하는 명령어는 무엇인가?
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#16" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        16. 현재 날짜와 시간을 출력하는 명령어는 무엇인가?
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#17" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        17. 현재 달력을 출력하는 명령어는 무엇인가?
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#18" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        18. 화면을 깨끗하게 지우고 싶을 때 사용하는 명령어는 무엇인가?
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#19" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        19. 현재 실행 중인 명령어 히스토리를 확인하는 명령어는 무엇인가?
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#20" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        20. 터미널(세션)을 종료하는 명령어는 무엇인가?
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -2486,7 +2093,7 @@
                 
                   
   
-    <a href="https://github.com/On-Demend/On-Demend/edit/master/docs/tutorial/linux/exam.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+    <a href="https://github.com/On-Demend/On-Demend/edit/master/docs/tutorial/linux/exam3.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75z"/></svg>
     </a>
@@ -2495,265 +2102,47 @@
     
       
     
-    <a href="https://github.com/On-Demend/On-Demend/raw/master/docs/tutorial/linux/exam.md" title="View source of this page" class="md-content__button md-icon">
+    <a href="https://github.com/On-Demend/On-Demend/raw/master/docs/tutorial/linux/exam3.md" title="View source of this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0 8a5 5 0 0 1-5-5 5 5 0 0 1 5-5 5 5 0 0 1 5 5 5 5 0 0 1-5 5m0-12.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5"/></svg>
     </a>
   
 
 
-<h1 id="commands-linux-exam-easy">Commands - Linux Exam (EASY)</h1>
-<h3 id="1">1. 리눅스에서 <strong>최상위 디렉토리</strong>를 나타내는 기호는 무엇인가?</h3>
-<ul>
-<li>
-<p>정답 : <code>/</code>  </p>
-</li>
-<li>
-<p>해설 :<br />
-<code>/</code>는 루트 디렉토리를 의미하며, 모든 경로의 기준점이 된다.  </p>
-</li>
-</ul>
+<h1 id="linux-3">Linux 기초 명령어 시험 3</h1>
+<p>클라우드 인프라 운영하는데 가장 기본적인 명령어들 입니다.</p>
+<p>이어지는 문제이므로 끝까지 풀어보세요.</p>
+<p>문제가 어렵다면 <code>Commands</code>에서 참고 및 검색은 해도 좋습니다. 다만 실력 향상을 위해 인공지능 사용은 자제해주세요. </p>
+<p>VMWare 가상머신 등을 사용하여 Ubuntu에서 작업하세요.</p>
 <hr />
-<h3 id="2">2. 현재 자신이 위치한 디렉토리를 의미하는 기호는 무엇인가?</h3>
-<ul>
-<li>
-<p>정답 : <code>.</code>  </p>
-</li>
-<li>
-<p>해설 :<br />
-<code>.</code>은 현재 디렉토리를 나타내며, 상대 경로에서 자주 사용된다.  </p>
-</li>
-</ul>
+<ol>
+<li>현재 서버의 운영체제(OS)가 Ubuntu인지 CentOS인지 확인하기 위해 커널 및 OS 정보를 상세히 출력하세요.</li>
+<li>현재 접속한 사용자 계정의 이름을 확인하세요.</li>
+<li>시스템이 마지막으로 부팅된 후 현재까지 가동된 시간(Uptime)을 확인하세요.</li>
+<li>서버의 현재 프라이빗 IP 주소를 확인하는 명령어를 작성하세요.</li>
+<li>최상위 루트(/) 디렉토리 아래에 <code>cloud_project</code>라는 디렉토리를 생성하세요. (권한 오류 발생 시 해결 방법 포함)</li>
+<li>생성한 <code>cloud_project</code> 디렉토리로 이동하세요.</li>
+<li>해당 디렉토리 안에 <code>web_log</code>와 <code>backup</code>이라는 두 개의 디렉토리를 한 번의 명령으로 생성하세요.</li>
+<li>현재 디렉토리의 소유자를 <code>ubuntu</code> 사용자와 <code>ubuntu</code> 그룹으로 변경하세요. (재귀적 변경 옵션 사용)</li>
+<li><code>web_log</code> 디렉토리의 권한을 '소유자는 모든 권한, 그룹과 나머지는 읽기 및 실행만' 가능하도록 숫자로 설정하세요.</li>
+<li><code>web_log</code> 디렉토리 안에 <code>access.log</code>라는 빈 파일을 생성하세요.</li>
+<li>리눅스 표준 편집기(vi 또는 nano)를 사용하여 <code>access.log</code> 파일에 "Server Started at 2026-02-25"라는 문구를 입력하고 저장하세요.</li>
+<li><code>access.log</code> 파일의 내용을 터미널 화면에 출력하여 확인하세요.</li>
+<li>기존 <code>access.log</code> 파일의 내용을 유지하면서, 그 뒤에 "New connection from 192.168.1.10"이라는 문장을 추가(Append)하세요.</li>
+<li>새로운 소프트웨어를 설치하기 전, 시스템의 패키지 리스트를 최신 상태로 업데이트하세요.</li>
+<li>웹 서버 소프트웨어인 <code>nginx</code>를 관리자 권한으로 설치하세요.</li>
+<li>설치된 <code>nginx</code> 서비스가 현재 실행 중(active)인지 상태를 확인하세요.</li>
+<li>서버가 재부팅되어도 <code>nginx</code> 서비스가 자동으로 시작되도록 설정하세요.</li>
+<li>현재 서버에서 80번 포트(HTTP)가 정상적으로 리스닝(Listening) 중인지 확인하세요.</li>
+<li>서버에서 실행 중인 전체 프로세스 목록을 페이지 단위로 끊어서 확인하세요.</li>
+<li><code>nginx</code>와 관련된 프로세스만 골라내어 해당 프로세스의 ID(PID)를 확인하세요.</li>
+<li>외부(Google 등)와 네트워크 통신이 원활한지 확인하기 위해 패킷을 4번만 보내보세요.</li>
+<li><code>access.log</code> 파일의 내용이 실시간으로 추가되는 것을 감시(Monitoring)하는 명령어를 실행하세요.</li>
+<li><code>access.log</code> 파일 내에서 "192.168"이 포함된 행만 필터링하여 출력하세요.</li>
+<li><code>web_log</code> 디렉토리 전체를 <code>web_archive.tar.gz</code>라는 이름으로 압축하여 <code>backup</code> 디렉토리 안에 저장하세요.</li>
+<li><code>backup</code> 디렉토리에 있는 파일 목록을 용량(KB, MB 등)과 함께 상세하게 출력해서 압축이 잘 되었는지 확인하세요.</li>
+</ol>
 <hr />
-<h3 id="3">3. 상위(부모) 디렉토리를 의미하는 기호는 무엇인가?</h3>
-<ul>
-<li>
-<p>정답 : <code>..</code>  </p>
-</li>
-<li>
-<p>해설 :<br />
-<code>..</code>은 현재 디렉토리보다 한 단계 위의 디렉토리를 의미한다.  </p>
-</li>
-</ul>
-<hr />
-<h3 id="4">4. 현재 위치한 작업 디렉토리의 절대 경로를 확인하는 명령어는 무엇인가?</h3>
-<ul>
-<li>
-<p>정답 :<br />
-  <div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nb">pwd</span>
-</span></code></pre></div></p>
-</li>
-<li>
-<p>해설 :<br />
-<code>pwd</code>는 "print working directory"의 약자이다.  </p>
-</li>
-</ul>
-<hr />
-<h3 id="5">5. 홈 디렉토리를 의미하는 기호는 무엇인가?</h3>
-<ul>
-<li>
-<p>정답 : <code>~</code>  </p>
-</li>
-<li>
-<p>해설 :<br />
-<code>~</code>는 로그인한 사용자의 홈 디렉토리를 나타낸다.  </p>
-</li>
-</ul>
-<hr />
-<h3 id="6">6. 현재 디렉토리 안에 있는 파일과 디렉토리를 출력하는 명령어는 무엇인가?</h3>
-<ul>
-<li>
-<p>정답 :<br />
-  <div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>ls
-</span></code></pre></div></p>
-</li>
-<li>
-<p>해설 :<br />
-<code>ls</code>는 list의 약자이며, 현재 디렉토리의 목록을 출력한다.  </p>
-</li>
-</ul>
-<hr />
-<h3 id="7-test">7. 디렉토리 <code>test</code>로 이동하려면 어떤 명령어를 써야 하는가?</h3>
-<ul>
-<li>
-<p>정답 :<br />
-  <div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nb">cd</span><span class="w"> </span><span class="nb">test</span>
-</span></code></pre></div></p>
-</li>
-<li>
-<p>해설 :<br />
-<code>cd</code>는 change directory의 약자로, 디렉토리 이동에 사용된다.  </p>
-</li>
-</ul>
-<hr />
-<h3 id="8">8. 상위 디렉토리로 이동하는 명령어는 무엇인가?</h3>
-<ul>
-<li>
-<p>정답 :<br />
-  <div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nb">cd</span><span class="w"> </span>..
-</span></code></pre></div></p>
-</li>
-<li>
-<p>해설 :<br />
-<code>..</code>은 상위 디렉토리를 의미한다.  </p>
-</li>
-</ul>
-<hr />
-<h3 id="9">9. 홈 디렉토리로 돌아가는 명령어는 무엇인가?</h3>
-<ul>
-<li>
-<p>정답 :<br />
-  <div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nb">cd</span><span class="w"> </span>~
-</span></code></pre></div></p>
-</li>
-<li>
-<p>해설 :<br />
-<code>~</code>는 홈 디렉토리를 나타내며, <code>cd</code>만 입력해도 같은 효과가 있다.  </p>
-</li>
-</ul>
-<hr />
-<h3 id="10-newdir">10. 새로운 디렉토리 <code>newdir</code>을 만드는 명령어는 무엇인가?</h3>
-<ul>
-<li>
-<p>정답 :<br />
-  <div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>mkdir<span class="w"> </span>newdir
-</span></code></pre></div></p>
-</li>
-<li>
-<p>해설 :<br />
-<code>mkdir</code>는 make directory의 약자이다.  </p>
-</li>
-</ul>
-<hr />
-<h3 id="11-atxt">11. 빈 파일 <code>a.txt</code>를 만드는 명령어는 무엇인가?</h3>
-<ul>
-<li>
-<p>정답 :<br />
-  <div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>touch<span class="w"> </span>a.txt
-</span></code></pre></div></p>
-</li>
-<li>
-<p>해설 :<br />
-<code>touch</code>는 빈 파일을 만들거나 파일의 최종 수정 시간을 변경한다.  </p>
-</li>
-</ul>
-<hr />
-<h3 id="12-atxt">12. 파일 <code>a.txt</code>의 내용을 화면에 출력하는 명령어는 무엇인가?</h3>
-<ul>
-<li>
-<p>정답 :<br />
-  <div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>cat<span class="w"> </span>a.txt
-</span></code></pre></div></p>
-</li>
-<li>
-<p>해설 :<br />
-<code>cat</code>은 concatenate의 약자로, 파일 내용을 출력하거나 이어붙일 때 사용된다.  </p>
-</li>
-</ul>
-<hr />
-<h3 id="13-atxt">13. 파일 <code>a.txt</code>의 앞부분만 확인하는 명령어는 무엇인가?</h3>
-<ul>
-<li>
-<p>정답 :<br />
-  <div class="language-bash highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>head<span class="w"> </span>a.txt
-</span></code></pre></div></p>
-</li>
-<li>
-<p>해설 :<br />
-<code>head</code>는 기본적으로 10줄을 출력한다.  </p>
-</li>
-</ul>
-<hr />
-<h3 id="14-atxt">14. 파일 <code>a.txt</code>의 마지막 부분만 확인하는 명령어는 무엇인가?</h3>
-<ul>
-<li>
-<p>정답 :<br />
-  <div class="language-bash highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>tail<span class="w"> </span>a.txt
-</span></code></pre></div></p>
-</li>
-<li>
-<p>해설 :<br />
-<code>tail</code>은 기본적으로 마지막 10줄을 출력한다.  </p>
-</li>
-</ul>
-<hr />
-<h3 id="15">15. 현재 로그인한 사용자의 이름을 확인하는 명령어는 무엇인가?</h3>
-<ul>
-<li>
-<p>정답 :<br />
-  <div class="language-bash highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>whoami
-</span></code></pre></div></p>
-</li>
-<li>
-<p>해설 :<br />
-<code>whoami</code>는 "내가 누구인지" 출력한다.  </p>
-</li>
-</ul>
-<hr />
-<h3 id="16">16. 현재 날짜와 시간을 출력하는 명령어는 무엇인가?</h3>
-<ul>
-<li>
-<p>정답 :<br />
-  <div class="language-bash highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>date
-</span></code></pre></div></p>
-</li>
-<li>
-<p>해설 :<br />
-<code>date</code>는 시스템 시간을 보여준다.  </p>
-</li>
-</ul>
-<hr />
-<h3 id="17">17. 현재 달력을 출력하는 명령어는 무엇인가?</h3>
-<ul>
-<li>
-<p>정답 :<br />
-  <div class="language-bash highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>cal
-</span></code></pre></div></p>
-</li>
-<li>
-<p>해설 :<br />
-<code>cal</code>은 간단한 달력을 표시한다.  </p>
-</li>
-</ul>
-<hr />
-<h3 id="18">18. 화면을 깨끗하게 지우고 싶을 때 사용하는 명령어는 무엇인가?</h3>
-<ul>
-<li>
-<p>정답 :<br />
-  <div class="language-bash highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>clear
-</span></code></pre></div></p>
-</li>
-<li>
-<p>해설 :<br />
-<code>clear</code>는 터미널 출력을 초기화한다.  </p>
-</li>
-</ul>
-<hr />
-<h3 id="19">19. 현재 실행 중인 명령어 히스토리를 확인하는 명령어는 무엇인가?</h3>
-<ul>
-<li>
-<p>정답 :<br />
-  <div class="language-bash highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="nb">history</span>
-</span></code></pre></div></p>
-</li>
-<li>
-<p>해설 :<br />
-<code>history</code>는 사용자가 입력한 명령어 기록을 보여준다.  </p>
-</li>
-</ul>
-<hr />
-<h3 id="20">20. 터미널(세션)을 종료하는 명령어는 무엇인가?</h3>
-<ul>
-<li>
-<p>정답 :<br />
-  <div class="language-bash highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="nb">exit</span>
-</span></code></pre></div></p>
-</li>
-<li>
-<p>해설 :<br />
-<code>exit</code>는 현재 세션을 종료한다.</p>
-</li>
-</ul>
 
 
 
@@ -2793,7 +2182,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../commands/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Commands">
+          <a href="../exam2/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Exam 2">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l137.3-137.4c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg>
@@ -2803,20 +2192,20 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                Commands
+                Exam 2
               </div>
             </div>
           </a>
         
         
           
-          <a href="../exam2/" class="md-footer__link md-footer__link--next" aria-label="Next: Exam 2">
+          <a href="../../Network/IP/" class="md-footer__link md-footer__link--next" aria-label="Next: IP &amp; Subnet">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Exam 2
+                IP & Subnet
               </div>
             </div>
             <div class="md-footer__button md-icon">
