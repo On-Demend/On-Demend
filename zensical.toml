@@ -1,0 +1,133 @@
+[project]
+site_name = "On-Demend"
+site_url = "https://on-demend.github.io/On-Demend"
+site_description = "On-Demand - Cloud Resources"
+site_author = "On-Demend"
+copyright = "Copyright &copy; 2026 On-Demend"
+docs_dir = "docs"
+site_dir = "site"
+extra_css = ["stylesheets/extra.css"]
+repo_url = "https://github.com/On-Demend/On-Demend"
+repo_name = "On-Demend/On-Demend"
+nav = [
+    {"Home" = "index.md"},
+    {"CI/CD" = [
+        {"CodeSeries" = [
+            { "CodeBuild" = [
+                { "ECS" = "CI&CD/CodeSeries/CodeBuild/ecs.md" }
+            ]},
+            { "CodeDeploy" = [
+                { "ECS" = "CI&CD/CodeSeries/CodeDeploy/ecs.md" }
+            ]}
+        ]}
+    ]},
+    {"EC2" = [
+        {"Systemd" = "EC2/systemd.md"}
+    ]},
+    {"ECS" = [
+        {"Docker" = "ECS/docker.md"},
+        {"Gateway" = "ECS/gateway.md"},
+        {"Installation" = "ECS/installation.md"}
+    ]},
+    { "EKS" = [
+        { "AWS Load Balancer Controller" = "EKS/awslbctr.md" },
+        { "Base Resources" = "EKS/base_resource.md" },
+        { "Installation" = "EKS/install.md" },
+        { "Modify Domain" = "EKS/change_domain.md" }
+    ]},
+    { "Logging" = [
+        { "Athena" = "Logging/athena.md" },
+        { "CloudWatch" = "Logging/cloudwatch.md" },
+        { "Fluentbit" = "Logging/fluentbit.md" }
+    ]},
+    { "Tools" = [
+        { "AWS-Nuke" = "tools/nuke/default.md" },
+        { "cURL" = "tools/curl.md" },
+        { "SSH/SCP" = "tools/ssh_scp.md" },
+        { "Terraform" = "tools/terraform.md" }
+    ]},
+    { "Getting Started" = [
+        { "Linux" = [
+            { "What is Linux" = "tutorial/linux/what-is-linux.md" },
+            { "Commands" = "tutorial/linux/commands.md" },
+            { "Exam 1" = "tutorial/linux/exam.md" },
+            { "Exam 2" = "tutorial/linux/exam2.md" }
+        ]},
+        { "Network" = [
+            { "IP & Subnet" = "tutorial/Network/IP.md" },
+            { "Protocols" = "tutorial/Network/Protocols.md" },
+            { "HTTP" = "tutorial/Network/HTTP.md" }
+        ]}
+    ]}
+]
+
+[project.theme]
+language = "en"
+font.code = "Work Sans"
+logo = "logos/on-demend.png"
+icon.logo = "logos/on-demend.png"
+favicon = "logos/on-demend.png"
+icon.previous = "fontawesome/solid/angle-left"
+icon.next = "fontawesome/solid/angle-right"
+icon.repo = "fontawesome/brands/github-alt"
+icon.edit = "material/pencil"
+icon.view = "material/eye"
+features = [
+    "search.highlight",
+    "navigation.instant",
+    "navigation.instant.prefetch",
+    "navigation.instant.progress",
+    "navigation.tabs",
+    "navigation.tabs.sticky",
+    "navigation.sections",
+    "navigation.expand",
+    "navigation.path",
+    "toc.follow",
+    "navigation.top",
+    "content.code.copy",
+    "content.code.select",
+    "content.code.annotate",
+    "content.action.edit",
+    "content.action.view",
+    "content.tabs.link",
+    "navigation.footer",
+    "navigation.tracking",
+    "navigation.tabs"
+]
+
+[[project.theme.palette]]
+media = "(prefers-color-scheme)"
+toggle.icon = "lucide/sun-moon"
+toggle.name = "Switch to light mode"
+
+[[project.theme.palette]]
+media = "(prefers-color-scheme: light)"
+scheme = "default"
+toggle.icon = "lucide/sun"
+toggle.name = "Switch to dark mode"
+primary = "deep purple"
+accent = "purple"
+
+[[project.theme.palette]]
+media = "(prefers-color-scheme: dark)"
+scheme = "slate"
+toggle.icon = "lucide/moon"
+toggle.name = "Switch to system preference"
+primary = "black"
+accent = "purple"
+
+[project.markdown_extensions.pymdownx.highlight]
+anchor_linenums = true
+line_spans = "__span"
+pygments_lang_class = true
+[project.markdown_extensions.pymdownx.inlinehilite]
+[project.markdown_extensions.pymdownx.snippets]
+[project.markdown_extensions.pymdownx.superfences]
+
+[[project.extra.social]]
+icon = "fontawesome/brands/github"
+link = "https://github.com/On-Demend"
+
+[[project.extra.social]]
+icon = "fontawesome/brands/docker"
+link = "https://hub.docker.com/u/ondemend"

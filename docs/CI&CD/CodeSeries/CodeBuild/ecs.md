@@ -1,4 +1,4 @@
-# CodeDeploy - ECS
+# CodeBuild - ECS
 ### `buildspec.yml`
 ```bash
 version: 0.2
