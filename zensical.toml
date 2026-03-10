@@ -44,7 +44,8 @@ nav = [
         { "AWS-Nuke" = "tools/nuke/default.md" },
         { "cURL" = "tools/curl.md" },
         { "SSH/SCP" = "tools/ssh_scp.md" },
-        { "Terraform" = "tools/terraform.md" }
+        { "Terraform" = "tools/terraform.md" },
+        { "GitHub CLI" = "tools/ghcli.md" }
     ]},
     { "Getting Started" = [
         { "Linux" = [
