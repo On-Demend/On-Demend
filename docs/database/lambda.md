@@ -63,7 +63,7 @@ def lambda_handler(event, context):
     }
 ```
 
-`CRUD`
+`CRUD Version`
 
 ```bash
 import json
