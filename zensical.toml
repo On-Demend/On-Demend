@@ -1,51 +1,53 @@
 [project]
 site_name = "On-Demend"
-# site_url = "https://on-demend.github.io/On-Demend"
+site_url = "https://on-demend.github.io/On-Demend"
 site_description = "On-Demand - Cloud Resources"
-# site_author = "On-Demend"
-# copyright = "Copyright &copy; 2026 On-Demend"
+site_author = "On-Demend"
+copyright = "Copyright &copy; 2026 On-Demend"
 docs_dir = "docs"
 site_dir = "site"
 extra_css = ["stylesheets/extra.css"]
-# repo_url = "https://github.com/On-Demend/On-Demend"
+repo_url = "https://github.com/On-Demend/On-Demend"
 repo_name = "On-Demend/On-Demend"
 nav = [
     {"Home" = "index.md"},
     {"CI/CD" = [
         {"CodeSeries" = [
             { "CodeBuild" = [
-                { "ECS" = "CI&CD/CodeSeries/CodeBuild/ecs.md" }
+                { "ECS" = "cicd/codeseries/codebuild/ecs.md" }
             ]},
             { "CodeDeploy" = [
-                { "ECS" = "CI&CD/CodeSeries/CodeDeploy/ecs.md" }
+                { "ECS" = "cicd/codeseries/codedeploy/ecs.md" }
             ]}
         ]}
     ]},
     { "DATABASE" = [
-        { "Serverless" = "database/lambda.md" }
-        #{ "cURL" = "tools/curl.md" },
-        #{ "SSH/SCP" = "tools/ssh_scp.md" },
-        #{ "Terraform" = "tools/terraform.md" },
-        #{ "GitHub CLI" = "tools/ghcli.md" }
+        { "Serverless" = "database/lambda.md" },
     ]},
     {"EC2" = [
-        {"Systemd" = "EC2/systemd.md"}
+        {"systemd" = "ec2/systemd.md"}
     ]},
     {"ECS" = [
-        {"Docker" = "ECS/docker.md"},
-        {"Gateway" = "ECS/gateway.md"},
-        {"Installation" = "ECS/installation.md"}
+        {"Docker" = "ecs/docker.md"},
+        {"Gateway" = "ecs/gateway.md"},
+        {"Installation" = "ecs/installation.md"}
     ]},
     { "EKS" = [
-        { "AWS Load Balancer Controller" = "EKS/awslbctr.md" },
-        { "Base Resources" = "EKS/base_resource.md" },
-        { "Installation" = "EKS/install.md" },
-        { "Modify Domain" = "EKS/change_domain.md" }
+        { "AWS Load Balancer Controller" = "eks/awslbctr.md" },
+        { "Base Resources" = "eks/base_resource.md" },
+        { "Installation" = "eks/install.md" },
+        { "Modify Domain" = "eks/change_domain.md" }
     ]},
     { "Logging" = [
-        { "Athena" = "Logging/athena.md" },
-        { "CloudWatch" = "Logging/cloudwatch.md" },
-        { "Fluentbit" = "Logging/fluentbit.md" }
+        { "Athena" = "logging/athena.md" },
+        { "CloudWatch" = "logging/cloudwatch.md" },
+        { "Fluentbit" = "logging/fluentbit.md" }
+    ]},
+    { "Tools" =[
+        { "cURL" = "tools/curl.md" },
+        { "SSH/SCP" = "tools/ssh_scp.md" },
+        { "Terraform" = "tools/terraform.md" },
+        { "GitHub CLI" = "tools/ghcli.md" }
     ]}
 ]
 
@@ -126,13 +128,13 @@ pygments_lang_class = true
 [project.markdown_extensions.pymdownx.snippets]
 [project.markdown_extensions.pymdownx.superfences]
 
-#[[project.extra.social]]
-#icon = "fontawesome/brands/github"
-#link = "https://github.com/On-Demend"
+[[project.extra.social]]
+icon = "fontawesome/brands/github"
+link = "https://github.com/On-Demend"
 
-#[[project.extra.social]]
-#icon = "fontawesome/brands/docker"
-#link = "https://hub.docker.com/u/ondemend"
+[[project.extra.social]]
+icon = "fontawesome/brands/docker"
+link = "https://hub.docker.com/u/ondemend"
 
 [project.markdown_extensions.attr_list]
 [project.markdown_extensions.admonition]
