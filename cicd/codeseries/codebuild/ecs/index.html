@@ -9,31 +9,39 @@
         <meta name="description" content="On-Demand - Cloud Resources">
       
       
+        <meta name="author" content="On-Demend">
       
       
+        <link rel="canonical" href="https://on-demend.github.io/On-Demend/cicd/codeseries/codebuild/ecs/">
+      
+      
+        <link rel="prev" href="../../../..">
+      
+      
+        <link rel="next" href="../../codedeploy/ecs/">
       
       
         
       
       
-      <link rel="icon" href="../../../logos/on-demend.png">
-      <meta name="generator" content="zensical-0.0.31">
+      <link rel="icon" href="../../../../logos/on-demend.png">
+      <meta name="generator" content="zensical-0.0.36">
     
     
       
-        <title>Commands - Linux - On-Demend</title>
+        <title>CodeBuild - ECS - On-Demend</title>
       
     
     
       
         
       
-      <link rel="stylesheet" href="../../../assets/stylesheets/modern/main.53a7feaf.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/modern/main.1e981d71.min.css">
       
         
           
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/modern/palette.dfe2e883.min.css">
+        <link rel="stylesheet" href="../../../../assets/stylesheets/modern/palette.dfe2e883.min.css">
       
       
   
@@ -112,14 +120,14 @@
         
         
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,500,500i,700,700i%7CWork+Sans:400,400i,700,700i&display=fallback">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,500,500i,700,700i%7CWork+Sans:400,400i,700,700i&amp;display=fallback">
         <style>:root{--md-text-font:"Inter";--md-code-font:"Work Sans"}</style>
       
     
     
-      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+      <link rel="stylesheet" href="../../../../stylesheets/extra.css">
     
-    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,t)=>(e<<5)-e+t.charCodeAt(0)),0),__md_get=(e,t=localStorage,a=__md_scope)=>JSON.parse(t.getItem(a.pathname+"."+e)),__md_set=(e,t,a=localStorage,_=__md_scope)=>{try{a.setItem(_.pathname+"."+e,JSON.stringify(t))}catch(e){}},document.documentElement.setAttribute("data-platform",navigator.platform)</script>
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,t)=>(e<<5)-e+t.charCodeAt(0)),0),__md_get=(e,t=localStorage,a=__md_scope)=>JSON.parse(t.getItem(a.pathname+"."+e)),__md_set=(e,t,a=localStorage,_=__md_scope)=>{try{a.setItem(_.pathname+"."+e,JSON.stringify(t))}catch(e){}},document.documentElement.setAttribute("data-platform",navigator.platform)</script>
     
       
 
@@ -144,7 +152,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#commands-linux" class="md-skip">
+        <a href="#codebuild-ecs" class="md-skip">
           Skip to content
         </a>
       
@@ -160,9 +168,9 @@
 
 <header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../.." title="On-Demend" class="md-header__button md-logo" aria-label="On-Demend" data-md-component="logo">
+    <a href="../../../.." title="On-Demend" class="md-header__button md-logo" aria-label="On-Demend" data-md-component="logo">
       
-  <img src="../../../logos/on-demend.png" alt="On-Demend">
+  <img src="../../../../logos/on-demend.png" alt="On-Demend">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer" aria-label="Navigation">
@@ -179,7 +187,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Commands - Linux
+              CodeBuild - ECS
             
           </span>
         </div>
@@ -242,6 +250,16 @@
     
     <div class="md-header__source">
       
+        <a href="https://github.com/On-Demend/On-Demend" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2026 Fonticons, Inc.--><path fill="currentColor" d="M202.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1M496 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2m-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3m-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1"/></svg>
+  </div>
+  <div class="md-source__repository">
+    On-Demend/On-Demend
+  </div>
+</a>
+      
     </div>
   </nav>
   
@@ -257,7 +275,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../.." class="md-tabs__link">
+      <a href="../../../.." class="md-tabs__link">
         
   
   Home
@@ -271,6 +289,8 @@
   
   
   
+    
+  
   
     
     
@@ -278,6 +298,8 @@
   
   
   
+    
+  
   
     
     
@@ -285,11 +307,13 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../../../CI&CD/CodeSeries/CodeBuild/ecs/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="././" class="md-tabs__link">
           
   
   CI/CD
@@ -314,7 +338,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../database/lambda/" class="md-tabs__link">
+        <a href="../../../../database/lambda/" class="md-tabs__link">
           
   
   DATABASE
@@ -333,7 +357,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../EC2/systemd/" class="md-tabs__link">
+        <a href="../../../../ec2/systemd.md" class="md-tabs__link">
           
   
   EC2
@@ -352,7 +376,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../ECS/docker/" class="md-tabs__link">
+        <a href="../../../../ecs/docker.md" class="md-tabs__link">
           
   
   ECS
@@ -371,7 +395,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../EKS/awslbctr/" class="md-tabs__link">
+        <a href="../../../../eks/awslbctr.md" class="md-tabs__link">
           
   
   EKS
@@ -390,10 +414,29 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../Logging/athena/" class="md-tabs__link">
+        <a href="../../../../logging/athena.md" class="md-tabs__link">
           
   
   Logging
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../tools/curl/" class="md-tabs__link">
+          
+  
+  Tools
 
         </a>
       </li>
@@ -429,13 +472,25 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="On-Demend" class="md-nav__button md-logo" aria-label="On-Demend" data-md-component="logo">
+    <a href="../../../.." title="On-Demend" class="md-nav__button md-logo" aria-label="On-Demend" data-md-component="logo">
       
-  <img src="../../../logos/on-demend.png" alt="On-Demend">
+  <img src="../../../../logos/on-demend.png" alt="On-Demend">
 
     </a>
     On-Demend
   </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/On-Demend/On-Demend" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2026 Fonticons, Inc.--><path fill="currentColor" d="M202.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1M496 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2m-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3m-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1"/></svg>
+  </div>
+  <div class="md-source__repository">
+    On-Demend/On-Demend
+  </div>
+</a>
+    </div>
   
   <ul class="md-nav__list" data-md-scrollfix>
     
@@ -446,7 +501,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../.." class="md-nav__link">
+      <a href="../../../.." class="md-nav__link">
         
   
   
@@ -470,28 +525,31 @@
       
   
   
+    
   
   
+  
     
     
     
     
+      
+        
+        
       
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
-        
-          
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
             
   
   
@@ -509,7 +567,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             
@@ -524,28 +582,31 @@
                 
   
   
+    
   
   
+  
     
     
     
     
       
       
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
         
           
+          
         
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_1" >
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" checked>
         
           
-          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="">
             
   
   
@@ -563,7 +624,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_1">
             <span class="md-nav__icon md-icon"></span>
             
@@ -578,8 +639,10 @@
                 
   
   
+    
   
   
+  
     
     
     
@@ -590,13 +653,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_1_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_1" checked>
         
           
           <label class="md-nav__link" for="__nav_2_1_1" id="__nav_2_1_1_label" tabindex="0">
@@ -617,7 +678,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_1_1_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_1_1_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_1_1">
             <span class="md-nav__icon md-icon"></span>
             
@@ -632,10 +693,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../../CI&CD/CodeSeries/CodeBuild/ecs/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ECS
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="././" class="md-nav__link md-nav__link--active">
         
   
   
@@ -651,6 +739,60 @@
   
 
       </a>
+      
+        
+
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#buildspecyml" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>buildspec.yml</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rolling-update" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Rolling Update
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#blue-green-deploy" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Blue / Green Deploy
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -725,7 +867,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../CI&CD/CodeSeries/CodeDeploy/ecs/" class="md-nav__link">
+      <a href="../../codedeploy/ecs/" class="md-nav__link">
         
   
   
@@ -830,7 +972,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../database/lambda/" class="md-nav__link">
+      <a href="../../../../database/lambda/" class="md-nav__link">
         
   
   
@@ -919,14 +1061,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../EC2/systemd/" class="md-nav__link">
+      <a href="../../../../ec2/systemd.md" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Systemd
+    systemd
   
 
     
@@ -1008,7 +1150,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ECS/docker/" class="md-nav__link">
+      <a href="../../../../ecs/docker.md" class="md-nav__link">
         
   
   
@@ -1036,7 +1178,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ECS/gateway/" class="md-nav__link">
+      <a href="../../../../ecs/gateway.md" class="md-nav__link">
         
   
   
@@ -1064,7 +1206,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ECS/installation/" class="md-nav__link">
+      <a href="../../../../ecs/installation.md" class="md-nav__link">
         
   
   
@@ -1153,7 +1295,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../EKS/awslbctr/" class="md-nav__link">
+      <a href="../../../../eks/awslbctr.md" class="md-nav__link">
         
   
   
@@ -1181,7 +1323,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../EKS/base_resource/" class="md-nav__link">
+      <a href="../../../../eks/base_resource.md" class="md-nav__link">
         
   
   
@@ -1209,7 +1351,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../EKS/install/" class="md-nav__link">
+      <a href="../../../../eks/install.md" class="md-nav__link">
         
   
   
@@ -1237,7 +1379,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../EKS/change_domain/" class="md-nav__link">
+      <a href="../../../../eks/change_domain.md" class="md-nav__link">
         
   
   
@@ -1326,7 +1468,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Logging/athena/" class="md-nav__link">
+      <a href="../../../../logging/athena.md" class="md-nav__link">
         
   
   
@@ -1354,7 +1496,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Logging/cloudwatch/" class="md-nav__link">
+      <a href="../../../../logging/cloudwatch.md" class="md-nav__link">
         
   
   
@@ -1382,7 +1524,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Logging/fluentbit/" class="md-nav__link">
+      <a href="../../../../logging/fluentbit.md" class="md-nav__link">
         
   
   
@@ -1390,6 +1532,179 @@
     
   
     Fluentbit
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tools
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Tools
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../tools/curl/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    cURL
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../tools/ssh_scp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SSH/SCP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../tools/terraform/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Terraform
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../tools/ghcli/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GitHub CLI
   
 
     
@@ -1451,161 +1766,33 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-file-directory" class="md-nav__link">
+  <a href="#buildspecyml" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        📂 1. File &amp; Directory • 리눅스 구조 이해
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="📂 1. File &amp; Directory • 리눅스 구조 이해">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        / (루트 : 최상위 디렉토리)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        . (작업 디렉토리)와 .. (상위 디렉토리)
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label=". (작업 디렉토리)와 .. (상위 디렉토리)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#optappkmit-optapp" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        문제 : 내 작업 디렉토리가 /opt/app/kmit/ 일 때 /opt/app 을 나타내는 것은? (정답 : ..)
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        ~ (홈 디렉토리)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#vs" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        절대 경로 vs 상대 경로
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="절대 경로 vs 상대 경로">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#absolute-path" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        절대 경로 (Absolute Path):
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#relative-path" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        상대 경로 (Relative Path):
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        ✅ 2. 기본 명령
-      
+      <span class="md-typeset">
+        <code>buildspec.yml</code>
+      </span>
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#3" class="md-nav__link">
+  <a href="#rolling-update" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        🛠️ 3. 파일 및 디렉토리 관리
-      
+      <span class="md-typeset">
+        Rolling Update
+      </span>
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#4" class="md-nav__link">
+  <a href="#blue-green-deploy" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        ⚙️ 4. 시스템 관리 및 권한
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#5" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        🌐 5. 네트워크 및 패키지
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#6" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        🔍 6. 기타
-      
+      <span class="md-typeset">
+        Blue / Green Deploy
+      </span>
     </span>
   </a>
   
@@ -1629,264 +1816,180 @@
   
 
 
+  <nav class="md-path" aria-label="Navigation" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../../../.." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    Home
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      
+  
+  
+    
+    
+      
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="././" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    CI/CD
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+    
+    
+      
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="././" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    CodeSeries
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="././" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    CodeBuild
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
               
               <article class="md-content__inner md-typeset">
                 
                   
+  
+    <a href="https://github.com/On-Demend/On-Demend/edit/master/docs/cicd/codeseries/codebuild/ecs.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75z"/></svg>
+    </a>
+  
+  
+    
+      
+    
+    <a href="https://github.com/On-Demend/On-Demend/raw/master/docs/cicd/codeseries/codebuild/ecs.md" title="View source of this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0 8a5 5 0 0 1-5-5 5 5 0 0 1 5-5 5 5 0 0 1 5 5 5 5 0 0 1-5 5m0-12.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5"/></svg>
+    </a>
+  
 
-<h1 id="commands-linux">Commands - Linux</h1>
-<h2 id="1-file-directory">📂 1. File &amp; Directory • 리눅스 구조 이해</h2>
-<p>리눅스를 처음 접하면 윈도우와 다른 파일 시스템 구조 때문에 어려울 수 있습니다.</p>
-<p>디렉토리는 폴더를 의미합니다.</p>
-<h3 id="_1">/ (루트 : 최상위 디렉토리)</h3>
-<ul>
-<li>리눅스 시스템의 <strong>뿌리</strong>이자 모든 것의 시작점</li>
-<li><strong>윈도우와의 차이:</strong> 윈도우 운영체제의 <code>C:\</code> 드라이브와 비슷하지만, 리눅스에는 <code>D:\</code>, <code>E:\</code> 같은 다른 뿌리가 없습니다. 모든 폴더와 장치는 무조건 <code>/</code> 아래에 있습니다.</li>
-<li><strong>특징:</strong> 모든 경로는 반드시 <code>/</code> 로 시작하거나 <code>/</code>를 거쳐서 연결됩니다.<ul>
-<li>예시 : <code>/cloud/kmit2023/worldskills</code></li>
-</ul>
-</li>
-</ul>
-<p>(윈도우의 디렉토리 구조도 헷갈린다면 아무 선배에게 물어볼 것)</p>
-<h3 id="_2">. (작업 디렉토리)와 .. (상위 디렉토리)</h3>
-<ul>
-<li><code>.</code> (점 하나 - 작업 디렉토리): <strong>"지금 내가 있는 곳"</strong>을 의미 (현재 위치)<ul>
-<li>작업 디렉토리 = 현재 디렉토리로 이해하면 됩니다.</li>
-</ul>
-</li>
-<li><code>..</code> (점 둘 - 상위 디렉토리): <strong>"내 바로 위 부모 폴더(상위 폴더)"</strong>를 의미 (뒤로 가기)</li>
-</ul>
-<h4 id="optappkmit-optapp">문제 : 내 작업 디렉토리가 /opt/app/kmit/ 일 때 /opt/app 을 나타내는 것은? (정답 : ..)</h4>
-<h3 id="_3">~ (홈 디렉토리)</h3>
-<ul>
-<li>리눅스에도 각각의 사용자가 있습니다. </li>
-<li>로그인한 사용자(본인)에게 할당된 디렉토리도 별도로 존재합니다. 이것을 홈 디렉토리라고 합니다.</li>
-<li>윈도우의 <code>내 문서</code>나 <code>C:\Users\이름</code> 폴더와 똑같다고 보면 됩니다.</li>
-<li>홈 디렉토리를 나타내는 경로는 <code>/home/&lt;사용자 명&gt;</code> 입니다. </li>
-<li>현재 로그인 된 사용자의 홈 디렉토리를 나타낼 때에는 <code>~</code> 라고 합니다. (사용자 이름이 <code>world</code>라면 <code>/home/world</code>와 <code>~</code>은 같은 곳을 나타냄)</li>
-</ul>
-<h3 id="vs">절대 경로 vs 상대 경로</h3>
-<h4 id="absolute-path"><strong>절대 경로 (Absolute Path):</strong></h4>
-<ul>
-<li>현재 자신이 어떤 경로에 있는 변하지 않는 경로입니다.</li>
-<li><strong>반드시 <code>/</code>로 시작합니다.</strong></li>
-<li>예: <code>/var/www/html/index.html</code></li>
-</ul>
-<h4 id="relative-path"><strong>상대 경로 (Relative Path):</strong></h4>
-<ul>
-<li>내 현재 위치를 기준으로 말하는 주소 입니다. <code>.</code> <code>..</code> 을 사용하여 나타내기도 합니다.</li>
-<li><strong><code>/</code>로 시작하지 않습니다.</strong> 내가 위치를 옮기면 경로도 달라집니다.</li>
-<li>예: <code>../images/logo.png</code> (한 칸 위로 가서 images 폴더 안의 logo.png)</li>
-</ul>
-<hr />
-<h2 id="2">✅ 2. 기본 명령</h2>
-<p>일단 이 명령어들만 외워도 벌써 반이나 도달했습니다. 대회 나갈 때 쯤이면 손이 기억합니다.</p>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">명령어</th>
-<th style="text-align: left;">의미</th>
-<th style="text-align: left;">상세 설명</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><code>pwd</code></td>
-<td style="text-align: left;"><strong>P</strong>rint <strong>W</strong>orking <strong>D</strong>irectory</td>
-<td style="text-align: left;">작업 디렉토리 출력 /  현재 위치한 전체 경로를 보여줍니다.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>ls</code></td>
-<td style="text-align: left;"><strong>L</strong>i<strong>s</strong>t</td>
-<td style="text-align: left;">현재 디렉토리에 뭐가 있는지 목록을 보여줍니다.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>ls -al</code></td>
-<td style="text-align: left;"><strong>L</strong>ist <strong>A</strong>ll <strong>L</strong>ong</td>
-<td style="text-align: left;">숨겨진 파일까지 포함해서 아주 자세하게(권한, 날짜 등) 보여줍니다.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>cd [경로]</code></td>
-<td style="text-align: left;"><strong>C</strong>hange <strong>D</strong>irectory</td>
-<td style="text-align: left;">디렉토리를 이동합니다. (예: <code>cd /etc</code> 또는 <code>cd ~</code>)</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>cd -</code></td>
-<td style="text-align: left;">Back</td>
-<td style="text-align: left;">바로 직전에 있었던 디렉토리로 되돌아갑니다.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>clear</code></td>
-<td style="text-align: left;">Clear</td>
-<td style="text-align: left;">지저분해진 터미널 화면을 깨끗하게 비웁니다.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>exit</code></td>
-<td style="text-align: left;">Exit</td>
-<td style="text-align: left;">현재 접속 중인 터미널 세션을 종료합니다.</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h2 id="3">🛠️ 3. 파일 및 디렉토리 관리</h2>
-<p>서버 설정을 하거나 파일을 옮길 때 필수로 사용하는 명령어들입니다.</p>
-<p>클라우드 하면서 많이 쓰게 될 명령어 모음입니다. (어렵지 않음)</p>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">명령어</th>
-<th style="text-align: left;">상세 설명</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><code>mkdir [이름]</code></td>
-<td style="text-align: left;">디렉토리를 만듭니다. <code>-p</code>를 쓰면 하위 디렉토리까지 한 번에 만듭니다. (예: <code>mkdir -p a/b/c</code>)</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>touch [파일명]</code></td>
-<td style="text-align: left;">내용이 없는 빈 파일을 만듭니다.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>cp [원본] [대상]</code></td>
-<td style="text-align: left;">파일이나 디렉토리를 복사합니다. 디렉토리까지 복사 시에는 반드시 <code>-r</code> 옵션이 필요합니다.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>mv [원본] [대상]</code></td>
-<td style="text-align: left;">파일/디렉토리를 옮기거나 <strong>이름을 변경</strong>할 때도 사용합니다.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>rm [대상]</code></td>
-<td style="text-align: left;">파일을 삭제합니다. <code>-r</code>은 디렉토리까지 삭제 가능하며, <code>-f</code>는 강제 삭제 옵션입니다.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>cat [파일명]</code></td>
-<td style="text-align: left;">파일 안에 내용이 무엇인지 터미널에서 바로 출력합니다.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>tail -f [파일명]</code></td>
-<td style="text-align: left;">파일의 마지막 부분을 실시간으로 보여줍니다. <strong>서버 에러 로그 확인 시 필수</strong>입니다.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>vim [파일명]</code></td>
-<td style="text-align: left;">리눅스의 메모장(편집기)입니다. 파일을 수정할 때 사용합니다. (다른 페이지에서 자세히 설명할 예정)</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h2 id="4">⚙️ 4. 시스템 관리 및 권한</h2>
-<p>클라우드 환경에서 서비스를 띄우거나 관리 권한이 필요할 때 사용합니다.</p>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">명령어</th>
-<th style="text-align: left;">상세 설명</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><code>sudo [명령어]</code></td>
-<td style="text-align: left;"><strong>S</strong>uper <strong>U</strong>ser <strong>DO</strong>. 일반 사용자가 할 수 없는 관리자 작업을 수행합니다.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>chmod [숫자] [파일]</code></td>
-<td style="text-align: left;">파일의 권한(읽기/쓰기/실행)을 설정합니다. (예: <code>chmod 755 스크립트.sh</code>)</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>chown [유저]:[그룹]</code></td>
-<td style="text-align: left;">파일의 주인(소유자)이 누구인지 바꿉니다.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>systemctl start [서비스]</code></td>
-<td style="text-align: left;">Nginx나 Docker 같은 프로그램을 실행시킵니다. (<code>stop</code>, <code>restart</code>, <code>status</code> 등)</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>systemctl enable [서비스]</code></td>
-<td style="text-align: left;">서버를 껐다 켜도 이 프로그램이 자동으로 실행되게 등록합니다.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>df -h</code></td>
-<td style="text-align: left;">디스크 용량이 얼마나 남았는지 '사람이 보기 편하게(h)' 보여줍니다.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>free -h</code></td>
-<td style="text-align: left;">현재 서버의 메모리(RAM) 사용량을 보여줍니다.</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h2 id="5">🌐 5. 네트워크 및 패키지</h2>
-<p>인터넷 연결을 확인하거나 새로운 프로그램을 설치할 때 사용합니다.</p>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">명령어</th>
-<th style="text-align: left;">상세 설명</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><code>sudo apt update</code></td>
-<td style="text-align: left;">설치 가능한 프로그램 목록을 최신판으로 업데이트합니다. (Debian 계열)</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>sudo apt install -y [명칭]</code></td>
-<td style="text-align: left;">새로운 프로그램을 설치합니다. <code>-y</code>는 확인 질문을 생략합니다. (Debian 계열)</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>sudo dnf update</code></td>
-<td style="text-align: left;">설치 가능한 프로그램 목록을 최신판으로 업데이트합니다. (RedHat 계열)</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>sudo dnf install -y [명칭]</code></td>
-<td style="text-align: left;">새로운 프로그램을 설치합니다. <code>-y</code>는 확인 질문을 생략합니다. (RedHat 계열)</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>ip a</code></td>
-<td style="text-align: left;">이 리눅스 시스템의 IP 주소가 무엇인지 확인합니다.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>ping [주소]</code></td>
-<td style="text-align: left;">해당 IP 주소와 통신이 잘 되는지 확인합니다.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>curl [URL]</code></td>
-<td style="text-align: left;">웹 사이트의 상태를 확인합니다. (매우 중요!!)</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>ss -tuln</code></td>
-<td style="text-align: left;">현재 리눅스에서 어떤 포트가 열려 있는지 확인합니다.</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h2 id="6">🔍 6. 기타</h2>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">명령어</th>
-<th style="text-align: left;">상세 설명</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><code>history</code></td>
-<td style="text-align: left;">지금까지 입력했던 명령어들의 기록을 보여줍니다.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>grep [단어] [파일]</code></td>
-<td style="text-align: left;">파일 내용 중에서 특정 단어가 들어간 줄만 골라냅니다.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>[명령어] | grep [단어]</code></td>
-<td style="text-align: left;">파이프라는 것으로, 앞 결과물에서 특정 단어만 필터링합니다.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>tar -xvzf [파일명]</code></td>
-<td style="text-align: left;"><code>.tar.gz</code> 형식으로 압축된 파일을 풉니다. zip과 비슷한 형태입니다.</td>
-</tr>
-</tbody>
-</table>
+
+<h1 id="codebuild-ecs">CodeBuild - ECS</h1>
+<h3 id="buildspecyml"><code>buildspec.yml</code></h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>version:<span class="w"> </span><span class="m">0</span>.2
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>env:
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">  </span>variables:
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span>AWS_ACCOUNT_ID:<span class="w"> </span><span class="m">000000000000</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">    </span>REPOSITORY_NAME:<span class="w"> </span>sample
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>phases:
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">  </span>pre_build:
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">    </span>commands:
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">      </span>-<span class="w"> </span><span class="nb">echo</span><span class="w"> </span>Logging<span class="w"> </span><span class="k">in</span><span class="w"> </span>to<span class="w"> </span>Amazon<span class="w"> </span>ECR...
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">      </span>-<span class="w"> </span>aws<span class="w"> </span>--version
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">      </span>-<span class="w"> </span>aws<span class="w"> </span>ecr<span class="w"> </span>get-login-password<span class="w"> </span>--region<span class="w"> </span><span class="nv">$AWS_DEFAULT_REGION</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>docker<span class="w"> </span>login<span class="w"> </span>--username<span class="w"> </span>AWS<span class="w"> </span>--password-stdin<span class="w"> </span><span class="nv">$AWS_ACCOUNT_ID</span>.dkr.ecr.<span class="nv">$AWS_DEFAULT_REGION</span>.amazonaws.com
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">      </span>-<span class="w"> </span><span class="nv">REPOSITORY_URI</span><span class="o">=</span><span class="nv">$AWS_ACCOUNT_ID</span>.dkr.ecr.<span class="nv">$AWS_DEFAULT_REGION</span>.amazonaws.com/<span class="nv">$REPOSITORY_NAME</span>
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">      </span>-<span class="w"> </span><span class="nv">COMMIT_HASH</span><span class="o">=</span><span class="k">$(</span><span class="nb">echo</span><span class="w"> </span><span class="nv">$CODEBUILD_RESOLVED_SOURCE_VERSION</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>cut<span class="w"> </span>-c<span class="w"> </span><span class="m">1</span>-7<span class="k">)</span>
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">      </span>-<span class="w"> </span><span class="nv">IMAGE_TAG</span><span class="o">=</span><span class="si">${</span><span class="nv">COMMIT_HASH</span><span class="p">:=latest</span><span class="si">}</span>
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="w">  </span>build:
+</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="w">    </span>commands:
+</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="w">      </span>-<span class="w"> </span><span class="nb">echo</span><span class="w"> </span>Build<span class="w"> </span>started<span class="w"> </span>on<span class="w"> </span><span class="sb">`</span>date<span class="sb">`</span>
+</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="w">      </span>-<span class="w"> </span><span class="nb">echo</span><span class="w"> </span>Building<span class="w"> </span>the<span class="w"> </span>Docker<span class="w"> </span>image...
+</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="w">      </span>-<span class="w"> </span>docker<span class="w"> </span>build<span class="w"> </span>-t<span class="w"> </span><span class="nv">$REPOSITORY_URI</span>:<span class="nv">$IMAGE_TAG</span><span class="w"> </span>.
+</span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="w">  </span>post_build:
+</span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a><span class="w">    </span>commands:
+</span><span id="__span-0-24"><a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a><span class="w">      </span>-<span class="w"> </span><span class="nb">echo</span><span class="w"> </span>Build<span class="w"> </span>completed<span class="w"> </span>on<span class="w"> </span><span class="sb">`</span>date<span class="sb">`</span>
+</span><span id="__span-0-25"><a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a><span class="w">      </span>-<span class="w"> </span><span class="nb">echo</span><span class="w"> </span>Pushing<span class="w"> </span>the<span class="w"> </span>Docker<span class="w"> </span>images...
+</span><span id="__span-0-26"><a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a><span class="w">      </span>-<span class="w"> </span>docker<span class="w"> </span>push<span class="w"> </span><span class="nv">$REPOSITORY_URI</span>:<span class="nv">$IMAGE_TAG</span>
+</span></code></pre></div>
+<h2 id="rolling-update">Rolling Update</h2>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>phases:
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span>post_build:
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span>commands:
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">      </span>-<span class="w"> </span><span class="nb">echo</span><span class="w"> </span>Writing<span class="w"> </span>image<span class="w"> </span>definitions<span class="w"> </span>file...
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">      </span>-<span class="w"> </span><span class="nb">printf</span><span class="w"> </span><span class="s1">&#39;[{&quot;name&quot;:&quot;sample&quot;,&quot;imageUri&quot;:&quot;%s&quot;}]&#39;</span><span class="w"> </span><span class="nv">$REPOSITORY_URI</span>:<span class="nv">$IMAGE_TAG</span><span class="w"> </span>&gt;<span class="w"> </span>imagedefinitions.json
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>artifacts:
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">  </span>files:
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">    </span>-<span class="w"> </span>imagedefinitions.json
+</span></code></pre></div>
+<h2 id="blue-green-deploy">Blue / Green Deploy</h2>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>phases:
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span>post_build:
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span>commands:
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">      </span>-<span class="w"> </span><span class="nb">echo</span><span class="w"> </span>Writing<span class="w"> </span>image<span class="w"> </span>details<span class="w"> </span>file...
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">      </span>-<span class="w"> </span><span class="nb">printf</span><span class="w"> </span><span class="s1">&#39;{&quot;ImageURI&quot;:&quot;%s&quot;}&#39;</span><span class="w"> </span><span class="nv">$REPOSITORY_URI</span>:<span class="nv">$IMAGE_TAG</span><span class="w"> </span>&gt;<span class="w"> </span>imageDetail.json
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>artifacts:
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">  </span>files:
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">    </span>-<span class="w"> </span>appspec.yaml
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">    </span>-<span class="w"> </span>taskdef.json
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="w">    </span>-<span class="w"> </span>imageDetail.json
+</span></code></pre></div>
 
 
 
@@ -1922,15 +2025,84 @@
         <footer class="md-footer">
   
     
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../../../.." class="md-footer__link md-footer__link--prev" aria-label="Previous: Home">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><!--! Font Awesome Free 7.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2026 Fonticons, Inc.--><path fill="currentColor" d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l137.3-137.4c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Home
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../../codedeploy/ecs/" class="md-footer__link md-footer__link--next" aria-label="Next: ECS">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                ECS
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><!--! Font Awesome Free 7.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2026 Fonticons, Inc.--><path fill="currentColor" d="M247.1 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L179.2 256 41.9 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
       <div class="md-copyright">
   
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 On-Demend
+    </div>
+  
   
     Made with
     <a href="https://zensical.org/" target="_blank" rel="noopener">
       Zensical
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/On-Demend" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2026 Fonticons, Inc.--><path fill="currentColor" d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://hub.docker.com/u/ondemend" target="_blank" rel="noopener" title="hub.docker.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 7.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2026 Fonticons, Inc.--><path fill="currentColor" d="M349.9 236.3h-66.1v-59.4h66.1zm0-204.3h-66.1v60.7h66.1zm78.2 144.8H362v59.4h66.1zm-156.3-72.1h-66.1v60.1h66.1zm78.1 0h-66.1v60.1h66.1zm276.8 100c-14.4-9.7-47.6-13.2-73.1-8.4-3.3-24-16.7-44.9-41.1-63.7l-14-9.3-9.3 14c-18.4 27.8-23.4 73.6-3.7 103.8-8.7 4.7-25.8 11.1-48.4 10.7H2.4c-8.7 50.8 5.8 116.8 44 162.1 37.1 43.9 92.7 66.2 165.4 66.2 157.4 0 273.9-72.5 328.4-204.2 21.4.4 67.6.1 91.3-45.2 1.5-2.5 6.6-13.2 8.5-17.1zm-511.1-27.9h-66v59.4h66.1v-59.4zm78.1 0h-66.1v59.4h66.1zm78.1 0h-66.1v59.4h66.1zm-78.1-72.1h-66.1v60.1h66.1z"/></svg>
     </a>
   
 </div>
@@ -1950,10 +2122,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate":null,"base":"../../..","features":["search.highlight","navigation.instant","navigation.instant.prefetch","navigation.instant.progress","navigation.tabs","navigation.tabs.sticky","navigation.sections","navigation.expand","navigation.path","toc.follow","navigation.top","content.code.copy","content.code.select","content.code.annotate","content.action.edit","content.action.view","content.tabs.link","navigation.footer","navigation.tracking","navigation.tabs"],"search":"../../../assets/javascripts/workers/search.e2d2d235.min.js","tags":null,"translations":{"clipboard.copied":"Copied to clipboard","clipboard.copy":"Copy to clipboard","search.result.more.one":"1 more on this page","search.result.more.other":"# more on this page","search.result.none":"No matching documents","search.result.one":"1 matching document","search.result.other":"# matching documents","search.result.placeholder":"Type to start searching","search.result.term.missing":"Missing","select.version":"Select version"},"version":null}</script>
+      <script id="__config" type="application/json">{"annotate":null,"base":"../../../..","features":["search.highlight","navigation.instant","navigation.instant.prefetch","navigation.instant.progress","navigation.tabs","navigation.tabs.sticky","navigation.sections","navigation.expand","navigation.path","toc.follow","navigation.top","content.code.copy","content.code.select","content.code.annotate","content.action.edit","content.action.view","content.tabs.link","navigation.footer","navigation.tracking","navigation.tabs"],"search":"../../../../assets/javascripts/workers/search.e2d2d235.min.js","tags":null,"translations":{"clipboard.copied":"Copied to clipboard","clipboard.copy":"Copy to clipboard","search.result.more.one":"1 more on this page","search.result.more.other":"# more on this page","search.result.none":"No matching documents","search.result.one":"1 matching document","search.result.other":"# matching documents","search.result.placeholder":"Type to start searching","search.result.term.missing":"Missing","select.version":"Select version"},"version":null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.91a19a9e.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.dbc0afdc.min.js"></script>
       
     
   </body>
