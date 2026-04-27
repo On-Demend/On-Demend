@@ -1,4 +1,4 @@
-## Serverless - SQL Lambda
+## Serverless - SQL Lambda Function
 
 `SELECT(Read) Only`
 ```bash
