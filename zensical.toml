@@ -33,10 +33,16 @@ nav = [
         {"Installation" = "ecs/installation.md"}
     ]},
     { "EKS" = [
-        { "AWS Load Balancer Controller" = "eks/awslbctr.md" },
-        { "Base Resources" = "eks/base_resource.md" },
-        { "Installation" = "eks/install.md" },
-        { "Modify Domain" = "eks/change_domain.md" }
+        {"Add-ons" = [
+            { "AWS Load Balancer Controller" = "eks/awslbctr.md" },
+            { "Karpenter" = "eks/karpenter.md" },
+            { "KEDA" = "eks/keda.md" }
+        ]},
+        {"Basic Configuration" = [
+            { "Base Resources" = "eks/base_resource.md" },
+            { "Connection & Setup" = "eks/install.md" },
+            { "Modify Domain" = "eks/change_domain.md" }
+        ]}
     ]},
     { "Logging" = [
         { "Athena" = "logging/athena.md" },

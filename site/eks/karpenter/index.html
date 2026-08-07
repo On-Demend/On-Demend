@@ -12,13 +12,13 @@
         <meta name="author" content="On-Demend">
       
       
-        <link rel="canonical" href="https://on-demend.github.io/On-Demend/eks/awslbctr/">
+        <link rel="canonical" href="https://on-demend.github.io/On-Demend/eks/karpenter/">
       
       
-        <link rel="prev" href="../../ecs/installation/">
+        <link rel="prev" href="../awslbctr/">
       
       
-        <link rel="next" href="../karpenter/">
+        <link rel="next" href="../keda/">
       
       
         
@@ -29,7 +29,7 @@
     
     
       
-        <title>AWS Load Balancer Controller - On-Demend</title>
+        <title>Karpenter - On-Demend</title>
       
     
     
@@ -152,7 +152,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#aws-load-balancer-controller" class="md-skip">
+        <a href="#karpenter" class="md-skip">
           Skip to content
         </a>
       
@@ -187,7 +187,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              AWS Load Balancer Controller
+              Karpenter
             
           </span>
         </div>
@@ -400,7 +400,7 @@
     
     
       <li class="md-tabs__item md-tabs__item--active">
-        <a href="././" class="md-tabs__link">
+        <a href="../awslbctr/" class="md-tabs__link">
           
   
   EKS
@@ -1273,6 +1273,34 @@
                 
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../awslbctr/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AWS Load Balancer Controller
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -1292,7 +1320,7 @@
   <span class="md-ellipsis">
     
   
-    AWS Load Balancer Controller
+    Karpenter
   
 
     
@@ -1310,7 +1338,7 @@
   <span class="md-ellipsis">
     
   
-    AWS Load Balancer Controller
+    Karpenter
   
 
     
@@ -1337,10 +1365,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#create-policy" class="md-nav__link">
+  <a href="#set-up-the-aws-infrastructure" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Create Policy
+        Set Up the AWS Infrastructure
       
     </span>
   </a>
@@ -1348,10 +1376,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#create-serviceaccount" class="md-nav__link">
+  <a href="#subnet-tagging" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Create ServiceAccount
+        Subnet Tagging
       
     </span>
   </a>
@@ -1359,10 +1387,43 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#install-with-helm" class="md-nav__link">
+  <a href="#configuring-irsa" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Install with Helm
+        Configuring IRSA
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#install-karpenter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Install Karpenter
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nodepool" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        NodePool
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ec2nodeclasses" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        EC2NodeClasses
       
     </span>
   </a>
@@ -1373,34 +1434,6 @@
   
 </nav>
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../karpenter/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Karpenter
-  
-
-    
-  </span>
-  
-  
-
-      </a>
     </li>
   
 
@@ -1944,10 +1977,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#create-policy" class="md-nav__link">
+  <a href="#set-up-the-aws-infrastructure" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Create Policy
+        Set Up the AWS Infrastructure
       
     </span>
   </a>
@@ -1955,10 +1988,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#create-serviceaccount" class="md-nav__link">
+  <a href="#subnet-tagging" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Create ServiceAccount
+        Subnet Tagging
       
     </span>
   </a>
@@ -1966,10 +1999,43 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#install-with-helm" class="md-nav__link">
+  <a href="#configuring-irsa" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Install with Helm
+        Configuring IRSA
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#install-karpenter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Install Karpenter
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nodepool" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        NodePool
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ec2nodeclasses" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        EC2NodeClasses
       
     </span>
   </a>
@@ -2024,7 +2090,7 @@
     
     
       <li class="md-path__item">
-        <a href="././" class="md-path__link">
+        <a href="../awslbctr/" class="md-path__link">
           
   <span class="md-ellipsis">
     EKS
@@ -2045,7 +2111,7 @@
     
     
       <li class="md-path__item">
-        <a href="././" class="md-path__link">
+        <a href="../awslbctr/" class="md-path__link">
           
   <span class="md-ellipsis">
     Add-ons
@@ -2065,7 +2131,7 @@
                 
                   
   
-    <a href="https://github.com/On-Demend/On-Demend/edit/master/docs/eks/awslbctr.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+    <a href="https://github.com/On-Demend/On-Demend/edit/master/docs/eks/karpenter.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75z"/></svg>
     </a>
@@ -2074,39 +2140,145 @@
     
       
     
-    <a href="https://github.com/On-Demend/On-Demend/raw/master/docs/eks/awslbctr.md" title="View source of this page" class="md-content__button md-icon">
+    <a href="https://github.com/On-Demend/On-Demend/raw/master/docs/eks/karpenter.md" title="View source of this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0 8a5 5 0 0 1-5-5 5 5 0 0 1 5-5 5 5 0 0 1 5 5 5 5 0 0 1-5 5m0-12.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5"/></svg>
     </a>
   
 
 
-<h1 id="aws-load-balancer-controller">AWS Load Balancer Controller</h1>
-<h2 id="create-policy">Create Policy</h2>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>curl<span class="w"> </span>-O<span class="w"> </span>https://raw.githubusercontent.com/kubernetes-sigs/aws-load-balancer-controller/v2.13.3/docs/install/iam_policy.json
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>aws<span class="w"> </span>iam<span class="w"> </span>create-policy<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span>--policy-name<span class="w"> </span>AWSLoadBalancerControllerIAMPolicy<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span>--policy-document<span class="w"> </span>file://iam_policy.json
+<h1 id="karpenter">Karpenter</h1>
+<p>Just-in-time Nodes for Any Kubernetes Cluster</p>
+<h2 id="set-up-the-aws-infrastructure">Set Up the AWS Infrastructure</h2>
+<p>Setting Up Infrastructure and Environment Variables
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nb">export</span><span class="w"> </span><span class="nv">KARPENTER_NAMESPACE</span><span class="o">=</span><span class="s2">&quot;kube-system&quot;</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nb">export</span><span class="w"> </span><span class="nv">KARPENTER_VERSION</span><span class="o">=</span><span class="k">$(</span>curl<span class="w"> </span>-sL<span class="w"> </span><span class="s2">&quot;https://api.github.com/repos/aws/karpenter/releases/latest&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>jq<span class="w"> </span>-r<span class="w"> </span><span class="s1">&#39;.tag_name | ltrimstr(&quot;v&quot;)&#39;</span><span class="k">)</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="nb">export</span><span class="w"> </span><span class="nv">K8S_VERSION</span><span class="o">=</span><span class="k">$(</span>kubectl<span class="w"> </span>version<span class="w"> </span>-o<span class="w"> </span>json<span class="w"> </span><span class="p">|</span><span class="w"> </span>jq<span class="w"> </span>-r<span class="w"> </span><span class="s1">&#39;.serverVersion | &quot;\(.major).\(.minor)&quot;&#39;</span><span class="k">)</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="nb">export</span><span class="w"> </span><span class="nv">AWS_PARTITION</span><span class="o">=</span><span class="s2">&quot;aws&quot;</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="nb">export</span><span class="w"> </span><span class="nv">TEMPOUT</span><span class="o">=</span><span class="s2">&quot;</span><span class="k">$(</span>mktemp<span class="k">)</span><span class="s2">&quot;</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>curl<span class="w"> </span>-fsSL<span class="w"> </span><span class="s2">&quot;https://raw.githubusercontent.com/aws/karpenter-provider-aws/v</span><span class="si">${</span><span class="nv">KARPENTER_VERSION</span><span class="si">}</span><span class="s2">/website/content/en/preview/getting-started/getting-started-with-karpenter/cloudformation.yaml&quot;</span><span class="w"> </span>&gt;<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">TEMPOUT</span><span class="si">}</span><span class="s2">&quot;</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>aws<span class="w"> </span>cloudformation<span class="w"> </span>deploy<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">  </span>--stack-name<span class="w"> </span><span class="s2">&quot;Karpenter-</span><span class="si">${</span><span class="nv">CLUSTER_NAME</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">  </span>--template-file<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">TEMPOUT</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">  </span>--capabilities<span class="w"> </span>CAPABILITY_NAMED_IAM<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">  </span>--parameter-overrides<span class="w"> </span><span class="s2">&quot;ClusterName=</span><span class="si">${</span><span class="nv">CLUSTER_NAME</span><span class="si">}</span><span class="s2">&quot;</span>
+</span></code></pre></div></p>
+<h2 id="subnet-tagging">Subnet Tagging</h2>
+<p>Tag subnets so Karpenter can auto-discover them. (Note: <code>ASG_NAME</code> must be set to the Auto Scaling Group name of your add-on node group.)
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nv">SUBNETS</span><span class="o">=</span><span class="k">$(</span>aws<span class="w"> </span>autoscaling<span class="w"> </span>describe-auto-scaling-groups<span class="w"> </span>--auto-scaling-group-names<span class="w"> </span><span class="nv">$ASG_NAME</span><span class="w"> </span>--query<span class="w"> </span><span class="s1">&#39;AutoScalingGroups[0].VPCZoneIdentifier&#39;</span><span class="w"> </span>--output<span class="w"> </span>text<span class="w"> </span><span class="p">|</span><span class="w"> </span>tr<span class="w"> </span><span class="s1">&#39;,&#39;</span><span class="w"> </span><span class="s1">&#39;\n&#39;</span><span class="k">)</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="k">for</span><span class="w"> </span>SUBNET<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="nv">$SUBNETS</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="k">do</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">    </span>aws<span class="w"> </span>ec2<span class="w"> </span>create-tags<span class="w"> </span>--resources<span class="w"> </span><span class="nv">$SUBNET</span><span class="w"> </span>--tags<span class="w"> </span><span class="nv">Key</span><span class="o">=</span>karpenter.sh/discovery,Value<span class="o">=</span><span class="si">${</span><span class="nv">CLUSTER_NAME</span><span class="si">}</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="k">done</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="nv">LAUNCH_TEMPLATE_ID</span><span class="o">=</span><span class="k">$(</span>aws<span class="w"> </span>autoscaling<span class="w"> </span>describe-auto-scaling-groups<span class="w"> </span>--auto-scaling-group-names<span class="w"> </span><span class="nv">$ASG_NAME</span><span class="w"> </span>--query<span class="w"> </span><span class="s1">&#39;AutoScalingGroups[0].MixedInstancesPolicy.LaunchTemplate.LaunchTemplateSpecification.LaunchTemplateId&#39;</span><span class="w"> </span>--output<span class="w"> </span>text<span class="k">)</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="nv">SECURITY_GROUPS</span><span class="o">=</span><span class="k">$(</span>aws<span class="w"> </span>ec2<span class="w"> </span>describe-launch-template-versions<span class="w"> </span>--launch-template-id<span class="w"> </span><span class="nv">$LAUNCH_TEMPLATE_ID</span><span class="w"> </span>--versions<span class="w"> </span><span class="nv">$Latest</span><span class="w"> </span>--query<span class="w"> </span><span class="s1">&#39;LaunchTemplateVersions[0].LaunchTemplateData.SecurityGroupIds&#39;</span><span class="w"> </span>--output<span class="w"> </span>text<span class="k">)</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="k">for</span><span class="w"> </span>SECURITY_GROUP<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="nv">$SECURITY_GROUPS</span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="k">do</span>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">    </span>aws<span class="w"> </span>ec2<span class="w"> </span>create-tags<span class="w"> </span>--resources<span class="w"> </span><span class="nv">$SECURITY_GROUP</span><span class="w"> </span>--tags<span class="w"> </span><span class="nv">Key</span><span class="o">=</span>karpenter.sh/discovery,Value<span class="o">=</span><span class="si">${</span><span class="nv">CLUSTER_NAME</span><span class="si">}</span>
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="k">done</span>
+</span></code></pre></div></p>
+<h2 id="configuring-irsa">Configuring IRSA</h2>
+<p>Create a Kubernetes service account and AWS IAM Role, and associate them using IRSA to let Karpenter launch instances.
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>eksctl<span class="w"> </span>create<span class="w"> </span>iamserviceaccount<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span>--cluster<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">CLUSTER_NAME</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span>--region<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">AWS_DEFAULT_REGION</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">  </span>--namespace<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">KARPENTER_NAMESPACE</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span>--name<span class="w"> </span>karpenter<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">  </span>--role-name<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">CLUSTER_NAME</span><span class="si">}</span><span class="s2">-karpenter&quot;</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">  </span>--attach-policy-arn<span class="w"> </span><span class="s2">&quot;arn:</span><span class="si">${</span><span class="nv">AWS_PARTITION</span><span class="si">}</span><span class="s2">:iam::</span><span class="si">${</span><span class="nv">AWS_ACCOUNT_ID</span><span class="si">}</span><span class="s2">:policy/KarpenterControllerNodeLifecyclePolicy-</span><span class="si">${</span><span class="nv">CLUSTER_NAME</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">  </span>--attach-policy-arn<span class="w"> </span><span class="s2">&quot;arn:</span><span class="si">${</span><span class="nv">AWS_PARTITION</span><span class="si">}</span><span class="s2">:iam::</span><span class="si">${</span><span class="nv">AWS_ACCOUNT_ID</span><span class="si">}</span><span class="s2">:policy/KarpenterControllerIAMIntegrationPolicy-</span><span class="si">${</span><span class="nv">CLUSTER_NAME</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">  </span>--attach-policy-arn<span class="w"> </span><span class="s2">&quot;arn:</span><span class="si">${</span><span class="nv">AWS_PARTITION</span><span class="si">}</span><span class="s2">:iam::</span><span class="si">${</span><span class="nv">AWS_ACCOUNT_ID</span><span class="si">}</span><span class="s2">:policy/KarpenterControllerEKSIntegrationPolicy-</span><span class="si">${</span><span class="nv">CLUSTER_NAME</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">  </span>--attach-policy-arn<span class="w"> </span><span class="s2">&quot;arn:</span><span class="si">${</span><span class="nv">AWS_PARTITION</span><span class="si">}</span><span class="s2">:iam::</span><span class="si">${</span><span class="nv">AWS_ACCOUNT_ID</span><span class="si">}</span><span class="s2">:policy/KarpenterControllerInterruptionPolicy-</span><span class="si">${</span><span class="nv">CLUSTER_NAME</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">  </span>--attach-policy-arn<span class="w"> </span><span class="s2">&quot;arn:</span><span class="si">${</span><span class="nv">AWS_PARTITION</span><span class="si">}</span><span class="s2">:iam::</span><span class="si">${</span><span class="nv">AWS_ACCOUNT_ID</span><span class="si">}</span><span class="s2">:policy/KarpenterControllerResourceDiscoveryPolicy-</span><span class="si">${</span><span class="nv">CLUSTER_NAME</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">  </span>--attach-policy-arn<span class="w"> </span><span class="s2">&quot;arn:</span><span class="si">${</span><span class="nv">AWS_PARTITION</span><span class="si">}</span><span class="s2">:iam::</span><span class="si">${</span><span class="nv">AWS_ACCOUNT_ID</span><span class="si">}</span><span class="s2">:policy/KarpenterControllerZonalShiftPolicy-</span><span class="si">${</span><span class="nv">CLUSTER_NAME</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="w">  </span>--role-only<span class="w"> </span>--approve
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>aws<span class="w"> </span>eks<span class="w"> </span>create-access-entry<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="w">  </span>--cluster-name<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">CLUSTER_NAME</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="w">  </span>--principal-arn<span class="w"> </span><span class="s2">&quot;arn:</span><span class="si">${</span><span class="nv">AWS_PARTITION</span><span class="si">}</span><span class="s2">:iam::</span><span class="si">${</span><span class="nv">AWS_ACCOUNT_ID</span><span class="si">}</span><span class="s2">:role/KarpenterNodeRole-</span><span class="si">${</span><span class="nv">CLUSTER_NAME</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="w">  </span>--type<span class="w"> </span>EC2_LINUX<span class="w"> </span>--region<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">AWS_DEFAULT_REGION</span><span class="si">}</span><span class="s2">&quot;</span>
+</span></code></pre></div></p>
+<h2 id="install-karpenter">Install Karpenter</h2>
+<p>Install Karpenter using Helm
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>helm<span class="w"> </span>upgrade<span class="w"> </span>--install<span class="w"> </span>karpenter<span class="w"> </span>oci://public.ecr.aws/karpenter/karpenter<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span>--version<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">KARPENTER_VERSION</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">  </span>--namespace<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">KARPENTER_NAMESPACE</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">  </span>--set<span class="w"> </span><span class="s2">&quot;settings.clusterName=</span><span class="si">${</span><span class="nv">CLUSTER_NAME</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">  </span>--set<span class="w"> </span><span class="s2">&quot;settings.interruptionQueue=</span><span class="si">${</span><span class="nv">CLUSTER_NAME</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">  </span>--set<span class="w"> </span><span class="s2">&quot;serviceAccount.annotations.eks\.amazonaws\.com/role-arn=arn:</span><span class="si">${</span><span class="nv">AWS_PARTITION</span><span class="si">}</span><span class="s2">:iam::</span><span class="si">${</span><span class="nv">AWS_ACCOUNT_ID</span><span class="si">}</span><span class="s2">:role/</span><span class="si">${</span><span class="nv">CLUSTER_NAME</span><span class="si">}</span><span class="s2">-karpenter&quot;</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">  </span>--set<span class="w"> </span>controller.resources.requests.cpu<span class="o">=</span><span class="m">1</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">  </span>--set<span class="w"> </span>controller.resources.requests.memory<span class="o">=</span>1Gi<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">  </span>--set<span class="w"> </span>controller.resources.limits.cpu<span class="o">=</span><span class="m">1</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="w">  </span>--set<span class="w"> </span>controller.resources.limits.memory<span class="o">=</span>1Gi<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="w">  </span>--set<span class="w"> </span><span class="s2">&quot;priorityClassName=system-cluster-critical&quot;</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="w">  </span>--wait
+</span></code></pre></div></p>
+<hr />
+<h2 id="nodepool">NodePool</h2>
+<div class="language-yaml highlight"><span class="filename">nodepool.yaml</span><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">karpenter.sh/v1</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">NodePool</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="nt">metadata</span><span class="p">:</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">default</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="nt">spec</span><span class="p">:</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">  </span><span class="nt">disruption</span><span class="p">:</span>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">    </span><span class="nt">consolidationPolicy</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">WhenEmptyOrUnderutilized</span>
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="w">    </span><span class="nt">consolidateAfter</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1m</span>
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="w">  </span><span class="nt">template</span><span class="p">:</span>
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="w">    </span><span class="nt">metadata</span><span class="p">:</span>
+</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="w">      </span><span class="nt">labels</span><span class="p">:</span>
+</span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="w">        </span><span class="nt">node</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">app</span>
+</span><span id="__span-4-13"><a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="w">    </span><span class="nt">spec</span><span class="p">:</span>
+</span><span id="__span-4-14"><a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a><span class="w">      </span><span class="nt">nodeClassRef</span><span class="p">:</span>
+</span><span id="__span-4-15"><a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a><span class="w">        </span><span class="nt">group</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">karpenter.k8s.aws</span>
+</span><span id="__span-4-16"><a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a><span class="w">        </span><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">EC2NodeClass</span>
+</span><span id="__span-4-17"><a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a><span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">default</span>
+</span><span id="__span-4-18"><a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a><span class="w">      </span><span class="nt">taints</span><span class="p">:</span>
+</span><span id="__span-4-19"><a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">node</span>
+</span><span id="__span-4-20"><a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a><span class="w">          </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">app</span>
+</span><span id="__span-4-21"><a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a><span class="w">          </span><span class="nt">effect</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">NoSchedule</span>
+</span><span id="__span-4-22"><a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a><span class="w">      </span><span class="nt">requirements</span><span class="p">:</span>
+</span><span id="__span-4-23"><a id="__codelineno-4-23" name="__codelineno-4-23" href="#__codelineno-4-23"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">kubernetes.io/arch</span>
+</span><span id="__span-4-24"><a id="__codelineno-4-24" name="__codelineno-4-24" href="#__codelineno-4-24"></a><span class="w">          </span><span class="nt">operator</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">In</span>
+</span><span id="__span-4-25"><a id="__codelineno-4-25" name="__codelineno-4-25" href="#__codelineno-4-25"></a><span class="w">          </span><span class="nt">values</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;amd64&quot;</span><span class="p p-Indicator">]</span>
+</span><span id="__span-4-26"><a id="__codelineno-4-26" name="__codelineno-4-26" href="#__codelineno-4-26"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">kubernetes.io/os</span>
+</span><span id="__span-4-27"><a id="__codelineno-4-27" name="__codelineno-4-27" href="#__codelineno-4-27"></a><span class="w">          </span><span class="nt">operator</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">In</span>
+</span><span id="__span-4-28"><a id="__codelineno-4-28" name="__codelineno-4-28" href="#__codelineno-4-28"></a><span class="w">          </span><span class="nt">values</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;linux&quot;</span><span class="p p-Indicator">]</span>
+</span><span id="__span-4-29"><a id="__codelineno-4-29" name="__codelineno-4-29" href="#__codelineno-4-29"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">karpenter.sh/capacity-type</span>
+</span><span id="__span-4-30"><a id="__codelineno-4-30" name="__codelineno-4-30" href="#__codelineno-4-30"></a><span class="w">          </span><span class="nt">operator</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">In</span>
+</span><span id="__span-4-31"><a id="__codelineno-4-31" name="__codelineno-4-31" href="#__codelineno-4-31"></a><span class="w">          </span><span class="nt">values</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;on-demand&quot;</span><span class="p p-Indicator">]</span>
+</span><span id="__span-4-32"><a id="__codelineno-4-32" name="__codelineno-4-32" href="#__codelineno-4-32"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">karpenter.k8s.aws/instance-category</span>
+</span><span id="__span-4-33"><a id="__codelineno-4-33" name="__codelineno-4-33" href="#__codelineno-4-33"></a><span class="w">          </span><span class="nt">operator</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">In</span>
+</span><span id="__span-4-34"><a id="__codelineno-4-34" name="__codelineno-4-34" href="#__codelineno-4-34"></a><span class="w">          </span><span class="nt">values</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;c&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;m&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;r&quot;</span><span class="p p-Indicator">]</span>
+</span><span id="__span-4-35"><a id="__codelineno-4-35" name="__codelineno-4-35" href="#__codelineno-4-35"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">karpenter.k8s.aws/instance-generation</span>
+</span><span id="__span-4-36"><a id="__codelineno-4-36" name="__codelineno-4-36" href="#__codelineno-4-36"></a><span class="w">          </span><span class="nt">operator</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Gt</span>
+</span><span id="__span-4-37"><a id="__codelineno-4-37" name="__codelineno-4-37" href="#__codelineno-4-37"></a><span class="w">          </span><span class="nt">values</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;3&quot;</span><span class="p p-Indicator">]</span>
+</span><span id="__span-4-38"><a id="__codelineno-4-38" name="__codelineno-4-38" href="#__codelineno-4-38"></a><span class="c1">#       - key: node.kubernetes.io/instance-type</span>
+</span><span id="__span-4-39"><a id="__codelineno-4-39" name="__codelineno-4-39" href="#__codelineno-4-39"></a><span class="c1">#         operator: In</span>
+</span><span id="__span-4-40"><a id="__codelineno-4-40" name="__codelineno-4-40" href="#__codelineno-4-40"></a><span class="c1">#         values: [&quot;c5.large&quot;, &quot;c5.xlarge&quot;]</span>
+</span><span id="__span-4-41"><a id="__codelineno-4-41" name="__codelineno-4-41" href="#__codelineno-4-41"></a><span class="w">      </span><span class="nt">expireAfter</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">720h</span>
+</span><span id="__span-4-42"><a id="__codelineno-4-42" name="__codelineno-4-42" href="#__codelineno-4-42"></a><span class="w">  </span><span class="nt">limits</span><span class="p">:</span>
+</span><span id="__span-4-43"><a id="__codelineno-4-43" name="__codelineno-4-43" href="#__codelineno-4-43"></a><span class="w">    </span><span class="nt">cpu</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
 </span></code></pre></div>
-<h2 id="create-serviceaccount">Create ServiceAccount</h2>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>eksctl<span class="w"> </span>create<span class="w"> </span>iamserviceaccount<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span>--cluster<span class="o">=</span><span class="nv">$CLUSTER_NAME</span><span class="w"> </span><span class="se">\</span>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">  </span>--namespace<span class="o">=</span>kube-system<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">  </span>--name<span class="o">=</span>aws-load-balancer-controller<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">  </span>--role-name<span class="w"> </span>AmazonEKSLoadBalancerControllerRole<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">  </span>--attach-policy-arn<span class="o">=</span>arn:aws:iam::<span class="nv">$AWS_ACCOUNT_ID</span>:policy/AWSLoadBalancerControllerIAMPolicy<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">  </span>--approve
-</span></code></pre></div>
-<h2 id="install-with-helm">Install with Helm</h2>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>helm<span class="w"> </span>repo<span class="w"> </span>add<span class="w"> </span>eks<span class="w"> </span>https://aws.github.io/eks-charts
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>helm<span class="w"> </span>repo<span class="w"> </span>update<span class="w"> </span>eks
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>helm<span class="w"> </span>install<span class="w"> </span>aws-load-balancer-controller<span class="w"> </span>eks/aws-load-balancer-controller<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">  </span>-n<span class="w"> </span>kube-system<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">  </span>--set<span class="w"> </span><span class="nv">clusterName</span><span class="o">=</span><span class="nv">$CLUSTER_NAME</span><span class="w"> </span><span class="se">\</span>
-</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">  </span>--set<span class="w"> </span>serviceAccount.create<span class="o">=</span><span class="nb">false</span><span class="w"> </span><span class="se">\</span>
-</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">  </span>--set<span class="w"> </span>serviceAccount.name<span class="o">=</span>aws-load-balancer-controller
+<h2 id="ec2nodeclasses">EC2NodeClasses</h2>
+<div class="language-yaml highlight"><span class="filename">ec2nodeclass.yaml</span><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">karpenter.k8s.aws/v1</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">EC2NodeClass</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="nt">metadata</span><span class="p">:</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">default</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="nt">spec</span><span class="p">:</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">  </span><span class="nt">amiFamily</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Bottlerocket</span>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="w">  </span><span class="nt">amiSelectorTerms</span><span class="p">:</span>
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${AMI_ID}</span>
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="w">  </span><span class="nt">role</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;KarpenterNodeRole-${CLUSTER_NAME}&quot;</span>
+</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="w">  </span><span class="nt">subnetSelectorTerms</span><span class="p">:</span>
+</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">tags</span><span class="p">:</span>
+</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="w">        </span><span class="nt">karpenter.sh/discovery</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${CLUSTER_NAME}</span>
+</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a><span class="w">  </span><span class="nt">securityGroupSelectorTerms</span><span class="p">:</span>
+</span><span id="__span-5-14"><a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">tags</span><span class="p">:</span>
+</span><span id="__span-5-15"><a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a><span class="w">        </span><span class="nt">karpenter.sh/discovery</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${CLUSTER_NAME}</span>
+</span><span id="__span-5-16"><a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a><span class="w">  </span><span class="nt">metadataOptions</span><span class="p">:</span>
+</span><span id="__span-5-17"><a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a><span class="w">    </span><span class="nt">httpPutResponseHopLimit</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
+</span><span id="__span-5-18"><a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a><span class="w">  </span><span class="nt">tags</span><span class="p">:</span>
+</span><span id="__span-5-19"><a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a><span class="w">    </span><span class="nt">Name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">apdev-ec2nodeclass</span>
 </span></code></pre></div>
 
 
@@ -2147,7 +2319,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../../ecs/installation/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Installation">
+          <a href="../awslbctr/" class="md-footer__link md-footer__link--prev" aria-label="Previous: AWS Load Balancer Controller">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l137.3-137.4c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg>
@@ -2157,20 +2329,20 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                Installation
+                AWS Load Balancer Controller
               </div>
             </div>
           </a>
         
         
           
-          <a href="../karpenter/" class="md-footer__link md-footer__link--next" aria-label="Next: Karpenter">
+          <a href="../keda/" class="md-footer__link md-footer__link--next" aria-label="Next: KEDA">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Karpenter
+                KEDA
               </div>
             </div>
             <div class="md-footer__button md-icon">

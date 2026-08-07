@@ -1,11 +1,60 @@
-# Install/Setting Script
+# Connection & Setup
 
-## Install AWSCLIv2
-`
+## AWS CloudShell Setup
+
+### (Optional) Install Kubectl
+```bash
+curl -O https://s3.us-west-2.amazonaws.com/amazon-eks/1.36.2/2026-07-05/bin/linux/amd64/kubectl
+sudo chmod +x ./kubectl
+sudo mv ./kubectl /usr/local/bin/kubectl
+kubectl completion bash | sudo tee /etc/bash_completion.d/kubectl > /dev/null
+```
+Download Specific Versions : [Set up kubectl](https://docs.aws.amazon.com/eks/latest/userguide/install-kubectl.html)
+
+### Install eksctl
+```bash
+curl -sL "https://github.com/eksctl-io/eksctl/releases/latest/download/eksctl_$(uname -s)_amd64.tar.gz" | sudo tar xz -C /usr/local/bin
+```
+
+### Install Helm
+```bash
+curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3
+chmod 700 get_helm.sh
+./get_helm.sh
+```
+
+### Connect EKS Cluster
+
+#### Setting Frequently Used Environment Variables
+You may need to set the `TARGET_REGION` variable.
+```bash
+TARGET_REGION=${AWS_REGION:-"ap-northeast-2"}
+
+aws configure set region $TARGET_REGION
+
+echo "export CLUSTER_NAME=$(eksctl get clusters --region $TARGET_REGION -o json | jq -r '.[0].Name')" >> ~/.bashrc
+echo "export AWS_DEFAULT_REGION=$TARGET_REGION" >> ~/.bashrc
+echo "export AWS_REGION=$TARGET_REGION" >> ~/.bashrc
+echo "export AWS_ACCOUNT_ID=$(aws sts get-caller-identity --query Account --output text)" >> ~/.bashrc
+
+source ~/.bashrc
+```
+
+#### Update Kubeconfig
+```bash
+aws eks update-kubeconfig --name $CLUSTER_NAME
+```
+
+---
+
+## AWS EC2 Setup
+
+### Install AWSCLIv2
+```bash
 pip3 install awscli --upgrade
-`
+```
 
-## Install Docker
+### Install Docker
 ```bash
 dnf install -y docker
 systemctl start docker
@@ -13,26 +62,25 @@ systemctl enable docker
 usermod -aG docker ec2-user
 ```
 
-## Install Kubectl
+### Install Kubectl
 ```bash
-curl -O https://s3.us-west-2.amazonaws.com/amazon-eks/1.35.3/2026-04-08/bin/linux/amd64/kubectl
+curl -O https://s3.us-west-2.amazonaws.com/amazon-eks/1.36.2/2026-07-05/bin/linux/amd64/kubectl
 chmod +x ./kubectl
 mv ./kubectl /usr/local/bin/kubectl
 kubectl completion bash | tee /etc/bash_completion.d/kubectl > /dev/null
 ```
-Download other Versions : [Set up kubectl](https://docs.aws.amazon.com/eks/latest/userguide/install-kubectl.html)
+Download Specific Versions : [Set up kubectl](https://docs.aws.amazon.com/eks/latest/userguide/install-kubectl.html)
 
-## Install Helm
+### Install eksctl
+```bash
+curl -sL "https://github.com/eksctl-io/eksctl/releases/latest/download/eksctl_$(uname -s)_amd64.tar.gz" | tar xz -C /usr/local/bin
+```
+
+### Install Helm
 ```bash
 curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3
 chmod 700 get_helm.sh
 ./get_helm.sh
-```
-
-## Install eksctl
-```bash
-curl --silent --location "https://github.com/weaveworks/eksctl/releases/latest/download/eksctl_$(uname -s)_amd64.tar.gz" | tar xz -C /tmp
-mv /tmp/eksctl /usr/local/bin
 ```
 
 ## Install All K8s Resources (EC2)
@@ -48,25 +96,34 @@ dnf install -y docker
 systemctl start docker
 systemctl enable docker
 usermod -aG docker ec2-user
-curl -O https://s3.us-west-2.amazonaws.com/amazon-eks/1.35.3/2026-04-08/bin/linux/amd64/kubectl
+curl -O https://s3.us-west-2.amazonaws.com/amazon-eks/1.36.2/2026-07-05/bin/linux/amd64/kubectl
 chmod +x ./kubectl
 mv ./kubectl /usr/local/bin/kubectl
 kubectl completion bash | tee /etc/bash_completion.d/kubectl > /dev/null
+curl -sL "https://github.com/eksctl-io/eksctl/releases/latest/download/eksctl_$(uname -s)_amd64.tar.gz" | tar xz -C /usr/local/bin
 curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3
 chmod 700 get_helm.sh
 ./get_helm.sh
-curl --silent --location "https://github.com/weaveworks/eksctl/releases/latest/download/eksctl_$(uname -s)_amd64.tar.gz" | tar xz -C /tmp
-mv /tmp/eksctl /usr/local/bin
 ```
 
-## Connect to EKS Cluster
-### Set Environment Variables (Frequently used)
+### Connect EKS Cluster
+
+#### Setting Frequently Used Environment Variables
+You may need to set the `TARGET_REGION` variable.
 ```bash
-aws configure set region ap-northeast-2
-echo "export CLUSTER_NAME=$(eksctl get clusters -o json | jq -r '.[0].Name')" >> ~/.bashrc
-echo "export AWS_DEFAULT_REGION=$(aws configure get region)" >> ~/.bashrc
+TARGET_REGION=${AWS_REGION:-"ap-northeast-2"}
+
+aws configure set region $TARGET_REGION
+
+echo "export CLUSTER_NAME=$(eksctl get clusters --region $TARGET_REGION -o json | jq -r '.[0].Name')" >> ~/.bashrc
+echo "export AWS_DEFAULT_REGION=$TARGET_REGION" >> ~/.bashrc
+echo "export AWS_REGION=$TARGET_REGION" >> ~/.bashrc
 echo "export AWS_ACCOUNT_ID=$(aws sts get-caller-identity --query Account --output text)" >> ~/.bashrc
+
 source ~/.bashrc
 ```
-### Upade Kubeconfig
-`aws eks update-kubeconfig --name $CLUSTER_NAME`
+
+#### Update Kubeconfig
+```bash
+aws eks update-kubeconfig --name $CLUSTER_NAME
+```

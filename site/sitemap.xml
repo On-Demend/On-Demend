@@ -28,6 +28,12 @@
         <loc>https://on-demend.github.io/On-Demend/eks/awslbctr/</loc>
       </url>
       <url>
+        <loc>https://on-demend.github.io/On-Demend/eks/karpenter/</loc>
+      </url>
+      <url>
+        <loc>https://on-demend.github.io/On-Demend/eks/keda/</loc>
+      </url>
+      <url>
         <loc>https://on-demend.github.io/On-Demend/eks/base_resource/</loc>
       </url>
       <url>
