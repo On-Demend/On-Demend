@@ -14,6 +14,10 @@ eksctl create iamserviceaccount \
 ## Install
 Install KEDA using Helm
 ```bash
+kubectl label sa keda-operator -n keda app.kubernetes.io/managed-by=Helm --overwrite
+kubectl annotate sa keda-operator -n keda meta.helm.sh/release-name=keda --overwrite
+kubectl annotate sa keda-operator -n keda meta.helm.sh/release-namespace=keda --overwrite
+
 helm repo add keda https://kedacore.github.io/charts
 helm repo update
 
