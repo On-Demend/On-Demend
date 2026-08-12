@@ -3,7 +3,7 @@ site_name = "On-Demend"
 site_url = "https://on-demend.github.io/On-Demend"
 site_description = "On-Demand - Cloud Resources"
 site_author = "On-Demend"
-copyright = "Copyright &copy; 2026 On-Demend"
+copyright = "&copy; 2026 On-Demend"
 docs_dir = "docs"
 site_dir = "site"
 extra_css = ["stylesheets/extra.css"]
@@ -21,14 +21,20 @@ nav = [
             ]}
         ]}
     ]},
+    { "Container Registry" = [
+        {"Docker" = [
+            {"Dockerfile" = "cr/dockerfile.md"}
+        ]}
+    ]},
     { "DATABASE" = [
         { "Serverless" = "database/lambda.md" },
     ]},
-    {"EC2" = [
-        {"systemd" = "ec2/systemd.md"}
+    {"EC2 & Linux" = [
+        {"Linux" = [
+            {"systemd" = "ec2/systemd.md"}
+        ]}
     ]},
     {"ECS" = [
-        {"Docker" = "ecs/docker.md"},
         {"Gateway" = "ecs/gateway.md"},
         {"Installation" = "ecs/installation.md"}
     ]},

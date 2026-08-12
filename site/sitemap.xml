@@ -10,13 +10,13 @@
         <loc>https://on-demend.github.io/On-Demend/cicd/codeseries/codedeploy/ecs/</loc>
       </url>
       <url>
+        <loc>https://on-demend.github.io/On-Demend/cr/dockerfile/</loc>
+      </url>
+      <url>
         <loc>https://on-demend.github.io/On-Demend/database/lambda/</loc>
       </url>
       <url>
         <loc>https://on-demend.github.io/On-Demend/ec2/systemd/</loc>
-      </url>
-      <url>
-        <loc>https://on-demend.github.io/On-Demend/ecs/docker/</loc>
       </url>
       <url>
         <loc>https://on-demend.github.io/On-Demend/ecs/gateway/</loc>

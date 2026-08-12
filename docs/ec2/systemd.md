@@ -1,20 +1,37 @@
-# systemd
+# system daemon
 
 File location : `/etc/systemd/system/<name>.service`
 
-### Service Unit File
-```bash
+## Minimal Service File
+```toml
 [Unit]
-Description=WorldPay Service
+Description=WS Minimal SVC File
 
 [Service]
 Type=simple
-EnvironmentFile=/opt/worldpay/.env
-ExecStart=/opt/worldpay/app
-WorkingDirectory=/opt/worldpay
+ExecStart=/opt/ws/app
 Restart=on-failure
-StandardOutput=file:/var/log/worldpay.log
-StandardError=file:/var/log/worldpay.log
+
+[Install]
+WantedBy=multi-user.target
+```
+
+## Recommended Service File
+```toml
+[Unit]
+Description=WS Minimal SVC File
+
+[Service]
+User=ec2-user
+Group=ec2-user
+Type=simple
+Environment="PORT=8080" "PASSWD=12345678"
+EnvironmentFile=/opt/ws/.env
+ExecStart=/opt/ws/app
+WorkingDirectory=/opt/ws
+Restart=on-failure
+StandardOutput=file:/var/log/ws.log
+StandardError=file:/var/log/ws.log
 
 [Install]
 WantedBy=multi-user.target

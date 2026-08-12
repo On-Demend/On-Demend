@@ -1,8 +1,8 @@
-# On-Demend 🖐️
+# On-Demend
 
 ### What is On-Demend?
 ---
-#### `On-Dem"e"nd is an elastic tech guide that lets you instantly pull the essential scripts and cloud resources you need—anytime, anywhere.`
+**`On-Dem"e"nd is an elastic tech guide that lets you instantly pull the essential scripts and cloud resources you need—anytime, anywhere.`**
 
 - Cloud Resources
 
