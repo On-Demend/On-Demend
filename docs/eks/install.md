@@ -26,17 +26,11 @@ chmod 700 get_helm.sh
 ### Connect EKS Cluster
 
 #### Setting Frequently Used Environment Variables
-You may need to set the `TARGET_REGION` variable.
+Change the default region via `aws configure` before proceeding.
 ```bash
-TARGET_REGION=${AWS_REGION:-"ap-northeast-2"}
-
-aws configure set region $TARGET_REGION
-
-echo "export CLUSTER_NAME=$(eksctl get clusters --region $TARGET_REGION -o json | jq -r '.[0].Name')" >> ~/.bashrc
-echo "export AWS_DEFAULT_REGION=$TARGET_REGION" >> ~/.bashrc
-echo "export AWS_REGION=$TARGET_REGION" >> ~/.bashrc
+echo "export CLUSTER_NAME=$(eksctl get clusters -o json | jq -r '.[0].Name')" >> ~/.bashrc
+echo "export AWS_DEFAULT_REGION=$(aws configure get region)" >> ~/.bashrc
 echo "export AWS_ACCOUNT_ID=$(aws sts get-caller-identity --query Account --output text)" >> ~/.bashrc
-
 source ~/.bashrc
 ```
 
