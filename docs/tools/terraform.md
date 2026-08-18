@@ -1,7 +1,7 @@
 # Terraform - IaC
 
 ## What is Terraform?
-Terraform is an infrastructure as code tool that lets you build, change, and version infrastructure safely and efficiently. [Learn More](https://developer.hashicorp.com/terraform)
+> Terraform is an infrastructure as code tool that lets you build, change, and version infrastructure safely and efficiently. [Learn More](https://developer.hashicorp.com/terraform)
 
 ## Install Terraform on Amazon Linux
 ```bash

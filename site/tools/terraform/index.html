@@ -435,7 +435,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../eks/awslbctr/" class="md-tabs__link">
+        <a href="../../eks/aws-lb-ctr/" class="md-tabs__link">
           
   
   EKS
@@ -457,7 +457,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../logging/athena/" class="md-tabs__link">
+        <a href="../../logging/alb-access-log/" class="md-tabs__link">
           
   
   Logging
@@ -1492,7 +1492,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../eks/awslbctr/" class="md-nav__link">
+      <a href="../../eks/aws-lb-ctr/" class="md-nav__link">
         
   
   
@@ -1638,14 +1638,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../eks/base_resource/" class="md-nav__link">
+      <a href="../../eks/basic-objects/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Base Resources
+    Basic Objects
   
 
     
@@ -1701,7 +1701,35 @@
   <span class="md-ellipsis">
     
   
-    Modify Domain
+    Customize Cluster Domain
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../eks/pod-iam-roles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pod IAM Roles
   
 
     
@@ -1791,14 +1819,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../logging/athena/" class="md-nav__link">
+      <a href="../../logging/alb-access-log/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Athena
+    ALB Access Logs
   
 
     
@@ -1819,14 +1847,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../logging/cloudwatch/" class="md-nav__link">
+      <a href="../../logging/cloudfront-log/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    CloudWatch
+    CloudFront Logs
   
 
     
@@ -2273,7 +2301,9 @@
 
 <h1 id="terraform-iac">Terraform - IaC</h1>
 <h2 id="what-is-terraform">What is Terraform?</h2>
+<blockquote>
 <p>Terraform is an infrastructure as code tool that lets you build, change, and version infrastructure safely and efficiently. <a href="https://developer.hashicorp.com/terraform">Learn More</a></p>
+</blockquote>
 <h2 id="install-terraform-on-amazon-linux">Install Terraform on Amazon Linux</h2>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>sudo<span class="w"> </span>yum<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>yum-utils<span class="w"> </span>shadow-utils
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>sudo<span class="w"> </span>yum-config-manager<span class="w"> </span>--add-repo<span class="w"> </span>https://rpm.releases.hashicorp.com/AmazonLinux/hashicorp.repo

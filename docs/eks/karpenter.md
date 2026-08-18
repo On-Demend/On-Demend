@@ -1,5 +1,5 @@
 # Karpenter
-Just-in-time Nodes for Any Kubernetes Cluster
+> Just-in-time Nodes for Any Kubernetes Cluster
 
 ## Set Up the AWS Infrastructure
 Setting Up Infrastructure and Environment Variables

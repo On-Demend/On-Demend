@@ -40,19 +40,20 @@ nav = [
     ]},
     { "EKS" = [
         {"Add-ons" = [
-            { "AWS Load Balancer Controller" = "eks/awslbctr.md" },
+            { "AWS Load Balancer Controller" = "eks/aws-lb-ctr.md" },
             { "Karpenter" = "eks/karpenter.md" },
             { "KEDA" = "eks/keda.md" }
         ]},
         {"Basic Configuration" = [
-            { "Base Resources" = "eks/base_resource.md" },
+            { "Basic Objects" = "eks/basic-objects.md" },
             { "Connection & Setup" = "eks/install.md" },
-            { "Modify Domain" = "eks/change_domain.md" }
+            { "Customize Cluster Domain" = "eks/change_domain.md" },
+            { "Pod IAM Roles" = "eks/pod-iam-roles.md" }
         ]}
     ]},
     { "Logging" = [
-        { "Athena" = "logging/athena.md" },
-        { "CloudWatch" = "logging/cloudwatch.md" },
+        { "ALB Access Logs" = "logging/alb-access-log.md" },
+        { "CloudFront Logs" = "logging/cloudfront-log.md" },
         { "Fluentbit" = "logging/fluentbit.md" }
     ]},
     { "Tools" =[

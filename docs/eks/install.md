@@ -11,6 +11,9 @@ kubectl completion bash | sudo tee /etc/bash_completion.d/kubectl > /dev/null
 ```
 Download Specific Versions : [Set up kubectl](https://docs.aws.amazon.com/eks/latest/userguide/install-kubectl.html)
 
+!!! tip
+    kubectl is pre-installed in CloudShell, so separate installation may not be required.
+
 ### Install eksctl
 ```bash
 curl -sL "https://github.com/eksctl-io/eksctl/releases/latest/download/eksctl_$(uname -s)_amd64.tar.gz" | sudo tar xz -C /usr/local/bin
@@ -26,7 +29,7 @@ chmod 700 get_helm.sh
 ### Connect EKS Cluster
 
 #### Setting Frequently Used Environment Variables
-Change the default region via `aws configure` before proceeding.
+Change the region via `aws configure` before proceeding.
 ```bash
 echo "export CLUSTER_NAME=$(eksctl get clusters -o json | jq -r '.[0].Name')" >> ~/.bashrc
 echo "export AWS_DEFAULT_REGION=$(aws configure get region)" >> ~/.bashrc

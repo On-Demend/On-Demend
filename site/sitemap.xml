@@ -25,7 +25,7 @@
         <loc>https://on-demend.github.io/On-Demend/ecs/installation/</loc>
       </url>
       <url>
-        <loc>https://on-demend.github.io/On-Demend/eks/awslbctr/</loc>
+        <loc>https://on-demend.github.io/On-Demend/eks/aws-lb-ctr/</loc>
       </url>
       <url>
         <loc>https://on-demend.github.io/On-Demend/eks/karpenter/</loc>
@@ -34,7 +34,7 @@
         <loc>https://on-demend.github.io/On-Demend/eks/keda/</loc>
       </url>
       <url>
-        <loc>https://on-demend.github.io/On-Demend/eks/base_resource/</loc>
+        <loc>https://on-demend.github.io/On-Demend/eks/basic-objects/</loc>
       </url>
       <url>
         <loc>https://on-demend.github.io/On-Demend/eks/install/</loc>
@@ -43,10 +43,13 @@
         <loc>https://on-demend.github.io/On-Demend/eks/change_domain/</loc>
       </url>
       <url>
-        <loc>https://on-demend.github.io/On-Demend/logging/athena/</loc>
+        <loc>https://on-demend.github.io/On-Demend/eks/pod-iam-roles/</loc>
       </url>
       <url>
-        <loc>https://on-demend.github.io/On-Demend/logging/cloudwatch/</loc>
+        <loc>https://on-demend.github.io/On-Demend/logging/alb-access-log/</loc>
+      </url>
+      <url>
+        <loc>https://on-demend.github.io/On-Demend/logging/cloudfront-log/</loc>
       </url>
       <url>
         <loc>https://on-demend.github.io/On-Demend/logging/fluentbit/</loc>

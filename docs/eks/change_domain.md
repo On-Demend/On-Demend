@@ -1,13 +1,20 @@
-## Kubernetes Setting
+# Customize Cluster Domain
 
-`Bottle Rocket Userdata script`
+## Add Launch Template UserData
+
+- Only Bottlerocket
+
 ```bash
-settings.kubernetes.cluster-name = 'ws25-eks-cluster'
+[settings.kubernetes]
+cluster-domain = "example.skills.local"
 ```
 
-## CoreDNS
+## Apply CoreDNS
+
+Update the `*.cluster.local` domain
+
 ```bash
-kubectl edit cm coredns -n kube-system
-kubectl rollout restart deployment coredns -n kube-system
-kubectl get --raw "/api/v1/nodes/NODE_NAME/proxy/configz" | jq | grep -i domain
+kubectl edit -n kube-system cm coredns
+
+kubectl rollout restart deployment -n kube-system coredns 
 ```

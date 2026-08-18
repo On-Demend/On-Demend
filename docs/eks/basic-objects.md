@@ -1,11 +1,13 @@
+# Basic Objects
+
 ## Deployment
-### ***`deployment.yaml`***
-```bash
+
+```yaml title="deployment.yaml"
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: ws26-green-deploy
-  namespace: ws26
+  name: ws25-green-deploy
+  namespace: ws25
 spec:
   replicas: 2
   selector:
@@ -41,14 +43,13 @@ spec:
         - containerPort: 80
 ```
 
-## service
-### ***`service.yaml`***
-```bash
+## Service
+```yaml title="service.yaml"
 apiVersion: v1
 kind: Service
 metadata:
-  name: ws26-green-service
-  namespace: ws26
+  name: ws25-green-service
+  namespace: ws25
 spec:
   type: NodePort
   selector:
@@ -56,22 +57,21 @@ spec:
   ports:
     - protocol: TCP
       port: 80
-      targetPort: 80
+      targetPort: 3000
 ```
 
 ## Ingress
-### ***`ingress.yaml`***
-```bash
+```yaml title="ingress.yaml"
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: ws26-app-alb
-  namespace: ws26
+  name: ws25-ingress
+  namespace: ws25
   annotations:
-    alb.ingress.kubernetes.io/load-balancer-name: ws26-app-alb
+    alb.ingress.kubernetes.io/load-balancer-name: ws25-app-alb
     alb.ingress.kubernetes.io/target-type: instance
     alb.ingress.kubernetes.io/target-node-labels: node=app
-    alb.ingress.kubernetes.io/scheme: internal
+    alb.ingress.kubernetes.io/scheme: internet-facing
     alb.ingress.kubernetes.io/healthcheck-path: /health
 spec:
   ingressClassName: alb
@@ -82,20 +82,19 @@ spec:
             pathType: Exact
             backend:
               service:
-                name: ws26-green-service
+                name: ws25-green-service
                 port:
                   number: 80
           - path: /red
             pathType: Exact
             backend:
               service:
-                name: ws26-red-service
+                name: ws25-red-service
                 port:
                   number: 80
 ```
 ## Secret
-### ***`secret.yaml`***
-```bash
+```yaml title="secret.yaml"
 apiVersion: v1
 kind: Secret
 metadata:

@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://on-demend.github.io/On-Demend/eks/install/">
       
       
-        <link rel="prev" href="../base_resource/">
+        <link rel="prev" href="../basic-objects/">
       
       
         <link rel="next" href="../change_domain/">
@@ -439,7 +439,7 @@
     
     
       <li class="md-tabs__item md-tabs__item--active">
-        <a href="../awslbctr/" class="md-tabs__link">
+        <a href="../aws-lb-ctr/" class="md-tabs__link">
           
   
   EKS
@@ -461,7 +461,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../logging/athena/" class="md-tabs__link">
+        <a href="../../logging/alb-access-log/" class="md-tabs__link">
           
   
   Logging
@@ -1500,7 +1500,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../awslbctr/" class="md-nav__link">
+      <a href="../aws-lb-ctr/" class="md-nav__link">
         
   
   
@@ -1649,14 +1649,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../base_resource/" class="md-nav__link">
+      <a href="../basic-objects/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Base Resources
+    Basic Objects
   
 
     
@@ -1977,7 +1977,35 @@
   <span class="md-ellipsis">
     
   
-    Modify Domain
+    Customize Cluster Domain
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pod-iam-roles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pod IAM Roles
   
 
     
@@ -2067,14 +2095,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../logging/athena/" class="md-nav__link">
+      <a href="../../logging/alb-access-log/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Athena
+    ALB Access Logs
   
 
     
@@ -2095,14 +2123,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../logging/cloudwatch/" class="md-nav__link">
+      <a href="../../logging/cloudfront-log/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    CloudWatch
+    CloudFront Logs
   
 
     
@@ -2616,7 +2644,7 @@
     
     
       <li class="md-path__item">
-        <a href="../awslbctr/" class="md-path__link">
+        <a href="../aws-lb-ctr/" class="md-path__link">
           
   <span class="md-ellipsis">
     EKS
@@ -2637,7 +2665,7 @@
     
     
       <li class="md-path__item">
-        <a href="../base_resource/" class="md-path__link">
+        <a href="../basic-objects/" class="md-path__link">
           
   <span class="md-ellipsis">
     Basic Configuration
@@ -2682,6 +2710,10 @@
 </span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>kubectl<span class="w"> </span>completion<span class="w"> </span>bash<span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>tee<span class="w"> </span>/etc/bash_completion.d/kubectl<span class="w"> </span>&gt;<span class="w"> </span>/dev/null
 </span></code></pre></div>
 Download Specific Versions : <a href="https://docs.aws.amazon.com/eks/latest/userguide/install-kubectl.html">Set up kubectl</a></p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>kubectl is pre-installed in CloudShell, so separate installation may not be required.</p>
+</div>
 <h3 id="install-eksctl">Install eksctl</h3>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>curl<span class="w"> </span>-sL<span class="w"> </span><span class="s2">&quot;https://github.com/eksctl-io/eksctl/releases/latest/download/eksctl_</span><span class="k">$(</span>uname<span class="w"> </span>-s<span class="k">)</span><span class="s2">_amd64.tar.gz&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>tar<span class="w"> </span>xz<span class="w"> </span>-C<span class="w"> </span>/usr/local/bin
 </span></code></pre></div>
@@ -2692,17 +2724,11 @@ Download Specific Versions : <a href="https://docs.aws.amazon.com/eks/latest/use
 </span></code></pre></div>
 <h3 id="connect-eks-cluster">Connect EKS Cluster</h3>
 <h4 id="setting-frequently-used-environment-variables">Setting Frequently Used Environment Variables</h4>
-<p>You may need to set the <code>TARGET_REGION</code> variable.
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nv">TARGET_REGION</span><span class="o">=</span><span class="si">${</span><span class="nv">AWS_REGION</span><span class="k">:-</span><span class="s2">&quot;ap-northeast-2&quot;</span><span class="si">}</span>
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>aws<span class="w"> </span>configure<span class="w"> </span><span class="nb">set</span><span class="w"> </span>region<span class="w"> </span><span class="nv">$TARGET_REGION</span>
-</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>
-</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;export CLUSTER_NAME=</span><span class="k">$(</span>eksctl<span class="w"> </span>get<span class="w"> </span>clusters<span class="w"> </span>--region<span class="w"> </span><span class="nv">$TARGET_REGION</span><span class="w"> </span>-o<span class="w"> </span>json<span class="w"> </span><span class="p">|</span><span class="w"> </span>jq<span class="w"> </span>-r<span class="w"> </span><span class="s1">&#39;.[0].Name&#39;</span><span class="k">)</span><span class="s2">&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.bashrc
-</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;export AWS_DEFAULT_REGION=</span><span class="nv">$TARGET_REGION</span><span class="s2">&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.bashrc
-</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;export AWS_REGION=</span><span class="nv">$TARGET_REGION</span><span class="s2">&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.bashrc
-</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;export AWS_ACCOUNT_ID=</span><span class="k">$(</span>aws<span class="w"> </span>sts<span class="w"> </span>get-caller-identity<span class="w"> </span>--query<span class="w"> </span>Account<span class="w"> </span>--output<span class="w"> </span>text<span class="k">)</span><span class="s2">&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.bashrc
-</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>
-</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="nb">source</span><span class="w"> </span>~/.bashrc
+<p>Change the region via <code>aws configure</code> before proceeding.
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;export CLUSTER_NAME=</span><span class="k">$(</span>eksctl<span class="w"> </span>get<span class="w"> </span>clusters<span class="w"> </span>-o<span class="w"> </span>json<span class="w"> </span><span class="p">|</span><span class="w"> </span>jq<span class="w"> </span>-r<span class="w"> </span><span class="s1">&#39;.[0].Name&#39;</span><span class="k">)</span><span class="s2">&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.bashrc
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;export AWS_DEFAULT_REGION=</span><span class="k">$(</span>aws<span class="w"> </span>configure<span class="w"> </span>get<span class="w"> </span>region<span class="k">)</span><span class="s2">&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.bashrc
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;export AWS_ACCOUNT_ID=</span><span class="k">$(</span>aws<span class="w"> </span>sts<span class="w"> </span>get-caller-identity<span class="w"> </span>--query<span class="w"> </span>Account<span class="w"> </span>--output<span class="w"> </span>text<span class="k">)</span><span class="s2">&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.bashrc
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="nb">source</span><span class="w"> </span>~/.bashrc
 </span></code></pre></div></p>
 <h4 id="update-kubeconfig">Update Kubeconfig</h4>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>aws<span class="w"> </span>eks<span class="w"> </span>update-kubeconfig<span class="w"> </span>--name<span class="w"> </span><span class="nv">$CLUSTER_NAME</span>
@@ -2810,7 +2836,7 @@ Download Specific Versions : <a href="https://docs.aws.amazon.com/eks/latest/use
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../base_resource/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Base Resources">
+          <a href="../basic-objects/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Basic Objects">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l137.3-137.4c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg>
@@ -2820,20 +2846,20 @@ Download Specific Versions : <a href="https://docs.aws.amazon.com/eks/latest/use
                 Previous
               </span>
               <div class="md-ellipsis">
-                Base Resources
+                Basic Objects
               </div>
             </div>
           </a>
         
         
           
-          <a href="../change_domain/" class="md-footer__link md-footer__link--next" aria-label="Next: Modify Domain">
+          <a href="../change_domain/" class="md-footer__link md-footer__link--next" aria-label="Next: Customize Cluster Domain">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Modify Domain
+                Customize Cluster Domain
               </div>
             </div>
             <div class="md-footer__button md-icon">

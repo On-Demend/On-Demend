@@ -12,13 +12,13 @@
         <meta name="author" content="On-Demend">
       
       
-        <link rel="canonical" href="https://on-demend.github.io/On-Demend/logging/athena/">
+        <link rel="canonical" href="https://on-demend.github.io/On-Demend/logging/alb-access-log/">
       
       
-        <link rel="prev" href="../../eks/change_domain/">
+        <link rel="prev" href="../../eks/pod-iam-roles/">
       
       
-        <link rel="next" href="../cloudwatch/">
+        <link rel="next" href="../cloudfront-log/">
       
       
         
@@ -29,7 +29,7 @@
     
     
       
-        <title>Athena(Access logs) - Logging - On-Demend</title>
+        <title>ALB Access Logs - On-Demend</title>
       
     
     
@@ -152,7 +152,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#athenaaccess-logs-logging" class="md-skip">
+        <a href="#alb-access-logs" class="md-skip">
           Skip to content
         </a>
       
@@ -187,7 +187,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Athena(Access logs) - Logging
+              ALB Access Logs
             
           </span>
         </div>
@@ -435,7 +435,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../eks/awslbctr/" class="md-tabs__link">
+        <a href="../../eks/aws-lb-ctr/" class="md-tabs__link">
           
   
   EKS
@@ -1492,7 +1492,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../eks/awslbctr/" class="md-nav__link">
+      <a href="../../eks/aws-lb-ctr/" class="md-nav__link">
         
   
   
@@ -1638,14 +1638,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../eks/base_resource/" class="md-nav__link">
+      <a href="../../eks/basic-objects/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Base Resources
+    Basic Objects
   
 
     
@@ -1701,7 +1701,35 @@
   <span class="md-ellipsis">
     
   
-    Modify Domain
+    Customize Cluster Domain
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../eks/pod-iam-roles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pod IAM Roles
   
 
     
@@ -1810,7 +1838,7 @@
   <span class="md-ellipsis">
     
   
-    Athena
+    ALB Access Logs
   
 
     
@@ -1828,7 +1856,7 @@
   <span class="md-ellipsis">
     
   
-    Athena
+    ALB Access Logs
   
 
     
@@ -1855,10 +1883,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#alb-access-log" class="md-nav__link">
+  <a href="#bucket-policy" class="md-nav__link">
     <span class="md-ellipsis">
       
-        ALB Access Log
+        Bucket policy
       
     </span>
   </a>
@@ -1866,21 +1894,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#cloutfront-logs-legacy" class="md-nav__link">
+  <a href="#create-the-table-for-alb-access-logs" class="md-nav__link">
     <span class="md-ellipsis">
       
-        CloutFront Logs (Legacy)
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#waf-logs" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        WAF Logs
+        Create the table for ALB access logs
       
     </span>
   </a>
@@ -1903,14 +1920,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../cloudwatch/" class="md-nav__link">
+      <a href="../cloudfront-log/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    CloudWatch
+    CloudFront Logs
   
 
     
@@ -2160,10 +2177,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#alb-access-log" class="md-nav__link">
+  <a href="#bucket-policy" class="md-nav__link">
     <span class="md-ellipsis">
       
-        ALB Access Log
+        Bucket policy
       
     </span>
   </a>
@@ -2171,21 +2188,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#cloutfront-logs-legacy" class="md-nav__link">
+  <a href="#create-the-table-for-alb-access-logs" class="md-nav__link">
     <span class="md-ellipsis">
       
-        CloutFront Logs (Legacy)
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#waf-logs" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        WAF Logs
+        Create the table for ALB access logs
       
     </span>
   </a>
@@ -2255,7 +2261,7 @@
                 
                   
   
-    <a href="https://github.com/On-Demend/On-Demend/edit/master/docs/logging/athena.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+    <a href="https://github.com/On-Demend/On-Demend/edit/master/docs/logging/alb-access-log.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75z"/></svg>
     </a>
@@ -2264,32 +2270,34 @@
     
       
     
-    <a href="https://github.com/On-Demend/On-Demend/raw/master/docs/logging/athena.md" title="View source of this page" class="md-content__button md-icon">
+    <a href="https://github.com/On-Demend/On-Demend/raw/master/docs/logging/alb-access-log.md" title="View source of this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0 8a5 5 0 0 1-5-5 5 5 0 0 1 5-5 5 5 0 0 1 5 5 5 5 0 0 1-5 5m0-12.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5"/></svg>
     </a>
   
 
 
-<h1 id="athenaaccess-logs-logging">Athena(Access logs) - Logging</h1>
-<h2 id="alb-access-log">ALB Access Log</h2>
-<p><code>Permission</code>
+<h1 id="alb-access-logs">ALB Access Logs</h1>
+<h2 id="bucket-policy">Bucket policy</h2>
+<blockquote>
+<p>This policy grants permissions to the log delivery service.</p>
+</blockquote>
 <div class="language-json highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">{</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="nt">&quot;Version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2012-10-17&quot;</span><span class="p">,</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="nt">&quot;Version&quot;</span><span class="p">:</span><span class="s2">&quot;2012-10-17&quot;</span><span class="p">,</span>
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span><span class="nt">&quot;Statement&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
 </span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="p">{</span>
 </span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">      </span><span class="nt">&quot;Effect&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Allow&quot;</span><span class="p">,</span>
 </span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">      </span><span class="nt">&quot;Principal&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">        </span><span class="nt">&quot;AWS&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;arn:aws:iam::600734575887:root&quot;</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">        </span><span class="nt">&quot;Service&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;logdelivery.elasticloadbalancing.amazonaws.com&quot;</span>
 </span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">      </span><span class="p">},</span>
 </span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">      </span><span class="nt">&quot;Action&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;s3:PutObject&quot;</span><span class="p">,</span>
-</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">      </span><span class="nt">&quot;Resource&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;arn:aws:s3:::apdev-log-s3-abcd/alb/*&quot;</span>
-</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="hll"><span class="w">      </span><span class="nt">&quot;Resource&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;arn:aws:s3:::example-bucket-125/AWSLogs/&lt;AWS ACCOUNT ID&gt;/*&quot;</span>
+</span></span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">    </span><span class="p">}</span>
 </span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">  </span><span class="p">]</span>
 </span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="p">}</span>
-</span></code></pre></div></p>
-<p><code>Creating Table</code>
-<div class="language-sql highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">CREATE</span><span class="w"> </span><span class="k">EXTERNAL</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="k">IF</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">EXISTS</span><span class="w"> </span><span class="n">product</span><span class="w"> </span><span class="p">(</span>
+</span></code></pre></div>
+<h2 id="create-the-table-for-alb-access-logs">Create the table for ALB access logs</h2>
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">CREATE</span><span class="w"> </span><span class="k">EXTERNAL</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="k">IF</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">EXISTS</span><span class="w"> </span><span class="n">alb_access_logs</span><span class="w"> </span><span class="p">(</span>
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">            </span><span class="k">type</span><span class="w"> </span><span class="n">string</span><span class="p">,</span>
 </span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">            </span><span class="k">time</span><span class="w"> </span><span class="n">string</span><span class="p">,</span>
 </span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">            </span><span class="n">elb</span><span class="w"> </span><span class="n">string</span><span class="p">,</span>
@@ -2325,113 +2333,14 @@
 </span><span id="__span-1-34"><a id="__codelineno-1-34" name="__codelineno-1-34" href="#__codelineno-1-34"></a><span class="w">            </span><span class="n">classification_reason</span><span class="w"> </span><span class="n">string</span><span class="p">,</span>
 </span><span id="__span-1-35"><a id="__codelineno-1-35" name="__codelineno-1-35" href="#__codelineno-1-35"></a><span class="w">            </span><span class="n">conn_trace_id</span><span class="w"> </span><span class="n">string</span>
 </span><span id="__span-1-36"><a id="__codelineno-1-36" name="__codelineno-1-36" href="#__codelineno-1-36"></a><span class="w">            </span><span class="p">)</span>
-</span><span id="__span-1-37"><a id="__codelineno-1-37" name="__codelineno-1-37" href="#__codelineno-1-37"></a><span class="w">            </span><span class="n">PARTITIONED</span><span class="w"> </span><span class="k">BY</span>
-</span><span id="__span-1-38"><a id="__codelineno-1-38" name="__codelineno-1-38" href="#__codelineno-1-38"></a><span class="w">            </span><span class="p">(</span>
-</span><span id="__span-1-39"><a id="__codelineno-1-39" name="__codelineno-1-39" href="#__codelineno-1-39"></a><span class="w">             </span><span class="k">day</span><span class="w"> </span><span class="n">STRING</span>
-</span><span id="__span-1-40"><a id="__codelineno-1-40" name="__codelineno-1-40" href="#__codelineno-1-40"></a><span class="w">            </span><span class="p">)</span>
-</span><span id="__span-1-41"><a id="__codelineno-1-41" name="__codelineno-1-41" href="#__codelineno-1-41"></a><span class="w">            </span><span class="k">ROW</span><span class="w"> </span><span class="n">FORMAT</span><span class="w"> </span><span class="n">SERDE</span><span class="w"> </span><span class="s1">&#39;org.apache.hadoop.hive.serde2.RegexSerDe&#39;</span>
-</span><span id="__span-1-42"><a id="__codelineno-1-42" name="__codelineno-1-42" href="#__codelineno-1-42"></a><span class="w">            </span><span class="k">WITH</span><span class="w"> </span><span class="n">SERDEPROPERTIES</span><span class="w"> </span><span class="p">(</span>
-</span><span id="__span-1-43"><a id="__codelineno-1-43" name="__codelineno-1-43" href="#__codelineno-1-43"></a><span class="w">            </span><span class="s1">&#39;serialization.format&#39;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;1&#39;</span><span class="p">,</span>
-</span><span id="__span-1-44"><a id="__codelineno-1-44" name="__codelineno-1-44" href="#__codelineno-1-44"></a><span class="w">            </span><span class="s1">&#39;input.regex&#39;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>
-</span><span id="__span-1-45"><a id="__codelineno-1-45" name="__codelineno-1-45" href="#__codelineno-1-45"></a><span class="w">        </span><span class="s1">&#39;([^ ]*) ([^ ]*) ([^ ]*) ([^ ]*):([0-9]*) ([^ ]*)[:-]([0-9]*) ([-.0-9]*) ([-.0-9]*) ([-.0-9]*) (|[-0-9]*) (-|[-0-9]*) ([-0-9]*) ([-0-9]*) \&quot;([^ ]*) (.*) (- |[^ ]*)\&quot; \&quot;([^\&quot;]*)\&quot; ([A-Z0-9-_]+) ([A-Za-z0-9.-]*) ([^ ]*) \&quot;([^\&quot;]*)\&quot; \&quot;([^\&quot;]*)\&quot; \&quot;([^\&quot;]*)\&quot; ([-.0-9]*) ([^ ]*) \&quot;([^\&quot;]*)\&quot; \&quot;([^\&quot;]*)\&quot; \&quot;([^ ]*)\&quot; \&quot;([^\\s]+?)\&quot; \&quot;([^\\s]+)\&quot; \&quot;([^ ]*)\&quot; \&quot;([^ ]*)\&quot; ?([^ ]*)?&#39;</span>
-</span><span id="__span-1-46"><a id="__codelineno-1-46" name="__codelineno-1-46" href="#__codelineno-1-46"></a><span class="w">            </span><span class="p">)</span>
-</span><span id="__span-1-47"><a id="__codelineno-1-47" name="__codelineno-1-47" href="#__codelineno-1-47"></a><span class="w">            </span><span class="k">LOCATION</span><span class="w"> </span><span class="s1">&#39;s3://apdev-log-s3-abcd/alb/product/AWSLogs/000000000000/elasticloadbalancing/ap-northeast-2/&#39;</span>
-</span><span id="__span-1-48"><a id="__codelineno-1-48" name="__codelineno-1-48" href="#__codelineno-1-48"></a><span class="w">            </span><span class="n">TBLPROPERTIES</span>
-</span><span id="__span-1-49"><a id="__codelineno-1-49" name="__codelineno-1-49" href="#__codelineno-1-49"></a><span class="w">            </span><span class="p">(</span>
-</span><span id="__span-1-50"><a id="__codelineno-1-50" name="__codelineno-1-50" href="#__codelineno-1-50"></a><span class="w">             </span><span class="ss">&quot;projection.enabled&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ss">&quot;true&quot;</span><span class="p">,</span>
-</span><span id="__span-1-51"><a id="__codelineno-1-51" name="__codelineno-1-51" href="#__codelineno-1-51"></a><span class="w">             </span><span class="ss">&quot;projection.day.type&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ss">&quot;date&quot;</span><span class="p">,</span>
-</span><span id="__span-1-52"><a id="__codelineno-1-52" name="__codelineno-1-52" href="#__codelineno-1-52"></a><span class="w">             </span><span class="ss">&quot;projection.day.range&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ss">&quot;2022/01/01,NOW&quot;</span><span class="p">,</span>
-</span><span id="__span-1-53"><a id="__codelineno-1-53" name="__codelineno-1-53" href="#__codelineno-1-53"></a><span class="w">             </span><span class="ss">&quot;projection.day.format&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ss">&quot;yyyy/MM/dd&quot;</span><span class="p">,</span>
-</span><span id="__span-1-54"><a id="__codelineno-1-54" name="__codelineno-1-54" href="#__codelineno-1-54"></a><span class="w">             </span><span class="ss">&quot;projection.day.interval&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ss">&quot;1&quot;</span><span class="p">,</span>
-</span><span id="__span-1-55"><a id="__codelineno-1-55" name="__codelineno-1-55" href="#__codelineno-1-55"></a><span class="w">             </span><span class="ss">&quot;projection.day.interval.unit&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ss">&quot;DAYS&quot;</span><span class="p">,</span>
-</span><span id="__span-1-56"><a id="__codelineno-1-56" name="__codelineno-1-56" href="#__codelineno-1-56"></a><span class="w">             </span><span class="ss">&quot;storage.location.template&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ss">&quot;s3://apdev-log-s3-abcd/alb/product/AWSLogs/000000000000/elasticloadbalancing/ap-northeast-2/${day}&quot;</span>
-</span><span id="__span-1-57"><a id="__codelineno-1-57" name="__codelineno-1-57" href="#__codelineno-1-57"></a><span class="w">            </span><span class="p">)</span>
-</span></code></pre></div></p>
-<h2 id="cloutfront-logs-legacy">CloutFront Logs (Legacy)</h2>
-<div class="language-sql highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">CREATE</span><span class="w"> </span><span class="k">EXTERNAL</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="k">IF</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">EXISTS</span><span class="w"> </span><span class="n">cloudfront_standard_logs</span><span class="w"> </span><span class="p">(</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span><span class="o">`</span><span class="nb">date</span><span class="o">`</span><span class="w"> </span><span class="nb">DATE</span><span class="p">,</span>
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">  </span><span class="k">time</span><span class="w"> </span><span class="n">STRING</span><span class="p">,</span>
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">  </span><span class="n">x_edge_location</span><span class="w"> </span><span class="n">STRING</span><span class="p">,</span>
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">  </span><span class="n">sc_bytes</span><span class="w"> </span><span class="nb">BIGINT</span><span class="p">,</span>
-</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">  </span><span class="n">c_ip</span><span class="w"> </span><span class="n">STRING</span><span class="p">,</span>
-</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">  </span><span class="n">cs_method</span><span class="w"> </span><span class="n">STRING</span><span class="p">,</span>
-</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">  </span><span class="n">cs_host</span><span class="w"> </span><span class="n">STRING</span><span class="p">,</span>
-</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">  </span><span class="n">cs_uri_stem</span><span class="w"> </span><span class="n">STRING</span><span class="p">,</span>
-</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">  </span><span class="n">sc_status</span><span class="w"> </span><span class="nb">INT</span><span class="p">,</span>
-</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="w">  </span><span class="n">cs_referrer</span><span class="w"> </span><span class="n">STRING</span><span class="p">,</span>
-</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="w">  </span><span class="n">cs_user_agent</span><span class="w"> </span><span class="n">STRING</span><span class="p">,</span>
-</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="w">  </span><span class="n">cs_uri_query</span><span class="w"> </span><span class="n">STRING</span><span class="p">,</span>
-</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="w">  </span><span class="n">cs_cookie</span><span class="w"> </span><span class="n">STRING</span><span class="p">,</span>
-</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="w">  </span><span class="n">x_edge_result_type</span><span class="w"> </span><span class="n">STRING</span><span class="p">,</span>
-</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="w">  </span><span class="n">x_edge_request_id</span><span class="w"> </span><span class="n">STRING</span><span class="p">,</span>
-</span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="w">  </span><span class="n">x_host_header</span><span class="w"> </span><span class="n">STRING</span><span class="p">,</span>
-</span><span id="__span-2-18"><a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a><span class="w">  </span><span class="n">cs_protocol</span><span class="w"> </span><span class="n">STRING</span><span class="p">,</span>
-</span><span id="__span-2-19"><a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a><span class="w">  </span><span class="n">cs_bytes</span><span class="w"> </span><span class="nb">BIGINT</span><span class="p">,</span>
-</span><span id="__span-2-20"><a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a><span class="w">  </span><span class="n">time_taken</span><span class="w"> </span><span class="nb">FLOAT</span><span class="p">,</span>
-</span><span id="__span-2-21"><a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a><span class="w">  </span><span class="n">x_forwarded_for</span><span class="w"> </span><span class="n">STRING</span><span class="p">,</span>
-</span><span id="__span-2-22"><a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a><span class="w">  </span><span class="n">ssl_protocol</span><span class="w"> </span><span class="n">STRING</span><span class="p">,</span>
-</span><span id="__span-2-23"><a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a><span class="w">  </span><span class="n">ssl_cipher</span><span class="w"> </span><span class="n">STRING</span><span class="p">,</span>
-</span><span id="__span-2-24"><a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a><span class="w">  </span><span class="n">x_edge_response_result_type</span><span class="w"> </span><span class="n">STRING</span><span class="p">,</span>
-</span><span id="__span-2-25"><a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a><span class="w">  </span><span class="n">cs_protocol_version</span><span class="w"> </span><span class="n">STRING</span><span class="p">,</span>
-</span><span id="__span-2-26"><a id="__codelineno-2-26" name="__codelineno-2-26" href="#__codelineno-2-26"></a><span class="w">  </span><span class="n">fle_status</span><span class="w"> </span><span class="n">STRING</span><span class="p">,</span>
-</span><span id="__span-2-27"><a id="__codelineno-2-27" name="__codelineno-2-27" href="#__codelineno-2-27"></a><span class="w">  </span><span class="n">fle_encrypted_fields</span><span class="w"> </span><span class="nb">INT</span><span class="p">,</span>
-</span><span id="__span-2-28"><a id="__codelineno-2-28" name="__codelineno-2-28" href="#__codelineno-2-28"></a><span class="w">  </span><span class="n">c_port</span><span class="w"> </span><span class="nb">INT</span><span class="p">,</span>
-</span><span id="__span-2-29"><a id="__codelineno-2-29" name="__codelineno-2-29" href="#__codelineno-2-29"></a><span class="w">  </span><span class="n">time_to_first_byte</span><span class="w"> </span><span class="nb">FLOAT</span><span class="p">,</span>
-</span><span id="__span-2-30"><a id="__codelineno-2-30" name="__codelineno-2-30" href="#__codelineno-2-30"></a><span class="w">  </span><span class="n">x_edge_detailed_result_type</span><span class="w"> </span><span class="n">STRING</span><span class="p">,</span>
-</span><span id="__span-2-31"><a id="__codelineno-2-31" name="__codelineno-2-31" href="#__codelineno-2-31"></a><span class="w">  </span><span class="n">sc_content_type</span><span class="w"> </span><span class="n">STRING</span><span class="p">,</span>
-</span><span id="__span-2-32"><a id="__codelineno-2-32" name="__codelineno-2-32" href="#__codelineno-2-32"></a><span class="w">  </span><span class="n">sc_content_len</span><span class="w"> </span><span class="nb">BIGINT</span><span class="p">,</span>
-</span><span id="__span-2-33"><a id="__codelineno-2-33" name="__codelineno-2-33" href="#__codelineno-2-33"></a><span class="w">  </span><span class="n">sc_range_start</span><span class="w"> </span><span class="nb">BIGINT</span><span class="p">,</span>
-</span><span id="__span-2-34"><a id="__codelineno-2-34" name="__codelineno-2-34" href="#__codelineno-2-34"></a><span class="w">  </span><span class="n">sc_range_end</span><span class="w"> </span><span class="nb">BIGINT</span>
-</span><span id="__span-2-35"><a id="__codelineno-2-35" name="__codelineno-2-35" href="#__codelineno-2-35"></a><span class="p">)</span>
-</span><span id="__span-2-36"><a id="__codelineno-2-36" name="__codelineno-2-36" href="#__codelineno-2-36"></a><span class="k">ROW</span><span class="w"> </span><span class="n">FORMAT</span><span class="w"> </span><span class="n">DELIMITED</span><span class="w"> </span>
-</span><span id="__span-2-37"><a id="__codelineno-2-37" name="__codelineno-2-37" href="#__codelineno-2-37"></a><span class="n">FIELDS</span><span class="w"> </span><span class="n">TERMINATED</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="s1">&#39;\t&#39;</span>
-</span><span id="__span-2-38"><a id="__codelineno-2-38" name="__codelineno-2-38" href="#__codelineno-2-38"></a><span class="k">LOCATION</span><span class="w"> </span><span class="s1">&#39;s3://apdev-log-s3/cloudfront/&#39;</span>
-</span><span id="__span-2-39"><a id="__codelineno-2-39" name="__codelineno-2-39" href="#__codelineno-2-39"></a><span class="n">TBLPROPERTIES</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="s1">&#39;skip.header.line.count&#39;</span><span class="o">=</span><span class="s1">&#39;2&#39;</span><span class="w"> </span><span class="p">)</span>
-</span></code></pre></div>
-<h2 id="waf-logs">WAF Logs</h2>
-<div class="language-sql highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">CREATE</span><span class="w"> </span><span class="k">EXTERNAL</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="o">`</span><span class="n">waf_logs</span><span class="o">`</span><span class="p">(</span>
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span><span class="o">`</span><span class="k">timestamp</span><span class="o">`</span><span class="w"> </span><span class="nb">bigint</span><span class="p">,</span><span class="w"> </span>
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">  </span><span class="o">`</span><span class="n">formatversion</span><span class="o">`</span><span class="w"> </span><span class="nb">int</span><span class="p">,</span><span class="w"> </span>
-</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">  </span><span class="o">`</span><span class="n">webaclid</span><span class="o">`</span><span class="w"> </span><span class="n">string</span><span class="p">,</span><span class="w"> </span>
-</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">  </span><span class="o">`</span><span class="n">terminatingruleid</span><span class="o">`</span><span class="w"> </span><span class="n">string</span><span class="p">,</span><span class="w"> </span>
-</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">  </span><span class="o">`</span><span class="n">terminatingruletype</span><span class="o">`</span><span class="w"> </span><span class="n">string</span><span class="p">,</span><span class="w"> </span>
-</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">  </span><span class="o">`</span><span class="n">action</span><span class="o">`</span><span class="w"> </span><span class="n">string</span><span class="p">,</span><span class="w"> </span>
-</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">  </span><span class="o">`</span><span class="n">terminatingrulematchdetails</span><span class="o">`</span><span class="w"> </span><span class="nb">array</span><span class="o">&lt;</span><span class="n">struct</span><span class="o">&lt;</span><span class="n">conditiontype</span><span class="p">:</span><span class="n">string</span><span class="p">,</span><span class="n">sensitivitylevel</span><span class="p">:</span><span class="n">string</span><span class="p">,</span><span class="k">location</span><span class="p">:</span><span class="n">string</span><span class="p">,</span><span class="n">matcheddata</span><span class="p">:</span><span class="nb">array</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;&gt;&gt;</span><span class="p">,</span><span class="w"> </span>
-</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">  </span><span class="o">`</span><span class="n">httpsourcename</span><span class="o">`</span><span class="w"> </span><span class="n">string</span><span class="p">,</span><span class="w"> </span>
-</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="w">  </span><span class="o">`</span><span class="n">httpsourceid</span><span class="o">`</span><span class="w"> </span><span class="n">string</span><span class="p">,</span><span class="w"> </span>
-</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="w">  </span><span class="o">`</span><span class="n">rulegrouplist</span><span class="o">`</span><span class="w"> </span><span class="nb">array</span><span class="o">&lt;</span><span class="n">struct</span><span class="o">&lt;</span><span class="n">rulegroupid</span><span class="p">:</span><span class="n">string</span><span class="p">,</span><span class="n">terminatingrule</span><span class="p">:</span><span class="n">struct</span><span class="o">&lt;</span><span class="n">ruleid</span><span class="p">:</span><span class="n">string</span><span class="p">,</span><span class="n">action</span><span class="p">:</span><span class="n">string</span><span class="p">,</span><span class="n">rulematchdetails</span><span class="p">:</span><span class="nb">array</span><span class="o">&lt;</span><span class="n">struct</span><span class="o">&lt;</span><span class="n">conditiontype</span><span class="p">:</span><span class="n">string</span><span class="p">,</span><span class="n">sensitivitylevel</span><span class="p">:</span><span class="n">string</span><span class="p">,</span><span class="k">location</span><span class="p">:</span><span class="n">string</span><span class="p">,</span><span class="n">matcheddata</span><span class="p">:</span><span class="nb">array</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;&gt;&gt;&gt;</span><span class="p">,</span><span class="n">nonterminatingmatchingrules</span><span class="p">:</span><span class="nb">array</span><span class="o">&lt;</span><span class="n">struct</span><span class="o">&lt;</span><span class="n">ruleid</span><span class="p">:</span><span class="n">string</span><span class="p">,</span><span class="n">action</span><span class="p">:</span><span class="n">string</span><span class="p">,</span><span class="n">overriddenaction</span><span class="p">:</span><span class="n">string</span><span class="p">,</span><span class="n">rulematchdetails</span><span class="p">:</span><span class="nb">array</span><span class="o">&lt;</span><span class="n">struct</span><span class="o">&lt;</span><span class="n">conditiontype</span><span class="p">:</span><span class="n">string</span><span class="p">,</span><span class="n">sensitivitylevel</span><span class="p">:</span><span class="n">string</span><span class="p">,</span><span class="k">location</span><span class="p">:</span><span class="n">string</span><span class="p">,</span><span class="n">matcheddata</span><span class="p">:</span><span class="nb">array</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;&gt;&gt;</span><span class="p">,</span><span class="n">challengeresponse</span><span class="p">:</span><span class="n">struct</span><span class="o">&lt;</span><span class="n">responsecode</span><span class="p">:</span><span class="n">string</span><span class="p">,</span><span class="n">solvetimestamp</span><span class="p">:</span><span class="n">string</span><span class="o">&gt;</span><span class="p">,</span><span class="n">captcharesponse</span><span class="p">:</span><span class="n">struct</span><span class="o">&lt;</span><span class="n">responsecode</span><span class="p">:</span><span class="n">string</span><span class="p">,</span><span class="n">solvetimestamp</span><span class="p">:</span><span class="n">string</span><span class="o">&gt;&gt;&gt;</span><span class="p">,</span><span class="n">excludedrules</span><span class="p">:</span><span class="n">string</span><span class="o">&gt;&gt;</span><span class="p">,</span><span class="w"> </span>
-</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="w">  </span><span class="o">`</span><span class="n">ratebasedrulelist</span><span class="o">`</span><span class="w"> </span><span class="nb">array</span><span class="o">&lt;</span><span class="n">struct</span><span class="o">&lt;</span><span class="n">ratebasedruleid</span><span class="p">:</span><span class="n">string</span><span class="p">,</span><span class="n">limitkey</span><span class="p">:</span><span class="n">string</span><span class="p">,</span><span class="n">maxrateallowed</span><span class="p">:</span><span class="nb">int</span><span class="o">&gt;&gt;</span><span class="p">,</span><span class="w"> </span>
-</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="w">  </span><span class="o">`</span><span class="n">nonterminatingmatchingrules</span><span class="o">`</span><span class="w"> </span><span class="nb">array</span><span class="o">&lt;</span><span class="n">struct</span><span class="o">&lt;</span><span class="n">ruleid</span><span class="p">:</span><span class="n">string</span><span class="p">,</span><span class="n">action</span><span class="p">:</span><span class="n">string</span><span class="p">,</span><span class="n">rulematchdetails</span><span class="p">:</span><span class="nb">array</span><span class="o">&lt;</span><span class="n">struct</span><span class="o">&lt;</span><span class="n">conditiontype</span><span class="p">:</span><span class="n">string</span><span class="p">,</span><span class="n">sensitivitylevel</span><span class="p">:</span><span class="n">string</span><span class="p">,</span><span class="k">location</span><span class="p">:</span><span class="n">string</span><span class="p">,</span><span class="n">matcheddata</span><span class="p">:</span><span class="nb">array</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;&gt;&gt;</span><span class="p">,</span><span class="n">challengeresponse</span><span class="p">:</span><span class="n">struct</span><span class="o">&lt;</span><span class="n">responsecode</span><span class="p">:</span><span class="n">string</span><span class="p">,</span><span class="n">solvetimestamp</span><span class="p">:</span><span class="n">string</span><span class="o">&gt;</span><span class="p">,</span><span class="n">captcharesponse</span><span class="p">:</span><span class="n">struct</span><span class="o">&lt;</span><span class="n">responsecode</span><span class="p">:</span><span class="n">string</span><span class="p">,</span><span class="n">solvetimestamp</span><span class="p">:</span><span class="n">string</span><span class="o">&gt;&gt;&gt;</span><span class="p">,</span><span class="w"> </span>
-</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="w">  </span><span class="o">`</span><span class="n">requestheadersinserted</span><span class="o">`</span><span class="w"> </span><span class="nb">array</span><span class="o">&lt;</span><span class="n">struct</span><span class="o">&lt;</span><span class="n">name</span><span class="p">:</span><span class="n">string</span><span class="p">,</span><span class="n">value</span><span class="p">:</span><span class="n">string</span><span class="o">&gt;&gt;</span><span class="p">,</span><span class="w"> </span>
-</span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="w">  </span><span class="o">`</span><span class="n">responsecodesent</span><span class="o">`</span><span class="w"> </span><span class="n">string</span><span class="p">,</span><span class="w"> </span>
-</span><span id="__span-3-16"><a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a><span class="w">  </span><span class="o">`</span><span class="n">httprequest</span><span class="o">`</span><span class="w"> </span><span class="n">struct</span><span class="o">&lt;</span><span class="n">clientip</span><span class="p">:</span><span class="n">string</span><span class="p">,</span><span class="n">country</span><span class="p">:</span><span class="n">string</span><span class="p">,</span><span class="n">headers</span><span class="p">:</span><span class="nb">array</span><span class="o">&lt;</span><span class="n">struct</span><span class="o">&lt;</span><span class="n">name</span><span class="p">:</span><span class="n">string</span><span class="p">,</span><span class="n">value</span><span class="p">:</span><span class="n">string</span><span class="o">&gt;&gt;</span><span class="p">,</span><span class="n">uri</span><span class="p">:</span><span class="n">string</span><span class="p">,</span><span class="n">args</span><span class="p">:</span><span class="n">string</span><span class="p">,</span><span class="n">httpversion</span><span class="p">:</span><span class="n">string</span><span class="p">,</span><span class="n">httpmethod</span><span class="p">:</span><span class="n">string</span><span class="p">,</span><span class="n">requestid</span><span class="p">:</span><span class="n">string</span><span class="p">,</span><span class="n">fragment</span><span class="p">:</span><span class="n">string</span><span class="p">,</span><span class="n">scheme</span><span class="p">:</span><span class="n">string</span><span class="p">,</span><span class="k">host</span><span class="p">:</span><span class="n">string</span><span class="o">&gt;</span><span class="p">,</span>
-</span><span id="__span-3-17"><a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a><span class="w">  </span><span class="o">`</span><span class="n">labels</span><span class="o">`</span><span class="w"> </span><span class="nb">array</span><span class="o">&lt;</span><span class="n">struct</span><span class="o">&lt;</span><span class="n">name</span><span class="p">:</span><span class="n">string</span><span class="o">&gt;&gt;</span><span class="p">,</span><span class="w"> </span>
-</span><span id="__span-3-18"><a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a><span class="w">  </span><span class="o">`</span><span class="n">captcharesponse</span><span class="o">`</span><span class="w"> </span><span class="n">struct</span><span class="o">&lt;</span><span class="n">responsecode</span><span class="p">:</span><span class="n">string</span><span class="p">,</span><span class="n">solvetimestamp</span><span class="p">:</span><span class="n">string</span><span class="p">,</span><span class="n">failurereason</span><span class="p">:</span><span class="n">string</span><span class="o">&gt;</span><span class="p">,</span><span class="w"> </span>
-</span><span id="__span-3-19"><a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a><span class="w">  </span><span class="o">`</span><span class="n">challengeresponse</span><span class="o">`</span><span class="w"> </span><span class="n">struct</span><span class="o">&lt;</span><span class="n">responsecode</span><span class="p">:</span><span class="n">string</span><span class="p">,</span><span class="n">solvetimestamp</span><span class="p">:</span><span class="n">string</span><span class="p">,</span><span class="n">failurereason</span><span class="p">:</span><span class="n">string</span><span class="o">&gt;</span><span class="p">,</span><span class="w"> </span>
-</span><span id="__span-3-20"><a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a><span class="w">  </span><span class="o">`</span><span class="n">ja3fingerprint</span><span class="o">`</span><span class="w"> </span><span class="n">string</span><span class="p">,</span><span class="w"> </span>
-</span><span id="__span-3-21"><a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a><span class="w">  </span><span class="o">`</span><span class="n">ja4fingerprint</span><span class="o">`</span><span class="w"> </span><span class="n">string</span><span class="p">,</span><span class="w"> </span>
-</span><span id="__span-3-22"><a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a><span class="w">  </span><span class="o">`</span><span class="n">oversizefields</span><span class="o">`</span><span class="w"> </span><span class="n">string</span><span class="p">,</span><span class="w"> </span>
-</span><span id="__span-3-23"><a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a><span class="w">  </span><span class="o">`</span><span class="n">requestbodysize</span><span class="o">`</span><span class="w"> </span><span class="nb">int</span><span class="p">,</span><span class="w"> </span>
-</span><span id="__span-3-24"><a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a><span class="w">  </span><span class="o">`</span><span class="n">requestbodysizeinspectedbywaf</span><span class="o">`</span><span class="w"> </span><span class="nb">int</span><span class="p">)</span>
-</span><span id="__span-3-25"><a id="__codelineno-3-25" name="__codelineno-3-25" href="#__codelineno-3-25"></a><span class="w">  </span><span class="n">PARTITIONED</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="p">(</span><span class="w"> </span>
-</span><span id="__span-3-26"><a id="__codelineno-3-26" name="__codelineno-3-26" href="#__codelineno-3-26"></a><span class="w">   </span><span class="o">`</span><span class="n">log_time</span><span class="o">`</span><span class="w"> </span><span class="n">string</span><span class="p">)</span>
-</span><span id="__span-3-27"><a id="__codelineno-3-27" name="__codelineno-3-27" href="#__codelineno-3-27"></a><span class="k">ROW</span><span class="w"> </span><span class="n">FORMAT</span><span class="w"> </span><span class="n">SERDE</span><span class="w"> </span>
-</span><span id="__span-3-28"><a id="__codelineno-3-28" name="__codelineno-3-28" href="#__codelineno-3-28"></a><span class="w">  </span><span class="s1">&#39;org.openx.data.jsonserde.JsonSerDe&#39;</span><span class="w"> </span>
-</span><span id="__span-3-29"><a id="__codelineno-3-29" name="__codelineno-3-29" href="#__codelineno-3-29"></a><span class="n">STORED</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">INPUTFORMAT</span><span class="w"> </span>
-</span><span id="__span-3-30"><a id="__codelineno-3-30" name="__codelineno-3-30" href="#__codelineno-3-30"></a><span class="w">  </span><span class="s1">&#39;org.apache.hadoop.mapred.TextInputFormat&#39;</span><span class="w"> </span>
-</span><span id="__span-3-31"><a id="__codelineno-3-31" name="__codelineno-3-31" href="#__codelineno-3-31"></a><span class="n">OUTPUTFORMAT</span><span class="w"> </span>
-</span><span id="__span-3-32"><a id="__codelineno-3-32" name="__codelineno-3-32" href="#__codelineno-3-32"></a><span class="w">  </span><span class="s1">&#39;org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat&#39;</span>
-</span><span id="__span-3-33"><a id="__codelineno-3-33" name="__codelineno-3-33" href="#__codelineno-3-33"></a><span class="k">LOCATION</span>
-</span><span id="__span-3-34"><a id="__codelineno-3-34" name="__codelineno-3-34" href="#__codelineno-3-34"></a><span class="w">  </span><span class="s1">&#39;s3://apdev-log-s3-xxxx/AWSLogs/000000000000/WAFLogs/cloudfront/CreatedByCloudFront-&lt;&gt;/&#39;</span>
-</span><span id="__span-3-35"><a id="__codelineno-3-35" name="__codelineno-3-35" href="#__codelineno-3-35"></a><span class="n">TBLPROPERTIES</span><span class="w"> </span><span class="p">(</span>
-</span><span id="__span-3-36"><a id="__codelineno-3-36" name="__codelineno-3-36" href="#__codelineno-3-36"></a><span class="w"> </span><span class="s1">&#39;projection.enabled&#39;</span><span class="o">=</span><span class="s1">&#39;true&#39;</span><span class="p">,</span>
-</span><span id="__span-3-37"><a id="__codelineno-3-37" name="__codelineno-3-37" href="#__codelineno-3-37"></a><span class="w">  </span><span class="s1">&#39;projection.log_time.format&#39;</span><span class="o">=</span><span class="s1">&#39;yyyy/MM/dd/HH/mm&#39;</span><span class="p">,</span>
-</span><span id="__span-3-38"><a id="__codelineno-3-38" name="__codelineno-3-38" href="#__codelineno-3-38"></a><span class="w">  </span><span class="s1">&#39;projection.log_time.interval&#39;</span><span class="o">=</span><span class="s1">&#39;1&#39;</span><span class="p">,</span>
-</span><span id="__span-3-39"><a id="__codelineno-3-39" name="__codelineno-3-39" href="#__codelineno-3-39"></a><span class="w">  </span><span class="s1">&#39;projection.log_time.interval.unit&#39;</span><span class="o">=</span><span class="s1">&#39;minutes&#39;</span><span class="p">,</span>
-</span><span id="__span-3-40"><a id="__codelineno-3-40" name="__codelineno-3-40" href="#__codelineno-3-40"></a><span class="w">  </span><span class="s1">&#39;projection.log_time.range&#39;</span><span class="o">=</span><span class="s1">&#39;2025/08/08/00/00,NOW&#39;</span><span class="p">,</span>
-</span><span id="__span-3-41"><a id="__codelineno-3-41" name="__codelineno-3-41" href="#__codelineno-3-41"></a><span class="w">  </span><span class="s1">&#39;projection.log_time.type&#39;</span><span class="o">=</span><span class="s1">&#39;date&#39;</span><span class="p">,</span>
-</span><span id="__span-3-42"><a id="__codelineno-3-42" name="__codelineno-3-42" href="#__codelineno-3-42"></a><span class="w">  </span><span class="s1">&#39;storage.location.template&#39;</span><span class="o">=</span><span class="s1">&#39;s3://apdev-log-s3/AWSLogs/000000000000/WAFLogs/cloudfront/CreatedByCloudFront-&lt;&gt;/${log_time}&#39;</span><span class="p">)</span>
-</span></code></pre></div>
+</span><span id="__span-1-37"><a id="__codelineno-1-37" name="__codelineno-1-37" href="#__codelineno-1-37"></a><span class="w">            </span><span class="k">ROW</span><span class="w"> </span><span class="n">FORMAT</span><span class="w"> </span><span class="n">SERDE</span><span class="w"> </span><span class="s1">&#39;org.apache.hadoop.hive.serde2.RegexSerDe&#39;</span>
+</span><span id="__span-1-38"><a id="__codelineno-1-38" name="__codelineno-1-38" href="#__codelineno-1-38"></a><span class="w">            </span><span class="k">WITH</span><span class="w"> </span><span class="n">SERDEPROPERTIES</span><span class="w"> </span><span class="p">(</span>
+</span><span id="__span-1-39"><a id="__codelineno-1-39" name="__codelineno-1-39" href="#__codelineno-1-39"></a><span class="w">            </span><span class="s1">&#39;serialization.format&#39;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;1&#39;</span><span class="p">,</span>
+</span><span id="__span-1-40"><a id="__codelineno-1-40" name="__codelineno-1-40" href="#__codelineno-1-40"></a><span class="w">            </span><span class="s1">&#39;input.regex&#39;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>
+</span><span id="__span-1-41"><a id="__codelineno-1-41" name="__codelineno-1-41" href="#__codelineno-1-41"></a><span class="w">        </span><span class="s1">&#39;([^ ]*) ([^ ]*) ([^ ]*) ([^ ]*):([0-9]*) ([^ ]*)[:-]([0-9]*) ([-.0-9]*) ([-.0-9]*) ([-.0-9]*) (|[-0-9]*) (-|[-0-9]*) ([-0-9]*) ([-0-9]*) \&quot;([^ ]*) (.*) (- |[^ ]*)\&quot; \&quot;([^\&quot;]*)\&quot; ([A-Z0-9-_]+) ([A-Za-z0-9.-]*) ([^ ]*) \&quot;([^\&quot;]*)\&quot; \&quot;([^\&quot;]*)\&quot; \&quot;([^\&quot;]*)\&quot; ([-.0-9]*) ([^ ]*) \&quot;([^\&quot;]*)\&quot; \&quot;([^\&quot;]*)\&quot; \&quot;([^ ]*)\&quot; \&quot;([^\\s]+?)\&quot; \&quot;([^\\s]+)\&quot; \&quot;([^ ]*)\&quot; \&quot;([^ ]*)\&quot; ?([^ ]*)? ?( .*)?&#39;</span>
+</span><span id="__span-1-42"><a id="__codelineno-1-42" name="__codelineno-1-42" href="#__codelineno-1-42"></a><span class="w">            </span><span class="p">)</span>
+</span><span id="__span-1-43"><a id="__codelineno-1-43" name="__codelineno-1-43" href="#__codelineno-1-43"></a><span class="hll"><span class="w">            </span><span class="k">LOCATION</span><span class="w"> </span><span class="s1">&#39;s3://example-bucket-125/AWSLogs/&lt;AWS ACCOUNT ID&gt;/elasticloadbalancing/&#39;</span>
+</span></span></code></pre></div>
 
 
 
@@ -2471,7 +2380,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../../eks/change_domain/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Modify Domain">
+          <a href="../../eks/pod-iam-roles/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Pod IAM Roles">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l137.3-137.4c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg>
@@ -2481,20 +2390,20 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                Modify Domain
+                Pod IAM Roles
               </div>
             </div>
           </a>
         
         
           
-          <a href="../cloudwatch/" class="md-footer__link md-footer__link--next" aria-label="Next: CloudWatch">
+          <a href="../cloudfront-log/" class="md-footer__link md-footer__link--next" aria-label="Next: CloudFront Logs">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                CloudWatch
+                CloudFront Logs
               </div>
             </div>
             <div class="md-footer__button md-icon">
